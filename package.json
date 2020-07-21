@@ -4,13 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "commit": "git-cz",
     "build:doc": "ts-node build/doc.ts",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zero-org/zero-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/zero-org/zero-utils/issues"
+  },
   "keywords": [],
-  "author": "",
+  "author": "liukun",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -19,8 +28,11 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/register": "^7.10.5",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "commitizen": "^4.1.2",
     "glob": "^7.1.6",
+    "husky": "^4.2.5",
     "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^6.0.1",
     "ts-node": "^8.10.2",
