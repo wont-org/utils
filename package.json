@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "changelog:all": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
     "commit": "git-cz",
     "build:doc": "ts-node build/doc.ts",
     "docs:dev": "vuepress dev docs",
