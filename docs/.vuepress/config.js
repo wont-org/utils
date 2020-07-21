@@ -1,6 +1,6 @@
 module.exports = {
     "themeConfig": {
-        "repo": "vuejs/vuepress",
+        "repo": "https://github.com/zero-org/zero-utils",
         "nav": [
             {
                 "text": "Home",
@@ -18,7 +18,7 @@ module.exports = {
             },
             {
                 "text": "Guide",
-                "link": "/guide/"
+                "link": "/docs/CHANGELOG"
             },
             {
                 "text": "External",
@@ -27,9 +27,16 @@ module.exports = {
         ],
         "sidebar": [
             {
+                "title": "变更历史",
+                "collapsable": false,
+                "path": "/common/CHANGELOG"
+            },
+            "/common/guide",
+            "/common/quickstart",
+            {
                 "title": "add",
                 "collapsable": false,
-                "path": "/src/add/"
+                "path": "/src/add"
             }
         ]
     }

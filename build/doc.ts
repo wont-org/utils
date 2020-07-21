@@ -9,19 +9,21 @@ import { removeSync } from 'fs-extra'
 
 interface State {
     docDir: string,
-    entries: string[],
+    tsFiles: string[],
+    mdFiles: string[],
 }
 
 interface Sidebar {
-    title: string,
+    title?: string,
     path: string,
-    collapsable: boolean,
+    collapsable?: boolean,
 }
 
 class Docs {
     state:State={
         docDir: 'docs/src',
-        entries: glob.sync('src/!(_)*/!(_)*.ts') || [],
+        tsFiles: glob.sync('src/!(_)*/!(_)*.ts'),
+        mdFiles: glob.sync('docs/common/!(_)*.md'),
     }
 
     getMD(path: string) {
@@ -33,29 +35,43 @@ class Docs {
         })
     }
 
-    setSidebar(sidebar: Sidebar[]) {
+    setSidebar(sidebar: any[]) {
+        const { mdFiles } = this.state
+        console.log('mdFiles :>> ', mdFiles);
+        const mdList: any[] = mdFiles.map(mdFile=> {
+            let [, dir,name] = mdFile.split('/')
+            name = name.split('.')[0]
+            if(name==='CHANGELOG') {
+                return {
+                    title: '变更历史',
+                    collapsable: false,
+                    path: `/${dir}/${name}`
+                }
+            }
+            return `/${dir}/${name}`
+        })
+
         const path = 'docs/.vuepress/config.js'
         const config: string = readFileSync(path, 'utf-8')
         let result = eval(config)
 
-        result.themeConfig.sidebar = sidebar
+        result.themeConfig.sidebar = mdList.concat(sidebar)
         result = JSON.stringify(result, null, 4)
         writeFileSync(path, `module.exports = ${result}`, 'utf-8')
     }
 
     setMD() {
-        let { entries, docDir } =  this.state
-        console.log('entries :>> ', entries)
+        let { tsFiles, docDir } =  this.state
+        console.log('tsFiles :>> ', tsFiles)
 
-        if(entries.length===0) return
+        if(tsFiles.length===0) return
 
         removeSync(docDir)
 
-        return entries.map(async path=> {
-            let [dir, ,name] = path.split('/')
+        return tsFiles.map(async path=> {
+            let [src, ,name] = path.split('/')
             name = name.split('.')[0]
-            console.log('dir, name :>> ', dir, name)
-            
+
             const data = await this.getMD(path)
 
             if(!existsSync(docDir)) mkdirSync(docDir)
@@ -64,7 +80,7 @@ class Docs {
             const sidebarItem = {
                 title: name,
                 collapsable: false,
-                path: `/${dir}/${name}/`
+                path: `/${src}/${name}`
             }
             return sidebarItem
         })
