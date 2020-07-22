@@ -35,10 +35,10 @@ class Docs {
         })
     }
 
-    setSidebar(sidebar: any[]) {
+    setSidebar(sidebar: Sidebar[]) {
         const { mdFiles } = this.state
         console.log('mdFiles :>> ', mdFiles);
-        const mdList: any[] = mdFiles.map(mdFile=> {
+        const mdList: Array<string | Sidebar> = mdFiles.map(mdFile=> {
             let [, dir,name] = mdFile.split('/')
             name = name.split('.')[0]
             if(name==='CHANGELOG') {
