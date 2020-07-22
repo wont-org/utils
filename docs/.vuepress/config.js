@@ -1,6 +1,7 @@
 module.exports = {
     "themeConfig": {
         "repo": "https://github.com/zero-org/zero-utils",
+        "lastUpdated": '最后更新时间', // string | boolean
         "nav": [
             {
                 "text": "Home",
