@@ -1,17 +1,17 @@
 import path from 'path'
 import glob from 'glob'
-import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import json from '@rollup/plugin-json';
-import { terser } from "rollup-plugin-terser";
-import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import json from '@rollup/plugin-json'
+import { terser } from 'rollup-plugin-terser'
+import babel from '@rollup/plugin-babel'
 
 import { name } from './package.json'
 
 const extensions = ['.ts', '.js']
 let singleFileInput = {}
 
-glob.sync('src/!(_)*/!(_)*.ts').forEach(files => {
+glob.sync('src/!(_)*/!(_)*.ts').forEach((files) => {
     const name = path.basename(path.dirname(files))
     singleFileInput[name] = files
 })
@@ -26,13 +26,13 @@ const paths = {
 }
 
 const globals = {
-    lodash: 'lodash'
+    lodash: 'lodash',
 }
 
 const plugins = [
     json(),
     resolve({
-        extensions
+        extensions,
     }),
     commonjs(),
     babel({
@@ -51,9 +51,7 @@ const rollupConfig = [
             // chunkFileNames: `${paths.outputES}/[name].js`, // 指定dir时可以忽略
         },
         external: ['lodash'],
-        plugins: [
-            ...plugins,
-        ],
+        plugins: [...plugins],
     },
     // umd not compress
     {
@@ -65,9 +63,7 @@ const rollupConfig = [
             globals,
         },
         external: ['lodash'],
-        plugins: [
-            ...plugins,
-        ],
+        plugins: [...plugins],
     },
     // umd compressed
     {
@@ -79,10 +75,7 @@ const rollupConfig = [
             globals,
         },
         external: ['lodash'],
-        plugins: [
-            ...plugins,
-            terser(),
-        ],
+        plugins: [...plugins, terser()],
     },
     // browner script
     // {

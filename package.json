@@ -1,54 +1,62 @@
 {
-  "name": "ze",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "create": "hygen module with-prompt",
-    "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
-    "commit": "git-cz",
-    "build": "ts-node build/build.ts",
-    "build:c": "rollup -c rollup.config.ts",
-    "build:doc": "ts-node build/doc.ts",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "homepage": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zero-org/zero-utils"
-  },
-  "bugs": {
-    "url": "https://github.com/zero-org/zero-utils/issues"
-  },
-  "keywords": [],
-  "author": "liukun",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
-    "@babel/register": "^7.10.5",
-    "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "^9.1.1",
-    "@rollup/plugin-babel": "^5.1.0",
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
-    "commitizen": "^4.1.2",
-    "conventional-changelog-cli": "^2.0.34",
-    "glob": "^7.1.6",
-    "husky": "^4.2.5",
-    "hygen": "^6.0.4",
-    "jsdoc-babel": "^0.5.0",
-    "jsdoc-to-markdown": "^6.0.1",
-    "rollup": "^2.22.2",
-    "rollup-plugin-terser": "^6.1.0",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7",
-    "vuepress": "^1.5.2"
-  }
+    "name": "ze",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "prettier --write .",
+        "create": "hygen module with-prompt",
+        "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
+        "commit": "git-cz",
+        "build": "ts-node build/build.ts",
+        "build:c": "rollup -c rollup.config.ts",
+        "build:doc": "ts-node build/doc.ts",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zero-org/zero-utils"
+    },
+    "bugs": {
+        "url": "https://github.com/zero-org/zero-utils/issues"
+    },
+    "keywords": [],
+    "author": "liukun",
+    "license": "ISC",
+    "lint-staged": {
+        "*.(js|ts)": [
+            "prettier --write"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.10.5",
+        "@babel/node": "^7.10.5",
+        "@babel/preset-env": "^7.10.4",
+        "@babel/preset-typescript": "^7.10.4",
+        "@babel/register": "^7.10.5",
+        "@commitlint/cli": "^9.1.1",
+        "@commitlint/config-conventional": "^9.1.1",
+        "@rollup/plugin-babel": "^5.1.0",
+        "@rollup/plugin-commonjs": "^14.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^8.4.0",
+        "commitizen": "^4.1.2",
+        "conventional-changelog-cli": "^2.0.34",
+        "glob": "^7.1.6",
+        "husky": "^4.2.5",
+        "hygen": "^6.0.4",
+        "jsdoc-babel": "^0.5.0",
+        "jsdoc-to-markdown": "^6.0.1",
+        "lint-staged": "^10.2.11",
+        "prettier": "^2.0.5",
+        "rollup": "^2.22.2",
+        "rollup-plugin-terser": "^6.1.0",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.7",
+        "vuepress": "^1.5.2"
+    }
 }

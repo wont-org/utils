@@ -1,6 +1,6 @@
-import path from 'path';
-import glob from 'glob';
-import fs from 'fs';
+import path from 'path'
+import glob from 'glob'
+import fs from 'fs'
 import rollupConfig from '../rollup.config'
 import { rollup } from 'rollup'
 import { removeSync } from 'fs-extra'
@@ -17,7 +17,7 @@ class Build {
 
     checkEntry() {
         const { entries, lib } = this.state
-        if (entries.length===0) {
+        if (entries.length === 0) {
             throw new Error(`没有可构建的文件~`)
         } else {
             removeSync(lib)
@@ -27,7 +27,7 @@ class Build {
     genIndex(output: string) {
         let { entries, desc, entryStr } = this.state
 
-        entries.forEach(files => {
+        entries.forEach((files) => {
             const name = path.basename(path.dirname(files))
             entryStr += `export { ${name} } from './${name}/${name}'\n`
         })
@@ -55,14 +55,16 @@ class Build {
         this.genIndex(umdInput)
 
         await Promise.all(
-            rollupConfig.map(async config => {
+            rollupConfig.map(async (config) => {
                 await this.build(config)
             })
-        ).then(()=> {
-            this.genIndex(esOutput)
-        }).catch(err=> {
-            console.log('Build render error :>> ', err);
-        })
+        )
+            .then(() => {
+                this.genIndex(esOutput)
+            })
+            .catch((err) => {
+                console.log('Build render error :>> ', err)
+            })
     }
 }
 

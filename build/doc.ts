@@ -1,4 +1,3 @@
-
 // const jsdoc2md = require('jsdoc-to-markdown')
 // const glob = require('glob')
 // const fs = require('fs')
@@ -8,19 +7,19 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { removeSync } from 'fs-extra'
 
 interface State {
-    docDir: string,
-    tsFiles: string[],
-    mdFiles: string[],
+    docDir: string
+    tsFiles: string[]
+    mdFiles: string[]
 }
 
 interface Sidebar {
-    title?: string,
-    path: string,
-    collapsable?: boolean,
+    title?: string
+    path: string
+    collapsable?: boolean
 }
 
 class Docs {
-    state:State={
+    state: State = {
         docDir: 'docs/src',
         tsFiles: glob.sync('src/!(_)*/!(_)*.ts'),
         mdFiles: glob.sync('docs/common/!(_)*.md'),
@@ -31,21 +30,21 @@ class Docs {
             'example-lang': 'js',
             files: path,
             partial: 'build/jsdoc2md/templates/*.hbs',
-            configure: 'build/jsdoc2md/jsdoc2md.json'
+            configure: 'build/jsdoc2md/jsdoc2md.json',
         })
     }
 
     setSidebar(sidebar: Sidebar[]) {
         const { mdFiles } = this.state
-        console.log('mdFiles :>> ', mdFiles);
-        const mdList: Array<string | Sidebar> = mdFiles.map(mdFile=> {
-            let [, dir,name] = mdFile.split('/')
+        console.log('mdFiles :>> ', mdFiles)
+        const mdList: Array<string | Sidebar> = mdFiles.map((mdFile) => {
+            let [, dir, name] = mdFile.split('/')
             name = name.split('.')[0]
-            if(name==='CHANGELOG') {
+            if (name === 'CHANGELOG') {
                 return {
                     title: '变更历史',
                     collapsable: false,
-                    path: `/${dir}/${name}`
+                    path: `/${dir}/${name}`,
                 }
             }
             return `/${dir}/${name}`
@@ -61,41 +60,42 @@ class Docs {
     }
 
     setMD() {
-        let { tsFiles, docDir } =  this.state
+        let { tsFiles, docDir } = this.state
         console.log('tsFiles :>> ', tsFiles)
 
-        if(tsFiles.length===0) return
+        if (tsFiles.length === 0) return
 
         removeSync(docDir)
 
-        return tsFiles.map(async path=> {
-            let [src, ,name] = path.split('/')
+        return tsFiles.map(async (path) => {
+            let [src, , name] = path.split('/')
             name = name.split('.')[0]
 
             const data = await this.getMD(path)
 
-            if(!existsSync(docDir)) mkdirSync(docDir)
+            if (!existsSync(docDir)) mkdirSync(docDir)
             writeFileSync(`${docDir}/${name}.md`, data)
 
             const sidebarItem = {
                 title: name,
                 collapsable: false,
-                path: `/${src}/${name}`
+                path: `/${src}/${name}`,
             }
             return sidebarItem
         })
     }
 
-
-   render() {
+    render() {
         const sidebar = this.setMD() || []
 
-        Promise.all(sidebar).then(data=> {
-            console.log('sidebar :>> ', data);
-            this.setSidebar(data)
-        }).catch(err=> {
-            console.log('err :>> ', err);
-        })
+        Promise.all(sidebar)
+            .then((data) => {
+                console.log('sidebar :>> ', data)
+                this.setSidebar(data)
+            })
+            .catch((err) => {
+                console.log('err :>> ', err)
+            })
     }
 }
 

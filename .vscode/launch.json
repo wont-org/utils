@@ -8,39 +8,31 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
+            "skipFiles": ["<node_internals>/**"],
             "program": "${workspaceFolder}/index.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+            "outFiles": ["${workspaceFolder}/**/*.js"]
         },
         {
             "type": "node",
             "request": "launch",
             "name": "ts-node 当前文件",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
+            "skipFiles": ["<node_internals>/**"],
             "args": [
                 // "${relativeFile}"
             ],
             "runtimeExecutable": "ts-node",
-            "program": "${file}",
+            "program": "${file}"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "node 当前文件",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
+            "skipFiles": ["<node_internals>/**"],
             "args": [
                 // "${relativeFile}"
             ],
             "runtimeExecutable": "node",
-            "program": "${file}",
+            "program": "${file}"
         }
     ]
 }
