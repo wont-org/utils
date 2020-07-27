@@ -1,44 +1,38 @@
-import glob from 'glob';
 import path from 'path';
+import glob from 'glob';
 import fs from 'fs';
+import rollupConfig from '../rollup.config'
+import { rollup } from 'rollup'
 
-// import rollupConfig from '../rollup.config'
-// import { rollup } from 'rollup'
+class Build {
+    state = {
+        entries: glob.sync('src/!(_)*/!(_)*.ts'),
+        entryStr: '',
+    }
 
-const entries = glob.sync('src/!(_)*/!(_)*.ts')
-let importText = ''
-let attrText = ''
-const newLine = `\n`
+    genIndex() {
+        let { entryStr, entries } = this.state
 
-// 拼装index.js文件
-function addText(name) {
-  importText += `${importText ? newLine : ''}import ${name} from './${name}/${name}'`
-  attrText += `${attrText ? newLine : ''}${name},`
+        entries.forEach(files => {
+            const name = path.basename(path.dirname(files))
+            entryStr += `export { ${name} } from './${name}/${name}'\n`
+        })
+
+        fs.writeFileSync('src/index.ts', entryStr)
+    }
+
+    async build(config) {
+        const { output } = config
+        const bundle = await rollup(config)
+        await bundle.write(output)
+    }
+
+    render() {
+        this.genIndex()
+        rollupConfig.forEach(async config => {
+            await this.build(config)
+        })
+    }
 }
-entries.forEach(files=> {
-    const name = path.basename(path.dirname(files))
-    addText(name)
-})
-const index = `${importText}\n
-export default {
-    ${attrText}
-}`
-// console.log('index content :>> ',index);
-fs.writeFileSync('src/index.ts', index)
 
-// const { input, output, plugins } = rollupConfig
-
-// async function build (inputOpt, outputOpt) {
-//     const bundle = await rollup(inputOpt)
-//     await bundle.write(outputOpt)
-// }
-
-// const inputOpt = {
-//     input,
-//     plugins
-// }
-// build(inputOpt, output).then(res=> {
-//     console.log('res :>> ', res);
-// }).catch(err=> {
-//     console.log('err :>> ', err, inputOpt, output);
-// })
+new Build().render()

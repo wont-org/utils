@@ -1,5 +1,5 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
+    // 使用 IntelliSense 了解相关属性。
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
@@ -19,14 +19,27 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "当前文件",
+            "name": "ts-node 当前文件",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "args": [
                 // "${relativeFile}"
             ],
-            "runtimeExecutable": "/Users/lk-mbp/.nvm/versions/node/v14.5.0/bin/ts-node",
+            "runtimeExecutable": "ts-node",
+            "program": "${file}",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "node 当前文件",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": [
+                // "${relativeFile}"
+            ],
+            "runtimeExecutable": "node",
             "program": "${file}",
         }
     ]

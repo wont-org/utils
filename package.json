@@ -1,5 +1,5 @@
 {
-  "name": "zero-utils",
+  "name": "ze",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
     "commit": "git-cz",
     "build": "ts-node build/build.ts",
-    "build:fn": "npm run build && rollup -c rollup.config.ts",
+    "build:c": "rollup -c rollup.config.ts",
     "build:doc": "ts-node build/doc.ts",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -36,6 +36,7 @@
     "@commitlint/config-conventional": "^9.1.1",
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "commitizen": "^4.1.2",
     "conventional-changelog-cli": "^2.0.34",
@@ -45,6 +46,7 @@
     "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^6.0.1",
     "rollup": "^2.22.2",
+    "rollup-plugin-terser": "^6.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "vuepress": "^1.5.2"
