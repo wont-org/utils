@@ -42,51 +42,24 @@ const plugins = [
 ]
 
 const rollupConfig = [
+    // esm
     {
         input: paths.singleFileInput,
-        output:
-        {
-            dir: paths.outputCJS,
-            format: 'cjs',
-            // chunkFileNames: `${paths.outputCJS}/[name].js`, // 指定dir时可以忽略
-        },
-        external: ['lodash'],
-        plugins: [
-            ...plugins,
-            terser(),
-        ],
-    },
-    {
-        input: paths.singleFileInput,
-        output:
-        {
+        output: {
             dir: paths.outputES,
             format: 'es',
+            // chunkFileNames: `${paths.outputES}/[name].js`, // 指定dir时可以忽略
         },
         external: ['lodash'],
         plugins: [
             ...plugins,
         ],
     },
+    // umd not compress
     {
         input: paths.input,
-        output:
-        {
-            dir: paths.outputIIFE,
-            format: 'iife',
-            name,
-            globals,
-        },
-        external: ['lodash'],
-        plugins: [
-            ...plugins,
-        ],
-    },
-    {
-        input: paths.input,
-        output:
-        {
-            dir: paths.outputUMD,
+        output: {
+            file: paths.outputUMD + '/index.js',
             format: 'umd',
             name,
             globals,
@@ -95,7 +68,49 @@ const rollupConfig = [
         plugins: [
             ...plugins,
         ],
-    }
+    },
+    // umd compressed
+    {
+        input: paths.input,
+        output: {
+            file: paths.outputUMD + '/index.min.js',
+            format: 'umd',
+            name,
+            globals,
+        },
+        external: ['lodash'],
+        plugins: [
+            ...plugins,
+            terser(),
+        ],
+    },
+    // browner script
+    // {
+    //     input: paths.input,
+    //     output: {
+    //         dir: paths.outputIIFE,
+    //         format: 'iife',
+    //         name,
+    //         globals,
+    //     },
+    //     external: ['lodash'],
+    //     plugins: [
+    //         ...plugins,
+    //     ],
+    // },
+    // cjs
+    // {
+    //     input: paths.singleFileInput,
+    //     output: {
+    //         dir: paths.outputCJS,
+    //         format: 'cjs',
+    //     },
+    //     external: ['lodash'],
+    //     plugins: [
+    //         ...plugins,
+    //         terser(),
+    //     ],
+    // },
 ]
 
 export default rollupConfig

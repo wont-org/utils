@@ -1,6 +1,6 @@
 # 开发指南
 
-> 在参与`zero-utils`函数库之前，您需要了解 `TypeScript`
+> 在参与`zero-utils`函数库之前，您需要了解 [TypeScript](https://www.tslang.cn/)
 
 ## 函数设计
 首先创建一个`issue`，对函数设计进行说明，需要包含以下几点：
@@ -44,15 +44,15 @@ npm run create
 ```js
 /**
  * 总体的描述
- * @function helloWorld
+ * @function add
  * @returns {number} 对返回值的描述
- * @param {number} a - 参数a的描述.
- * @throws {TypeError} 异常1的描述.
- * @author  xxx <xxx@winbaoxian.com>
- * @example // returns 1
- * helloWorld(1)
+ * @param {number} a - 参数a的描述
+ * @throws {TypeError} 异常1的描述
+ * @author  xxx <xxx@xxx.com>
+ * @example
+ * add(1) // returns 1
  */
-export default function helloWorld(a: number): number {
+export function helloWorld(a: number): number {
   return a
 }
 
@@ -60,7 +60,7 @@ export default function helloWorld(a: number): number {
 
 **helloWorld.test.js**
 ```js
-import helloWorld from './helloWorld'
+import { helloWorld } from './helloWorld'
 
 describe('helloWorld 方法测试', () => {
   test('具体测试', () => {
@@ -108,25 +108,33 @@ npm run watch
 默认的注释如下，改成正确的内容即可，[如何写注释](common/code-commenting)
 ```js
 /**
- * 总体的描述1
- * 总体的描述2
- * @function helloWorld
+ * 总体的描述
+ * @function add
  * @returns {number} 对返回值的描述
- * @param {number} a - 参数a的描述.
- * @throws {TypeError} 异常1的描述.
- * @author  xxx <xxx@winbaoxian.com>
- * @example // returns 1
- * helloWorld(1)
+ * @param {number} a - 参数a的描述
+ * @throws {TypeError} 异常1的描述
+ * @author  xxx <xxx@xxx.com>
+ * @example
+ * add(1)  // returns 1
  */
 ```
 
 运行 npm 命令来查看文档：
 ```bash
-npm run build:all && npm run doc
+npm run build && npm run docs:dev
 ```
 
 ## 提交代码
 commit规范: 采用 angular 风格, 借助 commitizen 进行交互式提交、commitlint 进行消息格式的校验；
+```bash
+# global
+npm i conventional-changelog-cli -D
+git cz
+# npm
+npm run commit
+# npx
+npx git-cz
+```
 
 commit 格式如下(第一行必填, 其他行选填), 其中 type 代表的是修改内容的类型(必须使用指定的值)、scope 代表影响范围(根据项目自定义)、
 
