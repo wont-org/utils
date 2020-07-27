@@ -26,7 +26,7 @@
             "args": [
                 // "${relativeFile}"
             ],
-            "runtimeExecutable": "/Users/lk-mbp/.nvm/versions/node/v14.6.0/bin/ts-node",
+            "runtimeExecutable": "ts-node",
             "program": "${file}",
         },
         {
