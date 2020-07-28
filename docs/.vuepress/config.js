@@ -1,44 +1,49 @@
 module.exports = {
-    themeConfig: {
-        repo: 'https://github.com/zero-org/zero-utils',
-        lastUpdated: '最后更新时间',
-        nav: [
+    "themeConfig": {
+        "repo": "https://github.com/zero-org/zero-utils",
+        "lastUpdated": "最后更新时间",
+        "nav": [
             {
-                text: 'Home',
-                link: '/',
-                items: [
+                "text": "Home",
+                "link": "/",
+                "items": [
                     {
-                        text: 'Chinese',
-                        link: '/language/chinese/',
+                        "text": "Chinese",
+                        "link": "/language/chinese/"
                     },
                     {
-                        text: 'Japanese',
-                        link: '/language/japanese/',
-                    },
-                ],
+                        "text": "Japanese",
+                        "link": "/language/japanese/"
+                    }
+                ]
             },
             {
-                text: 'Guide',
-                link: '/docs/CHANGELOG',
+                "text": "测试覆盖率",
+                "link": "/coverage/lcov-report/index.html"
             },
             {
-                text: 'External',
-                link: 'https://google.com',
+                "text": "Guide",
+                "link": "/docs/CHANGELOG"
             },
+            {
+                "text": "External",
+                "link": "https://google.com"
+            }
         ],
-        sidebar: [
+        "sidebar": [
             {
-                title: '变更历史',
-                collapsable: false,
-                path: '/common/CHANGELOG',
+                "title": "变更历史",
+                "collapsable": false,
+                "path": "/common/CHANGELOG"
             },
-            '/common/guide',
-            '/common/quickstart',
+            "/common/guide",
+            "/common/quickstart",
+            "/common/sidebar",
             {
-                title: 'add',
-                collapsable: false,
-                path: '/src/add',
-            },
-        ],
-    },
+                "title": "add",
+                "collapsable": false,
+                "path": "/src/add"
+            }
+        ]
+    }
 }

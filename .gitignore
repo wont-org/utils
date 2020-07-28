@@ -5,6 +5,7 @@ docs/common/changelog.md
 docs/_sidebar.md
 docs/api.md
 src/index.ts
+/coverage
 
 .DS_Store
 .cache
