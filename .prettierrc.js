@@ -1,5 +1,4 @@
 module.exports = {
-    // files: ['*.js', '*.ts'],
     singleQuote: true,
     semi: false,
     tabWidth: 4,

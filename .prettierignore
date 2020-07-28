@@ -4,6 +4,7 @@ docs/coverage/
 docs/common/changelog.md
 docs/_sidebar.md
 docs/api.md
+docs/.vuepress/config.js
 src/index.ts
 
 .DS_Store
