@@ -1,6 +1,3 @@
-// const jsdoc2md = require('jsdoc-to-markdown')
-// const glob = require('glob')
-// const fs = require('fs')
 import jsdoc2md from 'jsdoc-to-markdown'
 import glob from 'glob'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
@@ -60,7 +57,7 @@ class Docs {
     }
 
     setMD() {
-        let { tsFiles, docDir } = this.state
+        const { tsFiles, docDir } = this.state
         console.log('tsFiles :>> ', tsFiles)
 
         if (tsFiles.length === 0) return

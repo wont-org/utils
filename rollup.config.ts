@@ -9,7 +9,7 @@ import babel from '@rollup/plugin-babel'
 import { name } from './package.json'
 
 const extensions = ['.ts', '.js']
-let singleFileInput = {}
+const singleFileInput = {}
 
 glob.sync('src/!(_)*/!(_)*.ts').forEach((files) => {
     const name = path.basename(path.dirname(files))

@@ -27,7 +27,7 @@ class Build {
     }
 
     genIndex() {
-        let { inputs } = this.state
+        const { inputs } = this.state
         inputs.forEach((files) => {
             const name = path.basename(path.dirname(files))
             this.state.umdInputScript += `export { ${name} } from './${name}/${name}'\n`

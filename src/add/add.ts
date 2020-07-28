@@ -8,6 +8,7 @@
  * @example
  * add(1)  // returns 1
  */
+const d = 1
 export function add(a: number): number {
     return a
 }
