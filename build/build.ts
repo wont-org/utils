@@ -7,38 +7,32 @@ import { removeSync } from 'fs-extra'
 
 class Build {
     state = {
-        entries: glob.sync('src/!(_)*/!(_)*.ts'),
-        entryStr: '',
+        inputs: glob.sync('src/!(_)*/!(_)*.ts'),
+        umdInputScript: '',
+        esInputScript: '',
         lib: 'lib',
-        umdInput: 'src/index.ts',
-        esOutput: 'lib/es/index.js',
+        umdInputFile: 'src/index.ts',
+        esOutputFile: 'lib/es/index.js',
         desc: '// 此文件是脚本自动生成，请勿在此修改\n\n',
     }
 
     checkEntry() {
-        const { entries, lib } = this.state
-        if (entries.length === 0) {
+        const { inputs, lib } = this.state
+        if (inputs.length === 0) {
             throw new Error(`没有可构建的文件~`)
         } else {
             removeSync(lib)
+            this.genIndex()
         }
     }
 
-    genIndex(output: string) {
-        let { entries, desc, entryStr } = this.state
-
-        entries.forEach((files) => {
+    genIndex() {
+        let { inputs } = this.state
+        inputs.forEach((files) => {
             const name = path.basename(path.dirname(files))
-            entryStr += `export { ${name} } from './${name}/${name}'\n`
+            this.state.umdInputScript += `export { ${name} } from './${name}/${name}'\n`
+            this.state.esInputScript += `export { ${name} } from './${name}'\n`
         })
-
-        const result = desc + entryStr
-
-        this.writeIndex(output, result)
-    }
-
-    writeIndex(dist: string, content: string) {
-        fs.writeFileSync(dist, content)
     }
 
     async build(config) {
@@ -50,9 +44,15 @@ class Build {
     async render() {
         this.checkEntry()
 
-        const { esOutput, umdInput } = this.state
+        const {
+            umdInputFile,
+            esOutputFile,
+            umdInputScript,
+            esInputScript,
+            desc,
+        } = this.state
 
-        this.genIndex(umdInput)
+        fs.writeFileSync(umdInputFile, desc + umdInputScript)
 
         await Promise.all(
             rollupConfig.map(async (config) => {
@@ -60,7 +60,7 @@ class Build {
             })
         )
             .then(() => {
-                this.genIndex(esOutput)
+                fs.writeFileSync(esOutputFile, desc + esInputScript)
             })
             .catch((err) => {
                 console.log('Build render error :>> ', err)
