@@ -36,13 +36,16 @@ module.exports = {
                 "collapsable": false,
                 "path": "/common/CHANGELOG"
             },
+            "/common/code-commenting",
             "/common/guide",
+            "/common/jest",
             "/common/quickstart",
-            "/common/sidebar",
+            "/common/recommend",
+            "/common/z-refer",
             {
-                "title": "add",
+                "title": "helloWorld",
                 "collapsable": false,
-                "path": "/src/add"
+                "path": "/src/helloWorld"
             }
         ]
     }
