@@ -12,10 +12,12 @@
         "commit": "git-cz",
         "build": "ts-node build/build.ts",
         "build:c": "rollup -c rollup.config.ts",
-        "build:doc": "ts-node build/doc.ts",
+        "build:docs": "ts-node build/doc.ts",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs",
         "coverage": "jest --coverage --verbose -u",
+        "test:fix": "jest --clearCache",
+        "test:n": "jest --no-cache",
         "test": "jest"
     },
     "homepage": "",
