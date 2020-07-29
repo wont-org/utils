@@ -337,7 +337,7 @@ test('获取页面title', async () => {
     const page = await browser.newPage()
 
     // 打开页面
-    await page.goto('https://mobile.winbaoxian.com')
+    await page.goto('https://www.baidu.com')
     // 也可以打开本地启动的服务
     // await page.goto('http://localhost:8080/')
 
@@ -365,14 +365,14 @@ test('获取页面title', async () => {
     args: ['--no-sandbox']
   })
   const page = await browser.newPage()
-  await page.goto('https://broker-2a.winbaoxian.cn/group-recommend-sign.html')
+  await page.goto('https://www.baidu.html')
 
   // 把 js 文件注入到页面中, path 表示js文件的路径
   // 在函数库中，我们把打包好的文件存放在 'lib/index.min.js'
   await page.addScriptTag({ path: 'lib/index.min.js' })
 
-  const name1 = '微易'
-  const name2 = '保险师'
+  const name1 = 'name1'
+  const name2 = 'name2'
   const title = await page.evaluate(
     (a, b) => {
       document.title = Jax.hello(a + b)
@@ -382,7 +382,7 @@ test('获取页面title', async () => {
     name2,
   )
   await browser.close()
-  expect(title).toBe('hello 微易保险师')
+  expect(title).toBe('hello name1name1')
 })
 ```
 

@@ -9,7 +9,7 @@
  * @returns {number} 对返回值的描述
  * @param {number} a - 参数a的描述.
  * @throws {TypeError} 异常1的描述.
- * @author  xxx <xxx@winbaoxian.com>
+ * @author  xxx <xxx@xxx.com>
  * @example // returns 1
  * helloWorld(1)
  */
@@ -174,11 +174,11 @@ export default function handleEmployee(cb) {
 ## 开发者/维护者
 ```
 /**
- * @author 张三 <zhangsan@winbaoxian.com>
+ * @author 张三 <zhangsan@qq.com>
  */
 
 /**
- * @author 张三 <zhangsan@winbaoxian.com> 李四 <lisi@winbaoxian.com>
+ * @author 张三 <zhangsan@qq.com> 李四 <lisi@qq.com>
  */
 ```
 

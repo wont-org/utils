@@ -4,30 +4,16 @@ module.exports = {
         "lastUpdated": "最后更新时间",
         "nav": [
             {
-                "text": "Home",
-                "link": "/",
-                "items": [
-                    {
-                        "text": "Chinese",
-                        "link": "/language/chinese/"
-                    },
-                    {
-                        "text": "Japanese",
-                        "link": "/language/japanese/"
-                    }
-                ]
+                "text": "快速开始",
+                "link": "/common/quickstart"
             },
             {
-                "text": "测试覆盖率",
-                "link": "/coverage/lcov-report/index.html"
+                "text": "开发指南",
+                "link": "/common/guide"
             },
             {
-                "text": "Guide",
+                "text": "变更历史",
                 "link": "/docs/CHANGELOG"
-            },
-            {
-                "text": "External",
-                "link": "https://google.com"
             }
         ],
         "sidebar": [
