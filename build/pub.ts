@@ -1,4 +1,6 @@
-import { execSync, spawn } from 'child_process'
+import {
+    execSync, spawn,
+} from 'child_process'
 import { version } from '../package.json'
 
 const runner = spawn('npm', ['publish'])

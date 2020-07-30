@@ -1,24 +1,48 @@
-const eslintrc = {
-    parser: '@typescript-eslint/parser', // 使用 ts 解析器
+module.exports = {
+    root: true,
+    parser: '@typescript-eslint/parser',
     extends: [
-        'eslint:recommended', // eslint 推荐规则
-        'plugin:@typescript-eslint/recommended', // ts 推荐规则
+        // 'eslint:recommended',
+        // 'plugin:@typescript-eslint/recommended',
+        'airbnb-base',
+        'plugin:jest/recommended',
     ],
-    plugins: ['@typescript-eslint'],
+    plugins: ['@typescript-eslint', 'jest'],
     env: {
         browser: true,
         node: true,
-        es6: true,
+        es2020: true,
     },
     parserOptions: {
-        project: './tsconfig.eslint.json',
-        ecmaVersion: 2019,
+        ecmaVersion: 11,
         sourceType: 'module',
-        ecmaFeatures: {
-            experimentalObjectRestSpread: true,
-        },
     },
     rules: {
+        indent: ['error', 4],
+        semi: ['error', 'never'],
+        'max-len': 0,
+        'import/no-extraneous-dependencies': 0,
+        'import/no-unresolved': 0,
+        'import/prefer-default-export': 0,
+        'no-console': process.env === 'development' ? 'on' : 'off',
+        'class-methods-use-this': 0,
+        'prefer-destructuring': 0,
+        'no-eval': 0,
+        'consistent-return': 0,
+        'import/extensions': 0,
+        'object-curly-newline': [
+            'error',
+            {
+                ImportDeclaration: {
+                    multiline: true,
+                    minProperties: 2,
+                },
+                ExportDeclaration: {
+                    multiline: true,
+                    minProperties: 2,
+                },
+            },
+        ],
         'prefer-const': [
             'error',
             {
@@ -26,7 +50,5 @@ const eslintrc = {
                 ignoreReadBeforeAssign: false,
             },
         ],
-    }, // 自定义
+    },
 }
-
-module.exports = eslintrc

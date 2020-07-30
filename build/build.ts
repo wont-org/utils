@@ -1,9 +1,9 @@
 import path from 'path'
 import glob from 'glob'
 import fs from 'fs'
-import rollupConfig from '../rollup.config'
 import { rollup } from 'rollup'
 import { removeSync } from 'fs-extra'
+import rollupConfig from '../rollup.config'
 
 class Build {
     state = {
@@ -19,7 +19,7 @@ class Build {
     checkEntry() {
         const { inputs, lib } = this.state
         if (inputs.length === 0) {
-            throw new Error(`没有可构建的文件~`)
+            throw new Error('没有可构建的文件~')
         } else {
             removeSync(lib)
             this.genIndex()
@@ -57,7 +57,7 @@ class Build {
         await Promise.all(
             rollupConfig.map(async (config) => {
                 await this.build(config)
-            })
+            }),
         )
             .then(() => {
                 fs.writeFileSync(esOutputFile, desc + esInputScript)

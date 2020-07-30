@@ -12,8 +12,8 @@ const extensions = ['.ts', '.js']
 const singleFileInput = {}
 
 glob.sync('src/!(_)*/!(_)*.ts').forEach((files) => {
-    const name = path.basename(path.dirname(files))
-    singleFileInput[name] = files
+    const fileName = path.basename(path.dirname(files))
+    singleFileInput[fileName] = files
 })
 
 const paths = {
@@ -57,7 +57,7 @@ const rollupConfig = [
     {
         input: paths.input,
         output: {
-            file: paths.outputUMD + '/index.js',
+            file: `${paths.outputUMD}/index.js`,
             format: 'umd',
             name,
             globals,
@@ -69,7 +69,7 @@ const rollupConfig = [
     {
         input: paths.input,
         output: {
-            file: paths.outputUMD + '/index.min.js',
+            file: `${paths.outputUMD}/index.min.js`,
             format: 'umd',
             name,
             globals,

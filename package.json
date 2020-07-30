@@ -58,6 +58,8 @@
         "commitizen": "^4.1.2",
         "conventional-changelog-cli": "^2.0.34",
         "eslint": "^7.5.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
         "eslint-plugin-jest": "^23.19.0",
         "glob": "^7.1.6",
         "husky": "^4.2.5",
