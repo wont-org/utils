@@ -5,9 +5,14 @@ module.exports = {
         // 'eslint:recommended',
         // 'plugin:@typescript-eslint/recommended',
         'airbnb-base',
+        'prettier/@typescript-eslint',
         'plugin:jest/recommended',
     ],
-    plugins: ['@typescript-eslint', 'jest'],
+    plugins: [
+        '@typescript-eslint',
+        // 'prettier',
+        'jest',
+    ],
     env: {
         browser: true,
         node: true,
