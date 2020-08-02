@@ -3,6 +3,7 @@ import glob from 'glob'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
+import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 import babel from '@rollup/plugin-babel'
 
@@ -35,6 +36,10 @@ const plugins = [
         extensions,
     }),
     commonjs(),
+
+    typescript({
+        tsconfig: './tsconfig.es.json',
+    }),
     babel({
         exclude: 'node_modules/**',
         extensions,
@@ -42,18 +47,17 @@ const plugins = [
 ]
 
 const rollupConfig = [
-    // esm
     {
         input: paths.singleFileInput,
         output: {
             dir: paths.outputES,
-            format: 'es',
-            // chunkFileNames: `${paths.outputES}/[name].js`, // 指定dir时可以忽略
+            format: 'esm',
+            // exports: 'named',
+            // chunkFileNames: `${paths.outputES}/[name].js`,
         },
         external: ['lodash'],
         plugins: [...plugins],
     },
-    // umd not compress
     {
         input: paths.input,
         output: {
@@ -65,7 +69,6 @@ const rollupConfig = [
         external: ['lodash'],
         plugins: [...plugins],
     },
-    // umd compressed
     {
         input: paths.input,
         output: {
@@ -77,33 +80,6 @@ const rollupConfig = [
         external: ['lodash'],
         plugins: [...plugins, terser()],
     },
-    // browner script
-    // {
-    //     input: paths.input,
-    //     output: {
-    //         dir: paths.outputIIFE,
-    //         format: 'iife',
-    //         name,
-    //         globals,
-    //     },
-    //     external: ['lodash'],
-    //     plugins: [
-    //         ...plugins,
-    //     ],
-    // },
-    // cjs
-    // {
-    //     input: paths.singleFileInput,
-    //     output: {
-    //         dir: paths.outputCJS,
-    //         format: 'cjs',
-    //     },
-    //     external: ['lodash'],
-    //     plugins: [
-    //         ...plugins,
-    //         terser(),
-    //     ],
-    // },
 ]
 
 export default rollupConfig

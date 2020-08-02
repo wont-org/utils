@@ -18,7 +18,6 @@
             "name": "ts-node 当前文件",
             "skipFiles": ["<node_internals>/**"],
             "args": [
-                // "${relativeFile}"
             ],
             "runtimeExecutable": "ts-node",
             "program": "${file}"
@@ -29,7 +28,6 @@
             "name": "node 当前文件",
             "skipFiles": ["<node_internals>/**"],
             "args": [
-                // "${relativeFile}"
             ],
             "runtimeExecutable": "node",
             "program": "${file}"
