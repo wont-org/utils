@@ -4,8 +4,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 import typescript from 'rollup-plugin-typescript2'
-import { terser } from 'rollup-plugin-terser'
 import babel from '@rollup/plugin-babel'
+import { terser } from 'rollup-plugin-terser'
 
 import { name } from './package.json'
 
@@ -30,21 +30,30 @@ const globals = {
     lodash: 'lodash',
 }
 
-const plugins = [
-    json(),
-    resolve({
-        extensions,
-    }),
-    commonjs(),
-
-    typescript({
-        tsconfig: './tsconfig.es.json',
-    }),
-    babel({
-        exclude: 'node_modules/**',
-        extensions,
-    }),
-]
+function genPlugins(options?) {
+    const { useTerser = false, genDts = false } = options || {}
+    const plugins = [
+        json(),
+        resolve({
+            extensions,
+        }),
+        commonjs(),
+        typescript({
+            tsconfig: './tsconfig.es.json',
+            tsconfigOverride: {
+                compilerOptions: {
+                    declaration: genDts,
+                },
+            },
+        }),
+        babel({
+            exclude: 'node_modules/**',
+            extensions,
+        }),
+        useTerser ? terser() : null,
+    ]
+    return plugins
+}
 
 const rollupConfig = [
     {
@@ -52,11 +61,9 @@ const rollupConfig = [
         output: {
             dir: paths.outputES,
             format: 'esm',
-            // exports: 'named',
-            // chunkFileNames: `${paths.outputES}/[name].js`,
         },
         external: ['lodash'],
-        plugins: [...plugins],
+        plugins: genPlugins({ genDts: true }),
     },
     {
         input: paths.input,
@@ -67,7 +74,7 @@ const rollupConfig = [
             globals,
         },
         external: ['lodash'],
-        plugins: [...plugins],
+        plugins: genPlugins(),
     },
     {
         input: paths.input,
@@ -78,7 +85,7 @@ const rollupConfig = [
             globals,
         },
         external: ['lodash'],
-        plugins: [...plugins, terser()],
+        plugins: genPlugins({ useTerser: true }),
     },
 ]
 

@@ -2,7 +2,23 @@
     "name": "ze",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib/umd/index.js",
+    "module": "lib/es/index.js",
+    "browser": "lib/umd/index.js",
+    "types": "lib/umd/index.d.ts",
+    "keywords": [
+        "ze",
+        "utils",
+        "ze-utils"
+    ],
+    "author": {
+        "name": "liukun",
+        "email": "919590347@qq.com"
+    },
+    "files": [
+        "lib"
+    ],
+    "license": "ISC",
     "scripts": {
         "eslint": "eslint --ext .ts .",
         "eslint:fix": "eslint --ext .ts . --fix",
@@ -11,7 +27,7 @@
         "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
         "commit": "git-cz",
         "build": "ts-node build/build.ts",
-        "build:c": "rollup -c rollup.config.ts",
+        "build:c": "rm -rf lib && rollup -c rollup.config.ts",
         "build:docs": "ts-node build/doc.ts",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs",
@@ -28,9 +44,6 @@
     "bugs": {
         "url": "https://github.com/zero-org/zero-utils/issues"
     },
-    "keywords": [],
-    "author": "liukun",
-    "license": "ISC",
     "lint-staged": {
         "*.ts": [
             "eslint --fix"

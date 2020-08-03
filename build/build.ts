@@ -19,24 +19,54 @@ class Build {
     checkEntry() {
         const { inputs, lib } = this.state
         if (inputs.length === 0) {
-            throw new Error('没有可构建的文件~')
+            throw new Error(
+                'No files can be built, expect more than 1, but got 0'
+            )
         } else {
             removeSync(lib)
-            this.genIndex()
+            this.genEntry()
         }
     }
 
-    genIndex() {
+    genEntry() {
         const { inputs } = this.state
+        let exportVars = ''
         inputs.forEach((files) => {
             const name = path.basename(path.dirname(files))
-            this.state.umdInputScript += `export { ${name} } from './${name}/${name}'\n`
-            this.state.esInputScript += `export { ${name} } from './${name}'\n`
+            this.state.umdInputScript += `import { ${name} } from './${name}/${name}'\n`
+            this.state.esInputScript += `import { ${name} } from './${name}'\n`
+            exportVars += `${name},\n`
         })
+        this.state.umdInputScript += `\nexport default {\n    ${exportVars}}`
+        this.state.esInputScript += `\nexport default {\n    ${exportVars}}`
+    }
+
+    mergeDts() {
+        const outputDts = glob.sync('lib/es/**/*.d.ts')
+        console.log('outputDts :>> ', outputDts)
+
+        let dtsContent = ''
+        outputDts.forEach((dts) => {
+            if (dts.indexOf('index.d.ts') !== -1) {
+                removeSync(dts)
+            } else {
+                const content = fs.readFileSync(dts, 'utf-8')
+                dtsContent = content + dtsContent
+                const dirname = path.dirname(dts)
+                removeSync(dirname)
+            }
+        })
+        fs.writeFileSync('lib/es/index.d.ts', dtsContent)
+        fs.writeFileSync('lib/umd/index.d.ts', dtsContent)
     }
 
     async build(config) {
         const { output } = config
+        const { format } = output
+        const { umdInputFile, umdInputScript, desc } = this.state
+        if (['umd'].includes(format)) {
+            fs.writeFileSync(umdInputFile, desc + umdInputScript)
+        }
         const bundle = await rollup(config)
         await bundle.write(output)
     }
@@ -44,23 +74,15 @@ class Build {
     async render() {
         this.checkEntry()
 
-        const {
-            umdInputFile,
-            esOutputFile,
-            umdInputScript,
-            esInputScript,
-            desc,
-        } = this.state
-
-        fs.writeFileSync(umdInputFile, desc + umdInputScript)
-
+        const { esOutputFile, esInputScript, desc } = this.state
         await Promise.all(
             rollupConfig.map(async (config) => {
                 await this.build(config)
-            }),
+            })
         )
             .then(() => {
                 fs.writeFileSync(esOutputFile, desc + esInputScript)
+                this.mergeDts()
             })
             .catch((err) => {
                 console.log('Build render error :>> ', err)
