@@ -5,7 +5,9 @@ import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 import typescript from 'rollup-plugin-typescript2'
 import babel from '@rollup/plugin-babel'
+import filesize from 'rollup-plugin-filesize'
 import { terser } from 'rollup-plugin-terser'
+import { getFileSizeInfo } from './build/utils'
 
 import { name } from './package.json'
 
@@ -30,8 +32,8 @@ const globals = {
     lodash: 'lodash',
 }
 
-function genPlugins(options?) {
-    const { useTerser = false, genDts = false } = options || {}
+function genPlugins(opt?) {
+    const { useTerser = false, genDts = false } = opt || {}
     const plugins = [
         json(),
         resolve({
@@ -49,8 +51,14 @@ function genPlugins(options?) {
         babel({
             exclude: 'node_modules/**',
             extensions,
+            babelHelpers: 'bundled',
         }),
         useTerser ? terser() : null,
+        filesize({
+            reporter(options, bundle, sizeData) {
+                return getFileSizeInfo(options, bundle, sizeData)
+            },
+        }),
     ]
     return plugins
 }

@@ -1,6 +1,8 @@
 import path from 'path'
 import glob from 'glob'
 import fs from 'fs'
+import consola from 'consola'
+import chalk from 'chalk'
 import { rollup } from 'rollup'
 import { removeSync } from 'fs-extra'
 import rollupConfig from '../rollup.config'
@@ -19,10 +21,13 @@ class Build {
     checkEntry() {
         const { inputs, lib } = this.state
         if (inputs.length === 0) {
-            throw new Error(
-                'No files can be built, expect more than 1, but got 0'
+            const err = new Error(
+                'No files can be built, expect more than 1, but got 0',
             )
+            consola.error(err)
+            process.exit(0)
         } else {
+            console.log(chalk.black.bgGreen('start build'))
             removeSync(lib)
             this.genEntry()
         }
@@ -43,7 +48,7 @@ class Build {
 
     mergeDts() {
         const outputDts = glob.sync('lib/es/**/*.d.ts')
-        console.log('outputDts :>> ', outputDts)
+        // console.log('outputDts :>> ', outputDts)
 
         let dtsContent = ''
         outputDts.forEach((dts) => {
@@ -78,11 +83,12 @@ class Build {
         await Promise.all(
             rollupConfig.map(async (config) => {
                 await this.build(config)
-            })
+            }),
         )
             .then(() => {
                 fs.writeFileSync(esOutputFile, desc + esInputScript)
                 this.mergeDts()
+                consola.success('success')
             })
             .catch((err) => {
                 console.log('Build render error :>> ', err)
