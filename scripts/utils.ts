@@ -20,16 +20,13 @@ export function getFileSizeInfo(
         )}${clc.move.right(15 - 'GzipSize'.length)}${clc.bold('GzipSize')}\n`
     }
     isFirstFile = false
-    return (
-        `${output
-        }${clc.move.right(40 - fileName.length)}${clc.green(
-            fileName,
-        )}${clc.move.right(15 - bundle.format.length)}${clc.green(
-            bundle.format,
-        )}${clc.move.right(15 - bundleSize.length)}${clc.green(
-            bundleSize,
-        )}${clc.move.right(15 - minSize.length)}${clc.green(
-            minSize,
-        )}${clc.move.right(15 - gzipSize.length)}${clc.green(gzipSize)}`
-    )
+    return `${output}${clc.move.right(40 - fileName.length)}${clc.green(
+        fileName,
+    )}${clc.move.right(15 - bundle.format.length)}${clc.green(
+        bundle.format,
+    )}${clc.move.right(15 - bundleSize.length)}${clc.green(
+        bundleSize,
+    )}${clc.move.right(15 - minSize.length)}${clc.green(
+        minSize,
+    )}${clc.move.right(15 - gzipSize.length)}${clc.green(gzipSize)}`
 }
