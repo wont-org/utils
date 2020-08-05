@@ -39,7 +39,10 @@
         "test:n": "jest --no-cache",
         "test": "jest"
     },
-    "homepage": "",
+    "homepage": "zero-org.github.io/zero-utils/",
+    "publishConfig": {
+        "access": "public"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/zero-org/zero-utils"
