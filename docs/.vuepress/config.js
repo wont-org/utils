@@ -1,4 +1,5 @@
 module.exports = {
+    base: "/zero-utils/",
     "themeConfig": {
         "repo": "https://github.com/zero-org/zero-utils",
         "lastUpdated": "最后更新时间",
