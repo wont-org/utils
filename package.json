@@ -30,6 +30,7 @@
         "build:c": "rm -rf lib && rollup -c rollup.config.ts",
         "build": "ts-node scripts/build.ts",
         "build:docs": "ts-node scripts/doc.ts",
+        "build:pages": "npm run changelog && npm run build:docs && npm run docs:build",
         "build:all": "npm run changelog && npm run build:docs && npm run docs:build && npm run build",
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs",
