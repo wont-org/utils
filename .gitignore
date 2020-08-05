@@ -6,6 +6,7 @@ docs/_sidebar.md
 docs/api.md
 src/index.ts
 /coverage
+dist
 
 .DS_Store
 .cache

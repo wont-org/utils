@@ -7,7 +7,7 @@ import typescript from 'rollup-plugin-typescript2'
 import babel from '@rollup/plugin-babel'
 import filesize from 'rollup-plugin-filesize'
 import { terser } from 'rollup-plugin-terser'
-import { getFileSizeInfo } from './build/utils'
+import { getFileSizeInfo } from './scripts/utils'
 
 import { name } from './package.json'
 

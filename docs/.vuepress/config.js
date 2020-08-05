@@ -29,9 +29,9 @@ module.exports = {
             "/common/recommend",
             "/common/z-refer",
             {
-                "title": "helloWorld",
+                "title": "getUrlParam",
                 "collapsable": false,
-                "path": "/src/helloWorld"
+                "path": "/src/getUrlParam"
             }
         ]
     }

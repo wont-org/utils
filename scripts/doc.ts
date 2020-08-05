@@ -28,8 +28,8 @@ class Docs {
         return jsdoc2md.render({
             'example-lang': 'js',
             files: path,
-            partial: 'build/jsdoc2md/templates/*.hbs',
-            configure: 'build/jsdoc2md/jsdoc2md.json',
+            partial: 'scripts/jsdoc2md/templates/*.hbs',
+            configure: 'scripts/jsdoc2md/jsdoc2md.json',
         })
     }
 
