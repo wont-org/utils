@@ -1,4 +1,6 @@
 module.exports = {
+    "title": "zero-utils",
+    "description": "zero-utils is javascript library, written with typescript. supporting browser and node",
     base: "/zero-utils/",
     "themeConfig": {
         "repo": "https://github.com/zero-org/zero-utils",

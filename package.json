@@ -1,7 +1,7 @@
 {
     "name": "ze",
     "version": "0.0.1-alpha.1",
-    "description": "",
+    "description": "zero-utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
     "browser": "lib/umd/index.js",
@@ -18,7 +18,7 @@
     "files": [
         "lib"
     ],
-    "license": "ISC",
+    "license": "MIT",
     "scripts": {
         "pub": "ts-node scripts/pub.ts",
         "eslint": "eslint --ext .ts .",

@@ -1,6 +1,5 @@
-# 快速上手
 
-## 使用`npm`引入
+## Install
 
 全局引入
 ```bash
@@ -10,15 +9,15 @@ npm i zero-utils -S
 ```js
 import utils from 'zero-utils'
 
-utils.xxx()
+utils.getUrlParam()
 ```
 
 按需引入
 
 ```js
-import isApp from 'zero-utils/xxx'
+import { getUrlParam } from 'zero-utils'
 
-xxx()
+getUrlParam()
 ```
 
 ## 使用 CDN 引入
@@ -28,7 +27,16 @@ xxx()
 
 <script>
     window.onload = function () {
-        utils.xxx()
+        utils.getUrlParam()
     }
 </script>
 ```
+
+## Links
+
+- [Documentation](https://zero-org.github.io/zero-utils/)
+- [Changelog](https://zero-org.github.io/zero-utils/common/CHANGELOG.html)
+
+## LICENSE
+
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
