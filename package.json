@@ -20,6 +20,7 @@
     ],
     "license": "MIT",
     "scripts": {
+        "release": "standard-version",
         "pub": "ts-node scripts/pub.ts",
         "eslint": "eslint --ext .ts .",
         "eslint:fix": "eslint --ext .ts . --fix",
@@ -93,6 +94,7 @@
         "rollup": "^2.22.2",
         "rollup-plugin-terser": "^6.1.0",
         "rollup-plugin-typescript2": "^0.27.1",
+        "standard-version": "^8.0.2",
         "ts-jest": "^26.1.3",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.7",
