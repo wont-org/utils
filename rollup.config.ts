@@ -9,7 +9,7 @@ import filesize from 'rollup-plugin-filesize'
 import { terser } from 'rollup-plugin-terser'
 import { getFileSizeInfo } from './scripts/utils'
 
-import { name } from './package.json'
+const name = 'wontUtils'
 
 const extensions = ['.ts', '.js']
 const singleFileInput = {}
@@ -22,10 +22,8 @@ glob.sync('src/!(_)*/!(_)*.ts').forEach((files) => {
 const paths = {
     singleFileInput,
     input: 'src/index.ts',
-    outputCJS: path.join(__dirname, '/lib/cjs'),
     outputES: path.join(__dirname, '/lib/es'),
     outputUMD: path.join(__dirname, '/lib/umd'),
-    outputIIFE: path.join(__dirname, '/lib/iife'),
 }
 
 const globals = {

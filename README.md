@@ -3,39 +3,40 @@
 
 全局引入
 ```bash
-npm i zero-utils -S
+npm i @wont/utils -S
 ```
 
 ```js
-import utils from 'zero-utils'
+import utils from '@wont/utils'
 
 utils.getUrlParam()
 ```
 
-按需引入
+按需引入（推荐）
 
 ```js
-import { getUrlParam } from 'zero-utils'
+import { getUrlParam } from '@wont/utils'
 
 getUrlParam()
 ```
 
-## 使用 CDN 引入
+## script
+> 如需使用script，需要自行打包上传
 
 ```html
 <script src="xxx.js" type="text/javascript"></script>
 
 <script>
     window.onload = function () {
-        utils.getUrlParam()
+        wontUtils.getUrlParam()
     }
 </script>
 ```
 
 ## Links
 
-- [Documentation](https://zero-org.github.io/zero-utils/)
-- [Changelog](https://zero-org.github.io/zero-utils/common/CHANGELOG.html)
+- [Documentation](https://wont-org.github.io/utils/)
+- [Changelog](https://wont-org.github.io/utils/common/CHANGELOG.html)
 
 ## LICENSE
 

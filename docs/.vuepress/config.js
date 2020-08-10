@@ -1,9 +1,9 @@
 module.exports = {
-    "title": "zero-utils",
-    "description": "zero-utils is javascript library, written with typescript. supporting browser and node",
-    base: "/zero-utils/",
+    "title": "@wont/utils 函数库",
+    "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
+    "base": "/utils/",
     "themeConfig": {
-        "repo": "https://github.com/zero-org/zero-utils",
+        "repo": "https://github.com/wont-org/utils",
         "lastUpdated": "最后更新时间",
         "nav": [
             {

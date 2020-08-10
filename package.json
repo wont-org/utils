@@ -1,15 +1,15 @@
 {
-    "name": "ze",
-    "version": "0.0.1-alpha.1",
-    "description": "zero-utils is javascript library, written with typescript. supporting browser and node",
+    "name": "@wont/utils",
+    "version": "0.0.1",
+    "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
     "browser": "lib/umd/index.js",
     "types": "lib/umd/index.d.ts",
     "keywords": [
-        "ze",
+        "@wont",
         "utils",
-        "ze-utils"
+        "@wont-utils"
     ],
     "author": {
         "name": "liukun",
@@ -40,16 +40,16 @@
         "test:n": "jest --no-cache",
         "test": "jest"
     },
-    "homepage": "zero-org.github.io/zero-utils/",
+    "homepage": "wont-org.github.io/utils/",
     "publishConfig": {
         "access": "public"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/zero-org/zero-utils"
+        "url": "https://github.com/wont-org/utils"
     },
     "bugs": {
-        "url": "https://github.com/zero-org/zero-utils/issues"
+        "url": "https://github.com/wont-org/utils/issues"
     },
     "lint-staged": {
         "*.ts": [
