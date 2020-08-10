@@ -20,6 +20,10 @@
     ],
     "license": "MIT",
     "scripts": {
+        "push": "git push && git push --follow-tags origin master",
+        "alpha": "npm run release -- --prerelease alpha && npm run push",
+        "beta": "npm run release -- --prerelease beta && npm run push",
+        "rc": "npm run release -- --prerelease rc && npm run push",
         "release": "standard-version",
         "pub": "ts-node scripts/pub.ts",
         "eslint": "eslint --ext .ts .",
