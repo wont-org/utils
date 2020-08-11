@@ -9,10 +9,20 @@ script:
     - npm run build
     - npm run build:docs
 deploy:
-    provider: pages
-    skip_cleanup: true
-    local_dir: docs/.vuepress/dist
-    github_token: $GITHUB_TOKEN
-    keep_history: true
-    on:
-        branch: master
+    - provider: pages
+        skip_cleanup: true
+        local_dir: docs/.vuepress/dist
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        on:
+            branch: master
+            repo: wont-org/utils
+    - provider: npm
+        email: lklk06@163.com
+        api_key:
+            secure: Z6/3uhASH36CYRH6M8j6vq1dwYZZsLr3mWLisHlpTBrRF/nSZMve0mV2d3tMgfD5tyIBS0kBLEDBeVx5RWEN8Lj59nJ/8G4gnEPh5e9HUtk9tIAMDmAJ5hpAN8gujVhyM7/g36WOdaLEvkKTrH9cZzgIhRnexiVaVc7YjwKQzV3i6kCP15w6ebkXo1GX0OLuMn5KkUpredR1n1lLIv18DJpvxS0fAhgTjSPArQ3YMAiWJzub8OGXVNb5VndQqkL5kb0HydBArGuVfd4L0m1WW9scKXWkjdk1m9muesShI1yknere8wt0c6+wyvNIF0+6/KoMhrMImYPHTBXP0JythR3N5B+M/m7ulOiu+xH/jOsZDOFyv/8gnMyOhOPurHzdv/v3bD5iQZBL+EoYxpH6kboAOhSG2wdBjnlTAvuHYG8Syk3QpitR/9u3j9trl+lWlcX8JhtA99rVDI9uYEjf7Yuc4dfWtg8+MkkR4MPZ5o/iXw7dZ9Uh5OPZmkDhZQKAiutRuRuhNWEhmKa0O6evF7ILRNgJRA8yIHsDYDim+ZcZrqv5CMb2Gnzec2iWaZCiR6wY0aynTs3gFcF62c/V0+BmSHP0Gk9oTuMDDLDtU5W7NHOIoh3dH/sqqJiplByRAye116PTlG4DnGUxAvtgStfhee1+kxCEQx6Uk2kn/vs=
+        on:
+            tags: true
+            branch: master
+            repo: wont-org/utils
+        skip_cleanup: true
