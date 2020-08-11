@@ -91,7 +91,7 @@ class Build {
                 consola.success('success')
             })
             .catch((err) => {
-                console.log('Build render error :>> ', err)
+                console.log('Build utils error :>> ', err)
             })
     }
 }

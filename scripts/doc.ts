@@ -35,7 +35,7 @@ class Docs {
 
     setSidebar(sidebar: Sidebar[]) {
         const { mdFiles } = this.state
-        console.log('mdFiles :>> ', mdFiles)
+        console.log('generate mdFiles :>> ', mdFiles)
         const mdList: Array<string | Sidebar> = mdFiles.map((mdFile) => {
             let [, dir, name] = mdFile.split('/')
             name = name.split('.')[0]
@@ -60,7 +60,7 @@ class Docs {
 
     setMD() {
         const { tsFiles, docDir } = this.state
-        console.log('tsFiles :>> ', tsFiles)
+        console.log('build tsFiles :>> ', tsFiles)
 
         if (tsFiles.length === 0) return
 
@@ -89,11 +89,11 @@ class Docs {
 
         Promise.all(sidebar)
             .then((data) => {
-                console.log('sidebar :>> ', data)
+                console.log('build doc sidebar :>> ', data)
                 this.setSidebar(data)
             })
             .catch((err) => {
-                console.log('err :>> ', err)
+                console.log('build doc err :>> ', err)
             })
     }
 }

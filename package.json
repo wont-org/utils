@@ -1,6 +1,6 @@
 {
     "name": "@wont/utils",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
@@ -20,25 +20,26 @@
     ],
     "license": "MIT",
     "scripts": {
+        "patch": "npm run release -- --release-as patch",
+        "patch:demo": "npm run release -- --release-as patch --dry-run",
+        "minor": "npm run release -- --release-as minor",
+        "major": "npm run release -- --release-as major",
         "push": "git push && git push --follow-tags origin master",
         "alpha": "npm run release -- --prerelease alpha && npm run push",
         "beta": "npm run release -- --prerelease beta && npm run push",
         "rc": "npm run release -- --prerelease rc && npm run push",
         "release": "standard-version",
-        "pub": "ts-node scripts/pub.ts",
         "eslint": "eslint --ext .ts .",
         "eslint:fix": "eslint --ext .ts . --fix",
         "prettier": "prettier --write .",
         "create": "hygen module with-prompt",
         "changelog": "conventional-changelog -p angular -i docs/common/CHANGELOG.md -s -r 0",
         "commit": "git-cz",
-        "build:c": "rm -rf lib && rollup -c rollup.config.ts",
+        "predocs": "npm run changelog && npm run build:docs && npm run vuepress:build",
+        "docs": "ts-node scripts/doc.ts",
         "build": "ts-node scripts/build.ts",
-        "build:docs": "ts-node scripts/doc.ts",
-        "build:pages": "npm run changelog && npm run build:docs && npm run docs:build",
-        "build:all": "npm run changelog && npm run build:docs && npm run docs:build && npm run build",
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs",
+        "vuepress:dev": "vuepress dev docs",
+        "vuepress:build": "vuepress build docs",
         "coverage": "jest --coverage --verbose -u",
         "test:fix": "jest --clearCache",
         "test:n": "jest --no-cache",
@@ -63,6 +64,11 @@
             "prettier --write"
         ]
     },
+     "standard-version": {
+        "skip": {
+            "changelog": true
+        }
+     },
     "devDependencies": {
         "@babel/cli": "^7.10.5",
         "@babel/core": "^7.10.5",

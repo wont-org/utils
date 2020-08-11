@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /utils.png
+heroImage: http://n.sinaimg.cn/sinacn10120/558/w294h264/20190404/b3f1-hvhrcxk7243888.jpg
 heroText: "@wont/utils"
 tagline: node, browser通用函数库
 actionText: 快速上手 →
@@ -12,5 +12,5 @@ features:
       details: jest测试代码功能。
     - title: treeshake
       details: 基于rollup的treeshake。
-footer: MIT Licensed | Copyright © 2020-present wont-org
+footer: MIT Licensed | Copyright © 2020-present liukun
 ---
