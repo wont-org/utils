@@ -1,6 +1,6 @@
 {
     "name": "@wont/utils",
-    "version": "0.0.1-alpha.0",
+    "version": "0.0.0",
     "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
@@ -9,7 +9,7 @@
     "keywords": [
         "@wont",
         "utils",
-        "@wont-utils"
+        "@wont/utils"
     ],
     "author": {
         "name": "liukun",
@@ -20,6 +20,7 @@
     ],
     "license": "MIT",
     "scripts": {
+        "fetchtag": "git tag | xargs -I {} git tag -d {} && git fetch --tags",
         "patch": "npm run release -- --release-as patch",
         "patch:demo": "npm run release -- --release-as patch --dry-run",
         "minor": "npm run release -- --release-as minor",
