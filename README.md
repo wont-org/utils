@@ -10,7 +10,7 @@ npm i @wont/utils -S
 ```js
 import utils from '@wont/utils'
 
-utils.getUrlParam()
+utils.getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 8080
 ```
 
 按需引入（推荐）
@@ -18,7 +18,7 @@ utils.getUrlParam()
 ```js
 import { getUrlParam } from '@wont/utils'
 
-getUrlParam()
+getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 8080
 ```
 
 ## script

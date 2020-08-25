@@ -35,6 +35,11 @@ module.exports = {
                 "title": "getUrlParam",
                 "collapsable": false,
                 "path": "/src/getUrlParam"
+            },
+            {
+                "title": "validator",
+                "collapsable": false,
+                "path": "/src/validator"
             }
         ]
     }

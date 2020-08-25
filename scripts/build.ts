@@ -7,6 +7,9 @@ import { rollup } from 'rollup'
 import { removeSync } from 'fs-extra'
 import rollupConfig from '../rollup.config'
 
+interface BuildStat {
+    fnName: string[]
+}
 class Build {
     state = {
         inputs: glob.sync('src/!(_)*/!(_)*.ts'),
@@ -36,14 +39,22 @@ class Build {
     genEntry() {
         const { inputs } = this.state
         let exportVars = ''
+        const buildStat: BuildStat = {
+            fnName: [],
+        }
         inputs.forEach((files) => {
             const name = path.basename(path.dirname(files))
-            this.state.umdInputScript += `import { ${name} } from './${name}/${name}'\n`
-            this.state.esInputScript += `import { ${name} } from './${name}'\n`
-            exportVars += `${name},\n`
+            this.state.umdInputScript += `import ${name} from './${name}/${name}'\n`
+            this.state.esInputScript += `import ${name} from './${name}'\n`
+            exportVars += `    ${name},\n`
+            buildStat.fnName.push(name)
         })
-        this.state.umdInputScript += `\nexport default {\n    ${exportVars}}`
-        this.state.esInputScript += `\nexport default {\n    ${exportVars}}`
+        this.state.umdInputScript += `\nexport default {\n${exportVars}}\n`
+        this.state.esInputScript += `\nexport default {\n${exportVars}}\n`
+        fs.writeFileSync(
+            './build-stat.json',
+            JSON.stringify(buildStat, null, 4),
+        )
     }
 
     mergeDts() {
