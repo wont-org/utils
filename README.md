@@ -29,7 +29,7 @@ getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 
 
 <script>
     window.onload = function () {
-        wontUtils.getUrlParam()
+        wontUtils.getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 8080
     }
 </script>
 ```
