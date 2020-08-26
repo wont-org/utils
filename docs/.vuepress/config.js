@@ -16,7 +16,7 @@ module.exports = {
             },
             {
                 "text": "变更历史",
-                "link": "/docs/CHANGELOG"
+                "link": "/common/CHANGELOG"
             }
         ],
         "sidebar": [
