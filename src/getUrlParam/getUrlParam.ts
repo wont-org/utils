@@ -6,9 +6,6 @@
  * @param {string} [url=window.location.href] 可选，url
  * @author liukun <919590347@qq.com>
  * @example
- * import utils from '@wont/utils'
- * utils.getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0')  // returns '8080'
- * or
  * import { getUrlParam } from '@wont/utils'
  * getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0')  // returns '8080'
  */
