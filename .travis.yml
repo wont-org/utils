@@ -1,4 +1,8 @@
 language: node_js
+branches:
+  only:
+    - master
+    - dev
 node_js:
   - lts/*
 install:
@@ -15,7 +19,7 @@ deploy:
     github_token: $GITHUB_TOKEN
     keep_history: true
     on:
-      branch: master|dev
+      # branch: master
       repo: wont-org/utils
   - provider: npm
     email: lklk06@163.com
