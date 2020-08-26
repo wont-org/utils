@@ -7,15 +7,12 @@
  * @returns {number} 返回值的描述
  * @param {number} a - 参数a的描述
  * @throws {TypeError} 异常的描述
- * @author  xxx <xxx@xxx.com>
+ * @author xxx <xxx@xxx.com>
  * @example
- * import utils from '@wont/utils'
- * utils.<%= name %>(1)  // returns 1
- * or
- * import <%= name %> from '@wont/utils/<%= name %>'
  * import { <%= name %> } from '@wont/utils'
  * <%= name %>(1)  // returns 1
  */
-export default function <%= name %>(a: number): number {
+
+export function <%= name %>(a: number): number {
     return a
 }

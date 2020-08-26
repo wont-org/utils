@@ -1,8 +1,11 @@
 import { exec } from 'child_process'
 import $ from 'dekko'
-import buildStat from '../build-stat.json'
+import glob from 'glob'
+import path from 'path'
 
-const { fnName } = buildStat
+const fnNames = glob
+    .sync('src/!(_)*/!(_)*.ts')
+    .map((file) => path.basename(path.dirname(file)))
 
 function testPackages() {
     $('lib').isDirectory().hasDirectory('es').hasDirectory('umd')
@@ -12,7 +15,7 @@ function testPackages() {
         .hasFile('index.min.js')
     $('lib/es').hasFile('index.d.ts').hasFile('index.js')
 
-    fnName.forEach((name) => {
+    fnNames.forEach((name) => {
         $('lib/es').hasFile(`${name}.js`)
     })
 }
