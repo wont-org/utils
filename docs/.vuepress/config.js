@@ -37,9 +37,14 @@ module.exports = {
                 "path": "/src/getUrlParam"
             },
             {
-                "title": "validator",
+                "title": "isMobile",
                 "collapsable": false,
-                "path": "/src/validator"
+                "path": "/src/isMobile"
+            },
+            {
+                "title": "isNumber",
+                "collapsable": false,
+                "path": "/src/isNumber"
             }
         ]
     }
