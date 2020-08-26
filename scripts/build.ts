@@ -35,11 +35,15 @@ class Build {
 
     genEntry() {
         const { inputs } = this.state
+        let exportVars = ''
         inputs.forEach((file) => {
             const name = path.basename(path.dirname(file))
-            this.state.umdInputScript += `export { ${name} } from './${name}/${name}'\n`
-            this.state.esInputScript += `export { ${name} } from './${name}'\n`
+            this.state.umdInputScript += `import { ${name} } from './${name}/${name}'\n`
+            this.state.esInputScript += `import { ${name} } from './${name}'\n`
+            exportVars += `    ${name},\n`
         })
+        this.state.umdInputScript += `\nexport default {\n${exportVars}}\n`
+        this.state.esInputScript += `\nexport default {\n${exportVars}}\n`
     }
 
     mergeDts() {
