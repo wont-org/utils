@@ -15,7 +15,7 @@ deploy:
     github_token: $GITHUB_TOKEN
     keep_history: true
     on:
-      branch: master
+      branch: master|dev
       repo: wont-org/utils
   - provider: npm
     email: lklk06@163.com
