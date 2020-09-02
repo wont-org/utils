@@ -2,5 +2,5 @@
 
 set -e
 
-# sudo chmod +x  mv-coverage.sh
+rm -rf ./docs/.vuepress/dist/coverage
 mv ./docs/.vuepress/coverage ./docs/.vuepress/dist
