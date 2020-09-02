@@ -12,7 +12,7 @@ script:
   - npm run coverage
   - npm run build
   - npm run build:docs
-  - npm run mv-coverage
+  - sh ./script/mv-coverage.sh
 deploy:
   - provider: pages
     skip_cleanup: true
