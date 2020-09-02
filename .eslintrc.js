@@ -25,6 +25,7 @@ module.exports = {
     rules: {
         indent: ['error', 4],
         semi: ['error', 'never'],
+        'no-restricted-syntax': 0,
         'max-len': 0,
         'import/no-extraneous-dependencies': 0,
         'import/no-unresolved': 0,
