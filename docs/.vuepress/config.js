@@ -17,6 +17,10 @@ module.exports = {
             {
                 "text": "变更历史",
                 "link": "/common/CHANGELOG"
+            },
+            {
+                "text": "测试覆盖率",
+                "link": "/coverage/lcov-report/index"
             }
         ],
         "sidebar": [
@@ -37,6 +41,11 @@ module.exports = {
                 "path": "",
                 "collapsable": true,
                 "children": [
+                    {
+                        "title": "get",
+                        "collapsable": false,
+                        "path": "/src/get"
+                    },
                     {
                         "title": "getUrlParam",
                         "collapsable": false,
