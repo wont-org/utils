@@ -8,6 +8,7 @@
  * import { toFirstCase } from '@wont/utils'
  * toFirstCase('WORD')  // returns Word
  * toFirstCase('word')  // returns Word
+ * toFirstCase('woRd')  // returns Word
  */
 
 export function toFirstCase(word: string): string {
