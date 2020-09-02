@@ -1,10 +1,10 @@
 /**
  * @description 总体的描述
  * @function get 根据 object对象的path路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。
- * @returns {*} 返回解析的值
+ * @returns {any} 返回解析的值
  * @param {object} object - 要检索的对象
  * @param {string} path - 要获取属性的路径
- * @param {*} [defaultValue = undefined] - 如果解析值是 undefined ，这值会被返回
+ * @param {any} [defaultValue=undefined] - 如果解析值是 undefined ，这值会被返回
  * @author liukun <919590347@qq.com>
  * @example
  * import { get } from '@wont/utils'
