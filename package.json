@@ -4,7 +4,7 @@
     "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
-    "browser": "lib/umd/index.js",
+    "unpkg": "lib/umd/index.min.js",
     "types": "lib/umd/index.d.ts",
     "keywords": [
         "@wont",
