@@ -20,6 +20,7 @@
     ],
     "license": "MIT",
     "scripts": {
+        "mv-coverage": "./scripts/mv-coverage.sh",
         "fetchtag": "git tag | xargs -I {} git tag -d {} && git fetch --tags",
         "patch:demo": "npm run release -- --release-as patch --dry-run",
         "patch": "npm run fetchtag && npm run release -- --release-as patch",

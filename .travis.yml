@@ -9,9 +9,10 @@ install:
   - npm install
 script:
   - npm run eslint
+  - npm run coverage
   - npm run build
   - npm run build:docs
-  - npm run coverage
+  - npm run mv-coverage
 deploy:
   - provider: pages
     skip_cleanup: true

@@ -62,7 +62,7 @@ class Docs {
         }
         result.themeConfig.sidebar = mdList.concat(utilsGroup)
         result = JSON.stringify(result, null, 4)
-        writeFileSync(path, `module.exports = ${result}`, 'utf-8')
+        writeFileSync(path, `module.exports = ${result}\n`, 'utf-8')
     }
 
     setMD() {
