@@ -32,19 +32,32 @@ module.exports = {
             "/common/recommend",
             "/common/z-refer",
             {
-                "title": "getUrlParam",
-                "collapsable": false,
-                "path": "/src/getUrlParam"
-            },
-            {
-                "title": "isMobile",
-                "collapsable": false,
-                "path": "/src/isMobile"
-            },
-            {
-                "title": "isNumber",
-                "collapsable": false,
-                "path": "/src/isNumber"
+                "title": "函数API",
+                "sidebarDepth": 0,
+                "path": "",
+                "collapsable": true,
+                "children": [
+                    {
+                        "title": "getUrlParam",
+                        "collapsable": false,
+                        "path": "/src/getUrlParam"
+                    },
+                    {
+                        "title": "isMobile",
+                        "collapsable": false,
+                        "path": "/src/isMobile"
+                    },
+                    {
+                        "title": "isNumber",
+                        "collapsable": false,
+                        "path": "/src/isNumber"
+                    },
+                    {
+                        "title": "toFirstCase",
+                        "collapsable": false,
+                        "path": "/src/toFirstCase"
+                    }
+                ]
             }
         ]
     }
