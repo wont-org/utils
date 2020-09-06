@@ -53,9 +53,16 @@ class Docs {
         const config: string = readFileSync(path, 'utf-8')
         let result = eval(config)
 
-        result.themeConfig.sidebar = mdList.concat(sidebar)
+        const utilsGroup = {
+            title: '函数API',
+            sidebarDepth: 0,
+            path: '',
+            collapsable: true,
+            children: sidebar,
+        }
+        result.themeConfig.sidebar = mdList.concat(utilsGroup)
         result = JSON.stringify(result, null, 4)
-        writeFileSync(path, `module.exports = ${result}`, 'utf-8')
+        writeFileSync(path, `module.exports = ${result}\n`, 'utf-8')
     }
 
     setMD() {

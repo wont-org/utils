@@ -16,7 +16,11 @@ module.exports = {
             },
             {
                 "text": "变更历史",
-                "link": "/docs/CHANGELOG"
+                "link": "/common/CHANGELOG"
+            },
+            {
+                "text": "测试覆盖率",
+                "link": "/coverage/lcov-report/index"
             }
         ],
         "sidebar": [
@@ -32,19 +36,37 @@ module.exports = {
             "/common/recommend",
             "/common/z-refer",
             {
-                "title": "getUrlParam",
-                "collapsable": false,
-                "path": "/src/getUrlParam"
-            },
-            {
-                "title": "isMobile",
-                "collapsable": false,
-                "path": "/src/isMobile"
-            },
-            {
-                "title": "isNumber",
-                "collapsable": false,
-                "path": "/src/isNumber"
+                "title": "函数API",
+                "sidebarDepth": 0,
+                "path": "",
+                "collapsable": true,
+                "children": [
+                    {
+                        "title": "get",
+                        "collapsable": false,
+                        "path": "/src/get"
+                    },
+                    {
+                        "title": "getUrlParam",
+                        "collapsable": false,
+                        "path": "/src/getUrlParam"
+                    },
+                    {
+                        "title": "isMobile",
+                        "collapsable": false,
+                        "path": "/src/isMobile"
+                    },
+                    {
+                        "title": "isNumber",
+                        "collapsable": false,
+                        "path": "/src/isNumber"
+                    },
+                    {
+                        "title": "toFirstCase",
+                        "collapsable": false,
+                        "path": "/src/toFirstCase"
+                    }
+                ]
             }
         ]
     }

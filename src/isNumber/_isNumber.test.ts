@@ -1,13 +1,10 @@
 import { isNumber } from './isNumber'
 
-describe(" '1' isNumber toBeTruthy", () => {
-    test('execute', () => {
+describe('isNumber 方法测试', () => {
+    test(" '1' isNumber toBeTruthy ", () => {
         expect(isNumber('1')).toBeTruthy()
     })
-})
-
-describe(" '' isNumber toBeFalsy", () => {
-    test('execute', () => {
+    test(" '' isNumber toBeFalsy ", () => {
         expect(isNumber('')).toBeFalsy()
     })
 })

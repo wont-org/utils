@@ -1,13 +1,18 @@
 language: node_js
+branches:
+  only:
+    - master
+    - dev
 node_js:
   - lts/*
 install:
   - npm install
 script:
   - npm run eslint
-  - npm test
+  - npm run coverage
   - npm run build
   - npm run build:docs
+  - sh ./scripts/mv-coverage.sh
 deploy:
   - provider: pages
     skip_cleanup: true
@@ -15,7 +20,7 @@ deploy:
     github_token: $GITHUB_TOKEN
     keep_history: true
     on:
-      branch: master
+      branch: dev
       repo: wont-org/utils
   - provider: npm
     email: lklk06@163.com

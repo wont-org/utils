@@ -5,7 +5,7 @@ docs/common/changelog.md
 docs/_sidebar.md
 docs/api.md
 src/index.ts
-/coverage
+coverage
 dist
 
 package-lock.json
