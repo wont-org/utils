@@ -1,8 +1,8 @@
 language: node_js
-branches:
-  only:
-    - master
-    - dev
+# branches:
+#   only:
+#     - master
+#     - dev
 node_js:
   - lts/*
 install:
