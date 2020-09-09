@@ -1,8 +1,8 @@
 /**
  * @description 校验是否符合中文
  * @function isCN
- * @returns {number} true/false
- * @param {number} val - 需要校验的值
+ * @returns {string} true/false
+ * @param {boolean} val - 需要校验的值
  * @author liukun <919590347@qq.com>
  * @example
  * import { isCN } from '@wont/utils'
