@@ -61,7 +61,7 @@
         "*.ts": [
             "eslint --fix"
         ],
-        "*.(js|ts)": [
+        "*.(js|ts|mdx?)": [
             "prettier --write"
         ]
     },
