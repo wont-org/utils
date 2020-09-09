@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for get/get.ts</title>
+    <title>Code coverage report for validator/validator.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">get</a> get.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">validator</a> validator.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -100,7 +100,43 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,63 +164,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 总体的描述
- * @function get 根据 object对象的path路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。
- * @returns {any} 返回解析的值
- * @param {object} object - 要检索的对象
- * @param {string} path - 要获取属性的路径
- * @param {any} [defaultValue=undefined] - 如果解析值是 undefined ，这值会被返回
+ * @description 校验是否符合中文名
+ * @function validator
+ * @returns {number} true/false
+ * @param {string} val - 需要校验的值
+ * @param {number} type - 需要校验的类型
  * @author liukun &lt;919590347@qq.com&gt;
  * @example
- * import { get } from '@wont/utils'
- * const obj = {
- *     a: {
- *         b: [
- *             {
- *                 c: 'c'
- *             }
- *         ]
- *     },
- *     d: 'd'
- * }
- * get(obj, 'a.b')  // returns [{c:'c'}]
- * get(obj, 'd')  // returns 'd'
- * get(obj, 'a.b[0].c')  // returns 'c'
- * get(obj, 'e')  // returns undefined
- * get(obj, 'a.b[1].c', '默认字符串')  // returns '默认字符串'
+ * import { validator } from '@wont/utils'
+ * validator('mobile', '13233333333')  // returns true
  */
 &nbsp;
-export const get = (
-    object: object,
-    path: string,
-    defaultValue: any = undefined,
-): any =&gt; {
-    // a[3].b -&gt; a.3.b
-    const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
-    let result = object
-    for (const key of paths) {
-        result = Object(result)[key]
-        if (result === undefined) {
-            return defaultValue
-        }
-    }
-    return result
+const rulesInfo = {
+    mobile: {
+        label: '手机号',
+        rules: /^1[3456789]\d{9}$/,
+    },
+    email: {
+        label: '邮箱',
+        rules: /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/,
+    },
+    address: {
+        label: '地址',
+        rules: /^[\u4E00-\u9FA5A-Za-z\d\-_]{5,60}$/,
+    },
+    bank: {
+        label: '银行卡号',
+        rules: /^[1-9]\d{15,19}$/,
+    },
+    CN: {
+        label: '中文',
+        rules: /^[\u4e00-\u9fa5]+$/,
+    },
+    CName: {
+        label: '中文名',
+        rules: /^(([\u4e00-\u9fa5]{1,10})(·{0,1})([\u4e00-\u9fa5]{1,10})){1,5}$|^(([A-z]{1,20})([,.·]{0,1})([A-z]{1,20})){1,100}$/,
+    },
+    idCard: {
+        label: '身份证号',
+        rules: /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
+    },
+    number: {
+        label: '数字',
+        rules: /^\d+$/,
+    },
+    url: {
+        label: 'url地址',
+        rules: /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&amp;%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&amp;%$#=~_-]+))*$/,
+    },
+}
+&nbsp;
+export function validator(type: string, val: string): boolean {
+    const rules = rulesInfo[type].rules
+    return rules.test(val)
 }
 &nbsp;</pre></td></tr></table></pre>
 

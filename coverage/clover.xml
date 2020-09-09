@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599662431164" clover="3.2.0">
-  <project timestamp="1599662431164" name="All files">
-    <metrics statements="36" coveredstatements="36" conditionals="8" coveredconditionals="6" methods="10" coveredmethods="10" elements="54" coveredelements="52" complexity="0" loc="36" ncloc="36" packages="10" files="10" classes="10"/>
+<coverage generated="1599670467545" clover="3.2.0">
+  <project timestamp="1599670467545" name="All files">
+    <metrics statements="40" coveredstatements="40" conditionals="8" coveredconditionals="6" methods="11" coveredmethods="11" elements="59" coveredelements="57" complexity="0" loc="40" ncloc="40" packages="11" files="11" classes="11"/>
     <package name="get">
       <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="get.ts" path="/home/travis/build/wont-org/utils/src/get/get.ts">
@@ -96,6 +96,16 @@
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="validator">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="validator.ts" path="/home/travis/build/wont-org/utils/src/validator/validator.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="53" count="20" type="stmt"/>
+        <line num="54" count="20" type="stmt"/>
       </file>
     </package>
   </project>
