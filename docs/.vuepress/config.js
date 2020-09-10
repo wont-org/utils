@@ -52,19 +52,14 @@ module.exports = {
                         "path": "/src/getUrlParam"
                     },
                     {
-                        "title": "isMobile",
-                        "collapsable": false,
-                        "path": "/src/isMobile"
-                    },
-                    {
-                        "title": "isNumber",
-                        "collapsable": false,
-                        "path": "/src/isNumber"
-                    },
-                    {
                         "title": "toFirstCase",
                         "collapsable": false,
                         "path": "/src/toFirstCase"
+                    },
+                    {
+                        "title": "validator",
+                        "collapsable": false,
+                        "path": "/src/validator"
                     }
                 ]
             }

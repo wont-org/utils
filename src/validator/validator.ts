@@ -1,13 +1,17 @@
 /**
  * @description 校验是否符合中文名
  * @function validator
- * @returns {number} true/false
+ * @returns {boolean} true/false
+ * @param {ValidType} type - 需要校验的类型
  * @param {string} val - 需要校验的值
- * @param {number} type - 需要校验的类型
  * @author liukun <919590347@qq.com>
  * @example
  * import { validator } from '@wont/utils'
  * validator('mobile', '13233333333')  // returns true
+ */
+
+/**
+ * @enum {ValidType} ValidType
  */
 
 const rulesInfo = {
@@ -49,7 +53,8 @@ const rulesInfo = {
     },
 }
 
-export function validator(type: string, val: string): boolean {
+type ValidType = keyof typeof rulesInfo
+export function validator(type: ValidType, val: string): boolean {
     const rules = rulesInfo[type].rules
     return rules.test(val)
 }
