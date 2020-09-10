@@ -11,7 +11,7 @@
  */
 
 /**
- * @enum {ValidType} ValidType
+ * @enum {ValidType} 需要校验的类型
  */
 
 const rulesInfo = {
