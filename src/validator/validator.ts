@@ -9,12 +9,12 @@
  * import { validator } from '@wont/utils'
  * validator('mobile', '13233333333')  // returns true
  *
- * bank
- * 范校验，具体：https://gist.github.com/yanweijia/7fea45eab57a0ff355d71546411b004a
- * 银行卡生成测试：https://ddu1222.github.io/bankcard-validator/bcBuilder.html
+ * // bank
+ * // 范校验，具体：https://gist.github.com/yanweijia/7fea45eab57a0ff355d71546411b004a
+ * // 银行卡生成测试：https://ddu1222.github.io/bankcard-validator/bcBuilder.html
  * validator('bank', '4026589624604900')  // returns true
- * idCard
- * 在线生成：https://welefen.com/lab/identify
+ * // idCard
+ * // 在线生成：https://welefen.com/lab/identify
  * validator('idCard', '6125251996060691351')
  */
 
