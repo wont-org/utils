@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599758292789" clover="3.2.0">
-  <project timestamp="1599758292790" name="All files">
+<coverage generated="1600087217668" clover="3.2.0">
+  <project timestamp="1600087217668" name="All files">
     <metrics statements="21" coveredstatements="21" conditionals="7" coveredconditionals="5" methods="4" coveredmethods="4" elements="32" coveredelements="30" complexity="0" loc="21" ncloc="21" packages="4" files="4" classes="4"/>
     <package name="get">
       <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -41,10 +41,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="validator.ts" path="/home/travis/build/wont-org/utils/src/validator/validator.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="58" count="20" type="stmt"/>
-        <line num="59" count="20" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="22" type="stmt"/>
+        <line num="67" count="22" type="stmt"/>
       </file>
     </package>
   </project>
