@@ -52,6 +52,16 @@ Time:        0.985s, estimated 1s
 Ran all test suites.
 ```
 
+## 测试单个文件
+### 普通
+```bash
+npx jest path
+```
+### 生成覆盖率报告
+```bash
+npx jest path --coverage --verbose -u
+```
+
 ## 匹配器
 Jest 内置了断言，可以使用多种匹配器。
 
