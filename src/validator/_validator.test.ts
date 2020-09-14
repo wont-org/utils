@@ -1,15 +1,33 @@
 import { validator } from './validator'
 
-describe('isAddress 方法测试', () => {
-    test('符合地址', () => {
-        expect(validator('address', '1111号楼')).toBeTruthy()
+describe('mobile 规则测试', () => {
+    test('符合手机号', () => {
+        expect(validator('mobile', '13233333333')).toBeTruthy()
     })
-    test('不符合地址', () => {
-        expect(validator('address', '西安')).toBeFalsy()
+    test('不符合手机号', () => {
+        expect(validator('mobile', '12233333333')).toBeFalsy()
     })
 })
 
-describe('isBank 方法测试', () => {
+describe('tel 规则测试', () => {
+    test('符合座机号', () => {
+        expect(validator('tel', '0341-86091234')).toBeTruthy()
+    })
+    test('不符合座机号', () => {
+        expect(validator('tel', '012-1111')).toBeFalsy()
+    })
+})
+
+describe('email 规则测试', () => {
+    test('符合邮箱', () => {
+        expect(validator('email', '919590347@qq.com')).toBeTruthy()
+    })
+    test('不符合邮箱', () => {
+        expect(validator('email', '919590347@qq')).toBeFalsy()
+    })
+})
+
+describe('bank 规则测试', () => {
     test('符合银行卡号', () => {
         expect(validator('bank', '4026589624604900')).toBeTruthy()
     })
@@ -18,7 +36,7 @@ describe('isBank 方法测试', () => {
     })
 })
 
-describe('isCN 方法测试', () => {
+describe('CN 规则测试', () => {
     test('是中文', () => {
         expect(validator('CN', '今天天气真好')).toBeTruthy()
     })
@@ -30,7 +48,7 @@ describe('isCN 方法测试', () => {
     })
 })
 
-describe('isCName 方法测试', () => {
+describe('CName 规则测试', () => {
     test('符合中文名', () => {
         expect(validator('CName', '马哥')).toBeTruthy()
     })
@@ -39,16 +57,7 @@ describe('isCName 方法测试', () => {
     })
 })
 
-describe('isEmail 方法测试', () => {
-    test('符合邮箱', () => {
-        expect(validator('email', '919590347@qq.com')).toBeTruthy()
-    })
-    test('不符合邮箱', () => {
-        expect(validator('email', '919590347@qq')).toBeFalsy()
-    })
-})
-
-describe('isIdCard 方法测试', () => {
+describe('idCard 规则测试', () => {
     test('不符合身份证，小于18位', () => {
         expect(validator('idCard', '6125')).toBeFalsy()
     })
@@ -66,20 +75,30 @@ describe('isIdCard 方法测试', () => {
     })
 })
 
-describe('isMobile 方法测试', () => {
-    test('13233333333 isMobile toBeTruthy', () => {
-        expect(validator('mobile', '13233333333')).toBeTruthy()
+describe('number 规则测试', () => {
+    test('符合数字', () => {
+        expect(validator('number', '1')).toBeTruthy()
     })
-    test('12233333333 isMobile toBeFalsy', () => {
-        expect(validator('mobile', '12233333333')).toBeFalsy()
+    test('不符合数字', () => {
+        expect(validator('number', '')).toBeFalsy()
     })
 })
 
-describe('isNumber 方法测试', () => {
-    test(" '1' isNumber toBeTruthy ", () => {
-        expect(validator('number', '1')).toBeTruthy()
+describe('url 规则测试', () => {
+    test('符合url', () => {
+        expect(
+            validator(
+                'url',
+                'http://www.baidu.com/#/index?type=hash&id=8080&index=0',
+            ),
+        ).toBeTruthy()
     })
-    test(" '' isNumber toBeFalsy ", () => {
-        expect(validator('number', '')).toBeFalsy()
+    test('不符合url', () => {
+        expect(
+            validator(
+                'url',
+                'http://localhost:8088/#/index?type=hash&id=8080&index=0',
+            ),
+        ).toBeFalsy()
     })
 })

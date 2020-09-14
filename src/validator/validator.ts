@@ -8,6 +8,14 @@
  * @example
  * import { validator } from '@wont/utils'
  * validator('mobile', '13233333333')  // returns true
+ *
+ * bank
+ * 范校验，具体：https://gist.github.com/yanweijia/7fea45eab57a0ff355d71546411b004a
+ * 银行卡生成测试：https://ddu1222.github.io/bankcard-validator/bcBuilder.html
+ * validator('bank', '4026589624604900')  // returns true
+ * idCard
+ * 在线生成：https://welefen.com/lab/identify
+ * validator('idCard', '6125251996060691351')
  */
 
 /**
@@ -19,13 +27,13 @@ const rulesInfo = {
         label: '手机号',
         rules: /^1[3456789]\d{9}$/,
     },
+    tel: {
+        label: '座机号',
+        rules: /^\d{3}-\d{8}$|^\d{4}-\d{7,8}$/,
+    },
     email: {
         label: '邮箱',
         rules: /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/,
-    },
-    address: {
-        label: '地址',
-        rules: /^[\u4E00-\u9FA5A-Za-z\d\-_]{5,60}$/,
     },
     bank: {
         label: '银行卡号',
@@ -49,7 +57,7 @@ const rulesInfo = {
     },
     url: {
         label: 'url地址',
-        rules: /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/,
+        rules: /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/,
     },
 }
 
