@@ -1,3 +1,20 @@
+## [0.0.1-alpha.8](https://github.com/wont-org/utils/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2020-09-14)
+
+
+### Features
+
+* 合并校验函数为validator ([#12](https://github.com/wont-org/utils/issues/12)) ([e325127](https://github.com/wont-org/utils/commit/e32512713088fcc13d5da6430bb337c2ce2a452f)), closes [#4](https://github.com/wont-org/utils/issues/4)
+* 合并验证方法 ([ef6ef5d](https://github.com/wont-org/utils/commit/ef6ef5dfcdeaf2f5a66c45cc8a0575598d5ba40a))
+* 删除单个验证方法, 合成validator, type严格约束 ([21d2a56](https://github.com/wont-org/utils/commit/21d2a56fdb500f6b9ded6ae273a77bb5bb1fccab))
+* 新增座机校验 ([d864c24](https://github.com/wont-org/utils/commit/d864c248b088957908b38c316ed0be3137a711ab))
+* 增加身份证校验方法 ([e417d43](https://github.com/wont-org/utils/commit/e417d43596e2fa8010dbe375b2cb7b8b9232b158))
+* 增加银行卡泛校验方法 ([b7b5e5b](https://github.com/wont-org/utils/commit/b7b5e5b43c22e41d1efbf12777c0d9ab43c2e696))
+* 增加邮箱校验方法 ([869d0f9](https://github.com/wont-org/utils/commit/869d0f92d4685222f05ddbd68761096e0fee88aa))
+* 增加中文名校验方法 ([90eea6c](https://github.com/wont-org/utils/commit/90eea6ce5999756039994d9a493fee3014c440bb))
+* 增加中文校验方法 ([71c4a00](https://github.com/wont-org/utils/commit/71c4a00c4e4134d241b80deff4375ba10aec2416))
+
+
+
 ## [0.0.1-alpha.7](https://github.com/wont-org/utils/compare/v0.0.1-alpha.4...v0.0.1-alpha.7) (2020-09-06)
 
 
