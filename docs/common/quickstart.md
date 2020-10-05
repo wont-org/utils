@@ -25,7 +25,7 @@ getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 
 > [unpkg](https://unpkg.com/)收录，遵循umd规范，不支持`tree shake`
 
 ```html
-<script src="https://unpkg.com/@wont/utils@0.0.1-alpha.8/lib/umd/index.min.js" type="text/javascript"></script>
+<script src="https://unpkg.com/@wont/utils" type="text/javascript"></script>
 
 <script>
     window.onload = function () {
