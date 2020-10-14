@@ -21,6 +21,19 @@ module.exports = {
             {
                 "text": "测试覆盖率",
                 "link": "/coverage/lcov-report/index"
+            },
+            {
+                "text": "生态系统",
+                "items": [
+                    {
+                        "text": "脚手架",
+                        "link": "https://github.com/wont-org/cli"
+                    },
+                    {
+                        "text": "react组件库",
+                        "link": "https://github.com/wont-org/utils"
+                    }
+                ]
             }
         ],
         "sidebar": [
@@ -45,6 +58,11 @@ module.exports = {
                         "title": "get",
                         "collapsable": false,
                         "path": "/src/get"
+                    },
+                    {
+                        "title": "getDataType",
+                        "collapsable": false,
+                        "path": "/src/getDataType"
                     },
                     {
                         "title": "getUrlParam",

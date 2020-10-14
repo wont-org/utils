@@ -1,6 +1,6 @@
 {
     "name": "@wont/utils",
-    "version": "0.0.1-alpha.8",
+    "version": "0.0.1-alpha.9",
     "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
     "main": "lib/umd/index.js",
     "module": "lib/es/index.js",
@@ -30,6 +30,7 @@
         "rc": "npm run fetchtag && npm run release -- --prerelease rc && git push",
         "release": "standard-version",
         "pushtag": "git push --follow-tags origin master",
+        "pushtag1": "git push --tags origin master",
         "eslint": "eslint --ext .ts .",
         "eslint:fix": "eslint --ext .ts . --fix",
         "prettier": "prettier --write .",

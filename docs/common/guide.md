@@ -226,3 +226,15 @@ fix #1, fix #2
 ## 完成
 
 审核人员审核通过后，会处理**PR**，合并成功后，整个开发流程就此结束。
+
+## 发版
+
+通过npm scripts, 执行自动化版本变更，然后申请pr，pr通过后，切换到master，执行`npm run pushtag`推送tag至远程，travis会自动化发版，发版成功后会收到邮件
+```bash
+npm run alpha # 内部测试版,一般不向外部发布,会有很多Bug.一般只有测试人员使用
+npm run beta # 公测版，消除了严重bug，这个阶段的版本会一直加入新的功能。在Alpha版之后推出
+npm run rc # 系统平台上就是发行候选版本。RC版不会再加入新的功能了，主要着重于除错。
+npm run patch # 补丁，当做了向下兼容的问题修正
+npm run minor # 新增功能，当做了向下兼容的功能性新增
+npm run major # 断层更新，当做了不兼容的 API 修改
+```

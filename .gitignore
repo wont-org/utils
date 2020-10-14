@@ -1,7 +1,7 @@
 # 忽略代码自动生成的文件
 docs/src/
 docs/coverage/
-docs/common/changelog.md
+# docs/common/changelog.md
 docs/_sidebar.md
 docs/api.md
 src/index.ts

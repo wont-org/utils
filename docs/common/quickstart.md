@@ -22,10 +22,10 @@ getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 
 ```
 
 ## script
-> 如需使用script，需要自行打包上传
+> [unpkg](https://unpkg.com/)收录，遵循umd规范，不支持`tree shake`
 
 ```html
-<script src="@wont/utils.js" type="text/javascript"></script>
+<script src="https://unpkg.com/@wont/utils" type="text/javascript"></script>
 
 <script>
     window.onload = function () {
