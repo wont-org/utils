@@ -32,9 +32,9 @@ module.exports = {
                     {
                         "text": "react组件库",
                         "link": "https://github.com/wont-org/utils"
-                    },
-                ],
-            },
+                    }
+                ]
+            }
         ],
         "sidebar": [
             {
@@ -58,6 +58,11 @@ module.exports = {
                         "title": "get",
                         "collapsable": false,
                         "path": "/src/get"
+                    },
+                    {
+                        "title": "getDataType",
+                        "collapsable": false,
+                        "path": "/src/getDataType"
                     },
                     {
                         "title": "getUrlParam",
