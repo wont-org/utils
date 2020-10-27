@@ -26,9 +26,9 @@ const paths = {
     outputUMD: path.join(__dirname, '/lib/umd'),
 }
 
-const globals = {
-    lodash: 'lodash',
-}
+// const globals = {
+//     lodash: 'lodash',
+// }
 
 function genPlugins(opt?) {
     const { useTerser = false, genDts = false } = opt || {}
@@ -68,7 +68,7 @@ const rollupConfig = [
             dir: paths.outputES,
             format: 'esm',
         },
-        external: ['lodash'],
+        // external: ['lodash'],
         plugins: genPlugins({ genDts: true }),
     },
     {
@@ -77,9 +77,9 @@ const rollupConfig = [
             file: `${paths.outputUMD}/index.js`,
             format: 'umd',
             name,
-            globals,
+            // globals,
         },
-        external: ['lodash'],
+        // external: ['lodash'],
         plugins: genPlugins(),
     },
     {
@@ -88,9 +88,9 @@ const rollupConfig = [
             file: `${paths.outputUMD}/index.min.js`,
             format: 'umd',
             name,
-            globals,
+            // globals,
         },
-        external: ['lodash'],
+        // external: ['lodash'],
         plugins: genPlugins({ useTerser: true }),
     },
 ]
