@@ -1,3 +1,13 @@
+## [0.0.1-alpha.9](https://github.com/wont-org/utils/compare/v0.0.1-alpha.8...v0.0.1-alpha.9) (2020-10-14)
+
+
+### Features
+
+* 提交CHANGELOG ([93b1cdd](https://github.com/wont-org/utils/commit/93b1cddc3abb01c238ebbd7facecf39e995e7a42))
+* 增加getDataType,获取数据类型 ([35627c7](https://github.com/wont-org/utils/commit/35627c7228dbe9cb819b327f4c634715ddf57d5c))
+
+
+
 ## [0.0.1-alpha.8](https://github.com/wont-org/utils/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2020-09-14)
 
 
