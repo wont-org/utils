@@ -55,6 +55,11 @@ module.exports = {
                 "collapsable": true,
                 "children": [
                     {
+                        "title": "formatTime",
+                        "collapsable": false,
+                        "path": "/src/formatTime"
+                    },
+                    {
                         "title": "get",
                         "collapsable": false,
                         "path": "/src/get"
