@@ -1,0 +1,39 @@
+name: Deploy gh-pages
+on:
+  [push, pull_request]:
+    types: [published]
+    branches:
+      - docs/changelog
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@docs/changelog
+
+    - name: install
+      run: npm install
+
+    - name: eslint
+      run: npm run eslint
+
+    - name: coverage
+      run: npm run coverage
+
+    - name: build
+      run: npm run build:docs
+
+    - name: moveCoverage
+      run: sh ./scripts/mv-coverage.sh
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        # PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs/.vuepress/dist
+      with:
+        emptyCommits: false
