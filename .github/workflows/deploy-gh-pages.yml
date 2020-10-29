@@ -1,6 +1,6 @@
 name: Deploy gh-pages
 on:
-  [push, pull_request]:
+  push:
     types: [published]
     branches:
       - docs/changelog
