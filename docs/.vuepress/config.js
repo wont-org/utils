@@ -1,7 +1,7 @@
 module.exports = {
     "title": "@wont/utils 函数库",
     "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
-    "base": "/utils/",
+    "base": "/",
     "themeConfig": {
         "repo": "https://github.com/wont-org/utils",
         "lastUpdated": "最后更新时间",

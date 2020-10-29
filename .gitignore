@@ -25,7 +25,7 @@ yarn-error.log*
 *.sln
 
 # 忽略vscode配置
-!.vscode/settings.json
+.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
