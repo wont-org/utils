@@ -15,7 +15,7 @@ class Build {
         lib: 'lib',
         umdInputFile: 'src/index.ts',
         esOutputFile: 'lib/es/index.js',
-        desc: '// 此文件是脚本自动生成，请勿在此修改\n\n',
+        desc: '// 此文件是脚本自动生成，请勿在此修改\n',
     }
 
     checkEntry() {
@@ -35,15 +35,15 @@ class Build {
 
     genEntry() {
         const { inputs } = this.state
-        let exportVars = ''
+        // let exportVars = ''
         inputs.forEach((file) => {
             const name = path.basename(path.dirname(file))
-            this.state.umdInputScript += `import { ${name} } from './${name}/${name}'\n`
-            this.state.esInputScript += `import { ${name} } from './${name}'\n`
-            exportVars += `    ${name},\n`
+            this.state.umdInputScript += `export { ${name} } from './${name}/${name}'\n`
+            this.state.esInputScript += `export { ${name} } from './${name}'\n`
+            // exportVars += `    ${name},\n`
         })
-        this.state.umdInputScript += `\nexport default {\n${exportVars}}\n`
-        this.state.esInputScript += `\nexport default {\n${exportVars}}\n`
+        // this.state.umdInputScript += `\nexport default {\n${exportVars}}\n`
+        // this.state.esInputScript += `\nexport default {\n${exportVars}}\n`
     }
 
     mergeDts() {
