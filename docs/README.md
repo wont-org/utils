@@ -10,7 +10,7 @@ features:
       details: 使用typescript编写。
     - title: jest
       details: jest测试代码功能。
-    - title: treeshake
-      details: 基于rollup的treeshake。
+    - title: treeshaking
+      details: 基于rollup的treeshaking。
 footer: MIT Licensed | Copyright © 2020-present liukun
 ---
