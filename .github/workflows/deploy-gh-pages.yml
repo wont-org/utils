@@ -1,11 +1,9 @@
 name: Deploy gh-pages
 on:
-  push:
+  release:
+    types: [published]
     branches:
-      - docs/changelog
-  pull_request:
-    branches:
-      - docs/changelog
+      - master
 
 jobs:
   build-and-deploy:

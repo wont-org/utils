@@ -1,0 +1,12 @@
+name: Check Status
+on: [push, pull_request]
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    steps:
+    - name: eslint
+      run: npm run eslint
+
+    - name: coverage
+      run: npm run coverage
