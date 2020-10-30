@@ -1,8 +1,8 @@
 name: Npm Publish
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
     tags:
       - 'v*'
 
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node }}
-          # registry-url: https://registry.npmjs.org
+          registry-url: https://registry.npmjs.org
 
       - name: install
         run: npm install
