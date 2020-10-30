@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/wont-org/utils.svg?branch=master)](https://travis-ci.org/wont-org/utils)
+![Check Status](https://github.com/wont-org/utils/workflows/Check%20Status/badge.svg)   ![Npm Publish](https://github.com/wont-org/utils/workflows/Npm%20Publish/badge.svg) ![Deploy gh-pages](https://github.com/wont-org/utils/workflows/Deploy%20gh-pages/badge.svg)
 
 ## Install
 

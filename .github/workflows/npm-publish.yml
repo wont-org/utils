@@ -9,18 +9,41 @@ on:
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ '10', '12' ]
+    # strategy:
+    #   matrix:
+    #     node: [ '10', '12' ]
     steps:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: Set up Node.js
-        uses: actions/setup-node@master
+      - name: cache package-lock.json
+        uses: actions/cache@v2
         with:
-          node-version: ${{ matrix.node }}
-          registry-url: https://registry.npmjs.org
+          path: package-temp-dir
+          key: lock-${{ runner.os }}
+
+      - name: create package-lock.json
+        run: npm i --package-lock-only
+
+      - name: hack for singe file
+        run: |
+          if [ ! -d "package-temp-dir" ]; then
+            mkdir package-temp-dir
+          fi
+          cp package-lock.json package-temp-dir
+
+      - name: cache node_modules
+        id: node_modules_cache_id
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
+
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@master
+      #   with:
+      #     node-version: ${{ matrix.node }}
+      #     registry-url: https://registry.npmjs.org/
 
       # - name: npmrc
       #   run: echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc

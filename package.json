@@ -50,7 +50,7 @@
     "homepage": "wont-org.github.io/utils/",
     "publishConfig": {
         "access": "public",
-        "registry":"https://registry.npmjs.org"
+        "registry": "https://registry.npmjs.org/"
     },
     "repository": {
         "type": "git",
