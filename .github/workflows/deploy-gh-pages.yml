@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - docs/changelog
-on:
   pull_request:
     branches:
       - docs/changelog
