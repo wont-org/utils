@@ -49,7 +49,9 @@ jobs:
       #   run: echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
 
       - name: install
-        run: npm install
+        # run: npm install
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
+        run: npm ci
 
       - name: eslint
         run: npm run eslint
