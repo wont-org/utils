@@ -22,7 +22,9 @@ jobs:
           ${{ runner.os }}-
 
     - name: install
-      run: npm install
+      # run: npm install
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: /install.sh
 
     - name: eslint
       run: npm run eslint
