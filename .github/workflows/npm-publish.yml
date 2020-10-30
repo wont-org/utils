@@ -1,51 +1,21 @@
 name: Npm Publish
 on:
   push:
-    # branches:
-    #   - master
     tags:
       - 'v*'
 
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node: [ '10', '12' ]
     steps:
       - name: checkout
         uses: actions/checkout@master
-
-      # - name: cache package-lock.json
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: package-temp-dir
-      #     key: lock-${{ runner.os }}
-
-      # - name: create package-lock.json
-      #   run: npm i --package-lock-only
-
-      # - name: hack for singe file
-      #   run: |
-      #     if [ ! -d "package-temp-dir" ]; then
-      #       mkdir package-temp-dir
-      #     fi
-      #     cp package-lock.json package-temp-dir
-
-      # - name: cache node_modules
-      #   id: node_modules_cache_id
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: node_modules
-      #     key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
 
       - name: Set up NPM authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
 
       - name: install
-        # run: npm install
-        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
 
       - name: eslint
         run: npm run eslint
@@ -56,17 +26,8 @@ jobs:
       - name: build
         run: npm run build
 
-      # - name: build:docs
-      #   run: npm run build:docs
-
-      # - name: moveCoverage
-      #   run: sh ./scripts/mv-coverage.sh
-
       - name: publish
         run: npm publish
-        # uses: pascalgn/npm-publish-action@1.3.4
-        # with:
-        #   publish_command: 'npm'
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_KEY }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
