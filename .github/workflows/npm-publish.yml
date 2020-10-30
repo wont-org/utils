@@ -9,18 +9,18 @@ on:
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node: [ '10', '12' ]
+    strategy:
+      matrix:
+        node: [ '10', '12' ]
     steps:
       - name: checkout
         uses: actions/checkout@master
 
-      # - name: Set up Node.js
-        # uses: actions/setup-node@master
-        # with:
-        #   node-version: ${{ matrix.node }}
-          # registry-url: https://registry.npmjs.org
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node }}
+          registry-url: https://registry.npmjs.org
 
       - name: npmrc
         run: echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
