@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for get/get.ts</title>
+    <title>Code coverage report for formatTime/formatTime.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">get</a> get.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">formatTime</a> formatTime.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">71.43% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -96,15 +96,20 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,52 +129,86 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 总体的描述
- * @function get 根据`object`对象的`path`路径获取值。 如果解析值是`undefined`会以`defaultValue`取代。
- * @returns {any} 返回解析的值
- * @param {object} object - 要检索的对象
- * @param {string} path - 要获取属性的路径
- * @param {any} [defaultValue=undefined] - 如果解析值是`undefined`，这值会被返回
+ * @description 时间戳转字符串
+ * @function formatTime
+ * @returns {string} 根据fmt格式返回对应格式化后的日期字符串
+ * @param {number} timestamp - 时间戳
+ * @param {string} [fmt = 'yyyy-MM-dd'] - 想要获取格式化后日期字符串的模板
  * @author liukun &lt;919590347@qq.com&gt;
  * @example
- * import { get } from '@wont/utils'
- * const obj = {
- *     a: {
- *         b: [
- *             {
- *                 c: 'c'
- *             }
- *         ]
- *     },
- *     d: 'd'
- * }
- * get(obj, 'a.b')  // returns [{c:'c'}]
- * get(obj, 'd')  // returns 'd'
- * get(obj, 'a.b[0].c')  // returns 'c'
- * get(obj, 'e')  // returns undefined
- * get(obj, 'a.b[1].c', '默认字符串')  // returns '默认字符串'
+ * import { formatTime } from '@wont/utils'
+ * // yyyy-MM-dd
+ * formatTime(1603809694212)  // returns '2020-10-27'
+ * // yyyy/MM/dd
+ * formatTime(1603809694212, 'yyyy/MM/dd')  // returns '2020/10/27'
+ * // yyyy-MM-dd hh:mm:ss
+ * formatTime(1603809694212, 'yyyy-MM-dd hh:mm:ss')  // returns '2020-10-27 22:41:34'
+ * // yyyy-MM-dd h:m:s
+ * formatTime(1603809694212, 'yyyy-MM-dd h:m:s')  // returns '2020-10-27 22:41:34'
  */
 &nbsp;
-export const get = (object: object, path: string, defaultValue?: any): any =&gt; {
-    // a[3].b -&gt; a.3.b
-    const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
-    let result = object
-    for (const key of paths) {
-        result = Object(result)[key]
-        if (result === undefined) {
-            return defaultValue
+export function formatTime(timestamp: number, fmt = 'yyyy-MM-dd'): string {
+    const date = new Date(timestamp)
+    let result = fmt
+    const o = {
+        'M+': date.getMonth() + 1, // 月份
+        'd+': date.getDate(), // 日
+        'h+': date.getHours(), // 小时
+        'm+': date.getMinutes(), // 分
+        's+': date.getSeconds(), // 秒
+        'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
+        S: date.getMilliseconds(), // 毫秒
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (/(y+)/.test(fmt)) {
+        result = result.replace(
+            RegExp.$1,
+            date
+                .getFullYear()
+                .toString()
+                .substr(4 - RegExp.$1.length),
+        )
+    }
+    for (const k in o) {
+        if (new RegExp(`(${k})`).test(result)) {
+            result = result.replace(
+                RegExp.$1,
+                RegExp.$1.length === 1
+                    ? <span class="branch-0 cbranch-no" title="branch not covered" >o[k]</span>
+                    : `00${o[k]}`.substr(`${o[k]}`.length),
+            )
         }
     }
     return result
