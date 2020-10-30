@@ -1,9 +1,9 @@
 name: Deploy gh-pages
 on:
-  push:
-    branches:
-      - master
-      - dev
+  # push:
+  #   branches:
+  #     - master
+  #     - dev
     # tags:
     #   - 'v*'
   pull_request:
