@@ -16,3 +16,12 @@ jobs:
 
     - name: coverage
       run: npm run coverage
+
+    - name: build
+      run: npm run build
+
+    - name: build:docs
+      run: npm run build:docs
+
+    - name: moveCoverage
+      run: sh ./scripts/mv-coverage.sh

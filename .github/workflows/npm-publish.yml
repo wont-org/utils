@@ -1,0 +1,48 @@
+name: Npm Publish
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '10', '12' ]
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node }}
+          # registry-url: https://registry.npmjs.org
+
+      - name: install
+        run: npm install
+
+      - name: eslint
+        run: npm run eslint
+
+      - name: coverage
+        run: npm run coverage
+
+      - name: build
+        run: npm run build
+
+      # - name: build:docs
+      #   run: npm run build:docs
+
+      # - name: moveCoverage
+      #   run: sh ./scripts/mv-coverage.sh
+
+      - name: publish
+        run: npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_KEY }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
+
