@@ -1,7 +1,7 @@
 # 忽略代码自动生成的文件
 docs/src/
 docs/coverage/
-# docs/common/changelog.md
+docs/common/changelog.md
 docs/_sidebar.md
 docs/api.md
 src/index.ts
@@ -25,7 +25,7 @@ yarn-error.log*
 *.sln
 
 # 忽略vscode配置
-!.vscode/settings.json
+.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
