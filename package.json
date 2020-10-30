@@ -49,8 +49,7 @@
     },
     "homepage": "wont-org.github.io/utils/",
     "publishConfig": {
-        "access": "public",
-        "registry":"https://npm.pkg.github.com"
+        "access": "public"
     },
     "repository": {
         "type": "git",
