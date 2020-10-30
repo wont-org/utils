@@ -46,7 +46,7 @@ jobs:
       #     registry-url: https://registry.npmjs.org/
 
       - name: npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GIT_KEY }}" > ~/.npmrc
 
       - name: install
         # run: npm install
