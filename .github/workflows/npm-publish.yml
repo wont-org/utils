@@ -9,17 +9,17 @@ on:
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ '10', '12' ]
+    # strategy:
+    #   matrix:
+    #     node: [ '10', '12' ]
     steps:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: Set up Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: ${{ matrix.node }}
+      # - name: Set up Node.js
+        # uses: actions/setup-node@master
+        # with:
+        #   node-version: ${{ matrix.node }}
           # registry-url: https://registry.npmjs.org
 
       - name: install
