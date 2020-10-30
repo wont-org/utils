@@ -45,8 +45,8 @@ jobs:
       #     node-version: ${{ matrix.node }}
       #     registry-url: https://registry.npmjs.org/
 
-      - name: npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GIT_KEY }}" > ~/.npmrc
+      - name: Set up NPM authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
 
       - name: install
         # run: npm install
