@@ -5,6 +5,9 @@ jobs:
   check-status:
     runs-on: ubuntu-latest
     steps:
+    - name: install
+      run: npm install
+
     - name: eslint
       run: npm run eslint
 
