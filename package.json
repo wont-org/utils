@@ -60,11 +60,11 @@
         "url": "https://github.com/wont-org/utils/issues"
     },
     "lint-staged": {
-        "*.ts": [
-            "eslint --fix"
-        ],
-        "*.(js|ts|mdx?)": [
+        "*.{jsx,js,tsx,ts,md,mdx}": [
             "prettier --write"
+        ],
+        "*.{jsx,js,tsx,ts}": [
+            "eslint --cache --fix"
         ]
     },
     "standard-version": {
