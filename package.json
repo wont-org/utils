@@ -64,7 +64,7 @@
             "prettier --write"
         ],
         "*.{jsx,js,tsx,ts}": [
-            "eslint --cache --fix"
+            "eslint --fix"
         ]
     },
     "standard-version": {
