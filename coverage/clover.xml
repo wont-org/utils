@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1606143529332" clover="3.2.0">
-  <project timestamp="1606143529333" name="All files">
-    <metrics statements="40" coveredstatements="40" conditionals="17" coveredconditionals="13" methods="9" coveredmethods="9" elements="66" coveredelements="62" complexity="0" loc="40" ncloc="40" packages="7" files="7" classes="7"/>
-    <package name="curry">
-      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-      <file name="curry.ts" path="/home/runner/work/utils/utils/src/curry/curry.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
+<coverage generated="1606143661926" clover="3.2.0">
+  <project timestamp="1606143661926" name="All files">
+    <metrics statements="36" coveredstatements="36" conditionals="14" coveredconditionals="10" methods="9" coveredmethods="9" elements="59" coveredelements="55" complexity="0" loc="36" ncloc="36" packages="7" files="7" classes="7"/>
+    <package name="compose">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="compose.ts" path="/home/runner/work/utils/utils/src/compose/compose.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
       </file>
     </package>
     <package name="formatTime">
