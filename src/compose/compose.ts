@@ -1,8 +1,8 @@
 /**
- * @description 组合功能函数，按顺序执行
+ * @description 函数组合。将两个或两个以上的函数组合生成一个新函数，新函数会按照栈顺序执行传入函数
  * @function compose
- * @returns {Next} 返回一个执行函数
- * @param {any[]} fns - fns
+ * @param {Fn[]} fns - 函数组成的数组
+ * @returns {Next} 返回一个执行函数，可传入需要处理的参数
  * @author liukun <919590347@qq.com>
  * @example
  * import { compose } from '@wont/utils'
@@ -14,6 +14,7 @@
  */
 
 type Next = (param: any) => any
-export function compose(fns: any[]): Next {
+type Fn = (...rest: any[]) => any
+export function compose(fns: Fn[]): Next {
     return (param) => fns.reduce((arg, fn) => fn(arg), param)
 }
