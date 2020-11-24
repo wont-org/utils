@@ -23,11 +23,11 @@
 
 type Func = (...rest: any[]) => Func
 export function curry(func: Function, arity = func.length): Func {
-    return function carried(this: any, ...args) {
+    return function carried(this: Func, ...args) {
         if (args.length >= arity) {
             return func.apply(this, args)
         }
-        return function carried2(this: any, ...args2) {
+        return function carried2(this: Func, ...args2) {
             return carried.apply(this, args.concat(args2))
         }
     }
