@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1606219257945" clover="3.2.0">
-  <project timestamp="1606219257945" name="All files">
-    <metrics statements="42" coveredstatements="42" conditionals="17" coveredconditionals="13" methods="12" coveredmethods="12" elements="71" coveredelements="67" complexity="0" loc="42" ncloc="42" packages="8" files="8" classes="8"/>
+<coverage generated="1606222490840" clover="3.2.0">
+  <project timestamp="1606222490840" name="All files">
+    <metrics statements="48" coveredstatements="48" conditionals="20" coveredconditionals="16" methods="15" coveredmethods="15" elements="83" coveredelements="79" complexity="0" loc="48" ncloc="48" packages="9" files="9" classes="9"/>
     <package name="compose">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="compose.ts" path="/home/runner/work/utils/utils/src/compose/compose.ts">
@@ -20,6 +20,18 @@
         <line num="28" count="4" type="stmt"/>
         <line num="30" count="4" type="stmt"/>
         <line num="31" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="debounce">
+      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="debounce.ts" path="/home/runner/work/utils/utils/src/debounce/debounce.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
       </file>
     </package>
     <package name="formatTime">

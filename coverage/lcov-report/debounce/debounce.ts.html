@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for getDataType/getDataType.ts</title>
+    <title>Code coverage report for debounce/debounce.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">getDataType</a> getDataType.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">debounce</a> debounce.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -74,7 +74,25 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -88,25 +106,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 获取数据类型
- * @function getDataType
- * @returns {string} 返回数据类型
- * @param {any} [data=undefined] - 可选，要检测的数据
+ * @description 函数防抖。
+ * 1. 传入一个要防抖的函数，和一个延迟毫秒数
+ * 2. 延迟时间后，执行回调，如果一定时间内多次触发，则重新计时，只执行最后一次
+ * @function debounce
+ * @param {Function} fn - 要防抖的函数
+ * @param {number} [delay=300] - 延迟毫秒数
+ * @returns {Function} 返回新的（防抖）函数
  * @author liukun &lt;919590347@qq.com&gt;
  * @example
- * import { getDataType } from '@wont/utils'
- * getDataType(1)  // returns 'number'
- * getDataType([])  // returns 'array'
- * getDataType({})  // returns 'object'
+ * import { debounce } from '@wont/utils'
+ * const testFn = () =&gt; {
+ *     console.log('debounce running...')
+ * }
+ * window.addEventListener('mousemove', debounce(testFn, 500))
  */
 &nbsp;
-export function getDataType(data?: any): string {
-    const typeStr = Object.prototype.toString.call(data)
-    return typeStr.slice(typeStr.indexOf(' ') + 1, -1).toLowerCase()
+type Func = (...rest: any[]) =&gt; void
+export function debounce(fn: Function, delay: number = 300): Func {
+    let timer: NodeJS.Timeout
+    return function next(this: Func, ...rest: any[]) {
+        if (timer) {
+            clearTimeout(timer)
+        } else {
+            timer = setTimeout(() =&gt; {
+                fn.apply(this, rest)
+            }, delay)
+        }
+    }
 }
 &nbsp;</pre></td></tr></table></pre>
 
