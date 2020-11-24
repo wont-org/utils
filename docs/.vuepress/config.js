@@ -60,6 +60,12 @@ module.exports = {
                         "path": "/src/compose"
                     },
                     {
+
+                        "title": "curry",
+                        "collapsable": false,
+                        "path": "/src/curry"
+                    },
+                    {
                         "title": "formatTime",
                         "collapsable": false,
                         "path": "/src/formatTime"
