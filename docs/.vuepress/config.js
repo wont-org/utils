@@ -55,6 +55,11 @@ module.exports = {
                 "collapsable": true,
                 "children": [
                     {
+                        "title": "compose",
+                        "collapsable": false,
+                        "path": "/src/compose"
+                    },
+                    {
                         "title": "curry",
                         "collapsable": false,
                         "path": "/src/curry"
