@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1606218730805" clover="3.2.0">
-  <project timestamp="1606218730806" name="All files">
-    <metrics statements="40" coveredstatements="40" conditionals="17" coveredconditionals="13" methods="9" coveredmethods="9" elements="66" coveredelements="62" complexity="0" loc="40" ncloc="40" packages="7" files="7" classes="7"/>
+<coverage generated="1606219112657" clover="3.2.0">
+  <project timestamp="1606219112658" name="All files">
+    <metrics statements="42" coveredstatements="42" conditionals="17" coveredconditionals="13" methods="12" coveredmethods="12" elements="71" coveredelements="67" complexity="0" loc="42" ncloc="42" packages="8" files="8" classes="8"/>
+    <package name="compose">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="compose.ts" path="/home/runner/work/utils/utils/src/compose/compose.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+      </file>
+    </package>
     <package name="curry">
       <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <file name="curry.ts" path="/home/runner/work/utils/utils/src/curry/curry.ts">

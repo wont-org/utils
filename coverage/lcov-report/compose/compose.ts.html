@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for toFirstCase/toFirstCase.ts</title>
+    <title>Code coverage report for compose/compose.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">toFirstCase</a> toFirstCase.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">compose</a> compose.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -75,7 +75,11 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -90,26 +94,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 首字母大写
- * @function toFirstCase
- * @returns {string} 返回首字母大写
- * @param {string} word - 要转换的单词
+ * @description 函数组合。将两个或两个以上的函数组合生成一个新函数，新函数会按照栈顺序执行传入函数
+ * @function compose
+ * @param {Array.Function} funcs - 函数组成的数组
+ * @returns {Function} 返回一个执行函数，可传入需要处理的参数
  * @author liukun &lt;919590347@qq.com&gt;
  * @example
- * import { toFirstCase } from '@wont/utils'
- * toFirstCase('WORD')  // returns Word
- * toFirstCase('word')  // returns Word
- * toFirstCase('woRd')  // returns Word
+ * import { compose } from '@wont/utils'
+ * const trim = (str) =&gt; str.trim()
+ * const toLowerCase = (str) =&gt; str.toLowerCase()
+ * const split = (str, sep = ',') =&gt; str.split(sep)
+ * const getResult = compose([trim, toLowerCase, split])
+ * getResult('a,b,c ') // returns [a, b, c]
  */
 &nbsp;
-export function toFirstCase(word: string): string {
-    const temp = word.toLowerCase()
-    const result = temp.charAt(0).toUpperCase() + temp.slice(1)
-    return result
+type Fn = (...rest: any[]) =&gt; any
+export function compose(funcs: Function[]): Fn {
+    return (param) =&gt; funcs.reduce((arg, fn) =&gt; fn(arg), param)
 }
 &nbsp;</pre></td></tr></table></pre>
 
