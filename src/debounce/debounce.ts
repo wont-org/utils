@@ -4,7 +4,7 @@
  * 2. 延迟时间后，执行回调，如果一定时间内多次触发，则重新计时，只执行最后一次
  * @function debounce
  * @param {Function} fn - 要防抖的函数
- * @param {number} delay - 延迟毫秒数
+ * @param {number} [delay=300] - 延迟毫秒数
  * @returns {Function} 返回新的（防抖）函数
  * @author liukun <919590347@qq.com>
  * @example
@@ -12,7 +12,7 @@
  * const testFn = () => {
  *     console.log('debounce running...')
  * }
- * window.addEventListener('mousemove', testFn)
+ * window.addEventListener('mousemove', debounce(testFn, 500))
  */
 
 type Func = (...rest: any[]) => void

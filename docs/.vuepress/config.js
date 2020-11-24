@@ -65,6 +65,11 @@ module.exports = {
                         "path": "/src/curry"
                     },
                     {
+                        "title": "debounce",
+                        "collapsable": false,
+                        "path": "/src/debounce"
+                    },
+                    {
                         "title": "formatTime",
                         "collapsable": false,
                         "path": "/src/formatTime"
