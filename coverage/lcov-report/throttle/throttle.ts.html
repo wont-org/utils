@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for getUrlParam/getUrlParam.ts</title>
+    <title>Code coverage report for throttle/throttle.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">getUrlParam</a> getUrlParam.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">throttle</a> throttle.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -74,7 +74,21 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -88,25 +102,38 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * @description 获取url参数
- * @function getUrlParam
- * @returns {string} url参数name对应的值
- * @param {string} name - url参数
- * @param {string} [url=window.location.href] 可选，url
+ * @description 函数节流。在wait秒内最多只执行一次func，且执行第一次触发的func
+ * @function throttle
+ * @param {Function} func - 要节流的函数
+ * @param {number} [wait=300] - 需要节流的毫秒
+ * @returns {Function} 返回节流函数
  * @author liukun &lt;919590347@qq.com&gt;
  * @example
- * import { getUrlParam } from '@wont/utils'
- * getUrlParam('id', 'http://localhost:8088/#/index?type=hash&amp;id=8080&amp;index=0')  // returns '8080'
+ * import { throttle } from '@wont/utils'
+ * const testFn = () =&gt; {
+ *     console.log('throttle running...')
+ * }
+ * window.addEventListener('mousemove', throttle(testFn, 500))
  */
-export function getUrlParam(name: string, url?: string): string {
-    const reg = new RegExp(`(^|&amp;)${name}=([^&amp;]*)(&amp;|$)`)
-    const href = url || <span class="branch-1 cbranch-no" title="branch not covered" >window.location.href</span>
-    const result = href.match(reg)
-    return (result &amp;&amp; decodeURI(result[2])) || <span class="branch-2 cbranch-no" title="branch not covered" >''</span>
+&nbsp;
+type Func = (...rest: any[]) =&gt; void
+export function throttle(func: Function, wait = 300): Func {
+    let lastTime = 0
+    return function next(this: Func, ...rest) {
+        const nowTime = Date.now()
+        if (nowTime - lastTime &gt;= wait || !lastTime) {
+            func.apply(this, rest)
+            lastTime = nowTime
+        }
+    }
 }
 &nbsp;</pre></td></tr></table></pre>
 
