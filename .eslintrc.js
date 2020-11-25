@@ -56,5 +56,6 @@ module.exports = {
                 ignoreReadBeforeAssign: false,
             },
         ],
+        'no-unused-expressions': ['error', { allowShortCircuit: true }],
     },
 }
