@@ -308,43 +308,43 @@ describe('minus 方法测试', () => {
 
 在每个 `test` 运行之前，`beforeEach` 的回调方法 `fn` 都会运行一次；
 
-```
+```js
 let num = 1
 
 beforeEach(() => {
-  num = 1
+    num = 1
 })
 
 test('第一个测试', () => {
-  num += 1
-  expect(num).toBe(2)
+    num += 1
+    expect(num).toBe(2)
 })
 
 test('第二个测试', () => {
-  num += 2
-  expect(num).toBe(3)
+    num += 2
+    expect(num).toBe(3)
 })
 ```
 
 如果 `fn` 返回一个`promise`, Jest 会等待 `promise` 完成后再运行 `test`; 或者，您可以提供`timeout`（以毫秒为单位）来指定等待的时间。注意：默认超时为 5000 毫秒.
 
-```
+```js
 let num = 1
 
 beforeEach(() => {
-  return requestFun().then(() => {
-    num = 1
-  })
+    return requestFun().then(() => {
+        num = 1
+    })
 })
 
 test('第一个测试', () => {
-  num += 1
-  expect(num).toBe(2)
+    num += 1
+    expect(num).toBe(2)
 })
 
 test('第二个测试', () => {
-  num += 2
-  expect(num).toBe(3)
+    num += 2
+    expect(num).toBe(3)
 })
 ```
 
