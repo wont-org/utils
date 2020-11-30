@@ -2,10 +2,10 @@
   to: src/<%= name %>/<%= name %>.ts
 ---
 /**
- * @description 总体的描述
+ * @description 函数功能介绍
  * @function <%= name %>
- * @returns {number} 返回值的描述
  * @param {number} a - 参数a的描述
+ * @returns {number} 返回值的描述
  * @throws {TypeError} 异常的描述
  * @author liukun <919590347@qq.com>
  * @example
