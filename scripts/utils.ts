@@ -1,11 +1,10 @@
 import clc from 'cli-color'
 
 let isFirstFile = true
-/* eslint no-unused-vars: 0 */
 export function getFileSizeInfo(
     options,
     bundle,
-    { fileName, minSize, gzipSize, brotliSize, bundleSize },
+    { fileName, minSize, gzipSize, bundleSize },
 ) {
     let output = ''
     if (isFirstFile) {
