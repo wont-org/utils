@@ -2,7 +2,7 @@
  * @description 设置 object 对象中对应 path 属性路径上的值，如果 path 不存在，则创建
  * @function set
  * @param {object} object - 要修改的对象
- * @param {string | (string | number)[]} path - 要设置的对象路径
+ * @param {(string | Array<string, number>)} path - 要设置的对象路径
  * @param {any} val - 要设置的值
  * @returns {object} 返回修改后的对象
  * @author liukun <919590347@qq.com>

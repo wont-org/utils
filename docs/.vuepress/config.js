@@ -90,6 +90,11 @@ module.exports = {
                         "path": "/src/getUrlParam"
                     },
                     {
+                        "title": "set",
+                        "collapsable": false,
+                        "path": "/src/set"
+                    },
+                    {
                         "title": "throttle",
                         "collapsable": false,
                         "path": "/src/throttle"
