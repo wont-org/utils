@@ -1,4 +1,3 @@
-/* eslint-disable no-sparse-arrays */
 import {
     set,
     // eslint-disable-next-line no-unused-vars
@@ -39,7 +38,7 @@ const testCase = [
             editVal: 2,
             editArrVal: [2],
             setNestVal: { setNestVal: { setNestVal: 2 } },
-            setArrVal: [, 2],
+            setArrVal: [undefined, 2],
         },
     ],
     [
@@ -49,7 +48,7 @@ const testCase = [
             editVal: 2,
             editArrVal: [2],
             setNestVal: { setNestVal: { setNestVal: 2 } },
-            setArrVal: [, 2],
+            setArrVal: [undefined, 2],
             arr: [0],
         },
     ],
