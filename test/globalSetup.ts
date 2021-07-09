@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { exec } from 'child_process'
 import $ from 'dekko'
 import glob from 'glob'
 import path from 'path'
@@ -8,21 +8,33 @@ const fnNames = glob
     .map((file) => path.basename(path.dirname(file)))
 
 function testPackages() {
-    $('lib').isDirectory()
-    $('es').isDirectory()
+    $('lib').isDirectory().hasFile('index.js').hasFile('index.d.ts')
+    $('es').isDirectory().hasFile('index.js').hasFile('index.d.ts')
 
     fnNames.forEach((name) => {
-        $('lib').hasFile(`${name}/index.js`)
-        $('lib').hasFile(`${name}/${name}.d.ts`)
-        $('es').hasFile(`${name}/index.js`)
-        $('es').hasFile(`${name}/${name}.d.ts`)
+        $('lib').hasDirectory(name)
+        $(`lib/${name}`)
+            .isDirectory()
+            .hasFile('index.js')
+            .hasFile(`${name}.d.ts`)
+
+        $('es').hasDirectory(name)
+        $(`es/${name}`)
+            .isDirectory()
+            .hasFile('index.js')
+            .hasFile(`${name}.d.ts`)
     })
 }
 
-async function execGlobalSetup() {
+function execGlobalSetup() {
     try {
-        execSync('npm run build')
-        testPackages()
+        exec('npm run build', (e) => {
+            if (e) {
+                console.log('npm run build error :>> ', e)
+                process.exit(1)
+            }
+            testPackages()
+        })
     } catch (e) {
         console.log('execGlobalSetup error :>> ', e)
         process.exit(1)

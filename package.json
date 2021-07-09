@@ -48,7 +48,7 @@
         "coverage": "jest --coverage --verbose -u",
         "test:fix": "jest --clearCache",
         "test:n": "jest --no-cache",
-        "test": "jest"
+        "test": "jest --detectOpenHandles"
     },
     "homepage": "wont-org.github.io/utils/",
     "publishConfig": {
