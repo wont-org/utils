@@ -45,7 +45,7 @@
         "build:docs": "npm run changelog && npm run docs && npm run vuepress:build",
         "vuepress:dev": "npm run changelog && npm run docs && vuepress dev docs",
         "vuepress:build": "vuepress build docs",
-        "coverage": "jest --coverage --verbose -u",
+        "coverage": "jest --coverage --verbose -u --detectOpenHandles",
         "test:fix": "jest --clearCache",
         "test:n": "jest --no-cache",
         "test": "jest --detectOpenHandles"
