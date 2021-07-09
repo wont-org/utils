@@ -39,7 +39,7 @@
         "docs": "ts-node scripts/doc.ts",
         "build": "wont-tools compile utils -e src",
         "prepublishOnly": "npm run build",
-        "link": "npm run prepublishOnly && npm run link",
+        "link": "npm run prepublishOnly && npm link",
         "b": "wont-tools compile utils -e src",
         "build:docs": "npm run changelog && npm run docs && npm run vuepress:build",
         "vuepress:dev": "npm run changelog && npm run docs && vuepress dev docs",
