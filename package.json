@@ -15,6 +15,7 @@
         "email": "919590347@qq.com"
     },
     "files": [
+        "es",
         "lib"
     ],
     "license": "MIT",
@@ -85,7 +86,6 @@
         "@types/jest": "^26.0.7",
         "@typescript-eslint/eslint-plugin": "^3.7.1",
         "@typescript-eslint/parser": "^3.7.1",
-        "@wont/tools": "0.0.1-alpha.4",
         "chalk": "^4.1.0",
         "cli-color": "^2.0.0",
         "commitizen": "^4.1.2",

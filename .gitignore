@@ -7,8 +7,10 @@ docs/api.md
 src/index.ts
 coverage
 dist
+*.tgz
+*.local.*
 
-package-lock.json
+# package-lock.json
 .DS_Store
 .cache
 node_modules/
