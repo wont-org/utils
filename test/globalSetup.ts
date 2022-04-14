@@ -8,36 +8,35 @@ const fnNames = glob
     .map((file) => path.basename(path.dirname(file)))
 
 function testPackages() {
-    $('lib').isDirectory().hasDirectory('es').hasDirectory('umd')
-    $('lib/umd')
-        .hasFile('index.d.ts')
-        .hasFile('index.js')
-        .hasFile('index.min.js')
-    $('lib/es').hasFile('index.d.ts').hasFile('index.js')
+    $('lib').isDirectory().hasFile('index.js').hasFile('index.d.ts')
+    $('es').isDirectory().hasFile('index.js').hasFile('index.d.ts')
 
     fnNames.forEach((name) => {
-        $('lib/es').hasFile(`${name}.js`)
+        $('lib').hasDirectory(name)
+        $(`lib/${name}`)
+            .isDirectory()
+            .hasFile('index.js')
+            .hasFile(`${name}.d.ts`)
+
+        $('es').hasDirectory(name)
+        $(`es/${name}`)
+            .isDirectory()
+            .hasFile('index.js')
+            .hasFile(`${name}.d.ts`)
     })
 }
 
-async function buildPackages() {
-    await new Promise((resolve) => {
+function execGlobalSetup() {
+    try {
         exec('npm run build', (e) => {
             if (e) {
-                console.log(e)
+                console.log('npm run build error :>> ', e)
                 process.exit(1)
             }
-            resolve()
+            testPackages()
         })
-    })
-}
-
-async function execGlobalSetup() {
-    try {
-        await buildPackages()
-        testPackages()
     } catch (e) {
-        console.log(e)
+        console.log('execGlobalSetup error :>> ', e)
         process.exit(1)
     }
 }
