@@ -55,6 +55,11 @@ module.exports = {
                 "collapsable": true,
                 "children": [
                     {
+                        "title": "arrayToObject",
+                        "collapsable": false,
+                        "path": "/src/arrayToObject"
+                    },
+                    {
                         "title": "compose",
                         "collapsable": false,
                         "path": "/src/compose"
