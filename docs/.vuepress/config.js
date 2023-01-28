@@ -75,6 +75,11 @@ module.exports = {
                         "path": "/src/debounce"
                     },
                     {
+                        "title": "formatOptions",
+                        "collapsable": false,
+                        "path": "/src/formatOptions"
+                    },
+                    {
                         "title": "formatTime",
                         "collapsable": false,
                         "path": "/src/formatTime"
