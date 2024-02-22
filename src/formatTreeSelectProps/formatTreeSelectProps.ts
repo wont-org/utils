@@ -86,26 +86,27 @@ export const formatTreeSelectProps: FormatTreeSelectProps = ({
     children: 'children',
   },
   parentSelectable = false,
-}) => tree.map((item) => {
-  if (
-    Array.isArray(item[fieldNames.children])
-      && item[fieldNames.children].length > 0
-  ) {
+}) =>
+  tree.map((item) => {
+    if (
+      Array.isArray(item[fieldNames.children]) &&
+      item[fieldNames.children].length > 0
+    ) {
+      return {
+        ...item,
+        selectable: parentSelectable,
+        value: item[fieldNames.value],
+        label: item[fieldNames.label],
+        children: formatTreeSelectProps({
+          tree: item[fieldNames.children],
+          fieldNames,
+          parentSelectable,
+        }),
+      }
+    }
     return {
       ...item,
-      selectable: parentSelectable,
       value: item[fieldNames.value],
       label: item[fieldNames.label],
-      children: formatTreeSelectProps({
-        tree: item[fieldNames.children],
-        fieldNames,
-        parentSelectable,
-      }),
     }
-  }
-  return {
-    ...item,
-    value: item[fieldNames.value],
-    label: item[fieldNames.label],
-  }
-})
+  })

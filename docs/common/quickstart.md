@@ -41,3 +41,13 @@ getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0') // 
   }
 </script>
 ```
+
+## 试一试
+打开控制台，`wontUtils`查看所有方法
+
+```js
+wontUtils.getUrlParam(
+  'id',
+  'http://localhost:8088/#/index?type=hash&id=8080&index=0'
+) // 8080
+```
