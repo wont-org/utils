@@ -85,6 +85,11 @@ module.exports = {
                         "path": "/src/formatTime"
                     },
                     {
+                        "title": "formatTree",
+                        "collapsable": false,
+                        "path": "/src/formatTree"
+                    },
+                    {
                         "title": "formatTreeSelectProps",
                         "collapsable": false,
                         "path": "/src/formatTreeSelectProps"

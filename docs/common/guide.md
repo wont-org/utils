@@ -1,6 +1,7 @@
 # 开发指南
+
 ::: tip
-参与`zero-utils`函数库开发之前，您需要了解 [TypeScript](https://www.tslang.cn/)、[commit规范](https://github.com/conventional-changelog/commitlint)、[jest](https://jestjs.io/docs/en/getting-started)、[jsdoc](https://jsdoc.app/index.html)
+参与`zero-utils`函数库开发之前，您需要了解 [TypeScript](https://www.tslang.cn/)、[commit 规范](https://github.com/conventional-changelog/commitlint)、[jest](https://jestjs.io/docs/en/getting-started)、[jsdoc](https://jsdoc.app/index.html)
 :::
 
 ## 函数设计
@@ -16,39 +17,44 @@
 函数功能、系统分析得到认可后，开始开发。
 
 ## 分支策略
+
 ::: tip
 分支策略遵循`angular commit`规范，示例如下。
 :::
 
--   master: 受保护、稳定且经过测试的分支，也是主迭代分支。代码必须提`pull request`并且`code review`后，联系仓库`owner`   **liukun** <919590347@qq.com>
--   feat/\*: 新功能, 新函数
--   fix/\*: 修复函数的 bug （src/\*）
--   docs/\*: 仅修改文档相关（docs/\*）
--   style/\*: 代码风格层面改动, eg: 空格、分号、空行、引号……
--   refactor/\*: 函数重构，既不是bug也不是feature （src/*）
--   perf/\*: 优化性能（src/\*, build/\*）
--   test/\*: 测试用例的添加、修改、删除（src/\_\*.test.ts）
--   build/\*: 构建层面修改。 egg：build/\*, rollup, gulp……
--   ci/\*: 自动化脚本相关。 eg: Travis, jenkins, gitlab.ci
--   chore/\*: 其他的修改，不包含src, test
--   revert/\*: 回滚之前的commit
+- master: 受保护、稳定且经过测试的分支，也是主迭代分支。代码必须提`pull request`并且`code review`后，联系仓库`owner` **liukun** <919590347@qq.com>
+- feat/\*: 新功能, 新函数
+- fix/\*: 修复函数的 bug （src/\*）
+- docs/\*: 仅修改文档相关（docs/\*）
+- style/\*: 代码风格层面改动, eg: 空格、分号、空行、引号……
+- refactor/\*: 函数重构，既不是 bug 也不是 feature （src/\*）
+- perf/\*: 优化性能（src/\*, build/\*）
+- test/\*: 测试用例的添加、修改、删除（src/\_\*.test.ts）
+- build/\*: 构建层面修改。 egg：build/\*, rollup, gulp……
+- ci/\*: 自动化脚本相关。 eg: Travis, jenkins, gitlab.ci
+- chore/\*: 其他的修改，不包含 src, test
+- revert/\*: 回滚之前的 commit
 
 ## 创建分支、函数
 
 ### 创建分支
+
 ```bash
 # 迭代分支
 git checkout master
 git checkout -b feat/helloWorld
 ```
+
 ### 创建模块
+
 ::: tip
-执行npm脚本，输入函数名，强制使用小驼峰（camelCase），例如: `helloWorld`;
+执行 npm 脚本，输入函数名，强制使用小驼峰（camelCase），例如: `helloWorld`;
 
 如该函数不开放给使用者，请以下划线开头，例如: `_helloWorld`;
 
 完成之后，可以看到新增了一个目录 **src/helloWorld**，且该目录下有两个文件：
 :::
+
 ```bash
 npm run create
 ```
@@ -67,19 +73,19 @@ npm run create
  * helloWorld(1)  // returns 1
  */
 export function helloWorld(a: number): number {
-    return a
+  return a
 }
 ```
 
-**_helloWorld.test.ts**
+**\_helloWorld.test.ts**
 
 ```ts
 import { helloWorld } from './helloWorld'
 
 describe('helloWorld 方法测试', () => {
-    test('具体测试', () => {
-        expect(helloWorld(1)).toBe(1)
-    })
+  test('具体测试', () => {
+    expect(helloWorld(1)).toBe(1)
+  })
 })
 ```
 
@@ -93,7 +99,7 @@ describe('helloWorld 方法测试', () => {
 
 ## 编写单元测试
 
-在 **_helloWorld.test.ts** 文件中编写单元测试
+在 **\_helloWorld.test.ts** 文件中编写单元测试
 
 函数库使用 **[Jest](https://jestjs.io/)** 作为单元测试框架，可参考 [Jest 介绍](/common/jest/)
 
@@ -115,16 +121,16 @@ npm run watch
 
 `watch` 模式默认运行所有的单元测试，也可以根据需求自定义
 
--   输入 `p` 只运行文件名符合匹配规则的单元测试
--   输入 `t` 只运行`test name`符合匹配规则的单元测试
--   输入 `f` 只运行测试失败的单元测试
--   输入 `o` 只运行文件发生改动的单元测试
+- 输入 `p` 只运行文件名符合匹配规则的单元测试
+- 输入 `t` 只运行`test name`符合匹配规则的单元测试
+- 输入 `f` 只运行测试失败的单元测试
+- 输入 `o` 只运行文件发生改动的单元测试
 
 此外，`watch` 模式还支持其他功能
 
--   输入 `F` 修复 EsLint
--   输入 `回车键` 触发运行一次单元测试
--   输入 `q` 退出 `watch` 模式
+- 输入 `F` 修复 EsLint
+- 输入 `回车键` 触发运行一次单元测试
+- 输入 `q` 退出 `watch` 模式
 
 ## 完善注释
 
@@ -157,7 +163,8 @@ npm run changelog && npm run build:docs
 commit 规范: 采用 angular 风格, 借助 commitizen 进行交互式提交、commitlint 进行消息格式的校验；
 :::
 
-### commitizen命令行交互
+### commitizen 命令行交互
+
 ```bash
 # global
 npm i conventional-changelog-cli -g
@@ -167,7 +174,8 @@ npm i conventional-changelog-cli -D
 npx git-cz
 ```
 
-### commitlint校验
+### commitlint 校验
+
 ::: tip
 commit 格式如下(第一行必填, 其他行选填), 其中 type 代表的是修改内容的类型(必须使用指定的值)、scope 代表影响范围(根据项目自定义)、
 :::
@@ -184,24 +192,25 @@ fix #1, fix #2
 ```
 
 #### type 取值列表
+
 > 分支策略完全相同
 
--   feat: 新功能, 新函数
--   fix: 修复函数的 bug （src/\*）
--   docs: 仅修改文档相关（docs/\*）
--   style: 代码风格层面改动, eg: 空格、分号、空行、引号……
--   refactor: 函数重构，既不是bug也不是feature （src/*）
--   perf: 优化性能（src/\*, build/\*）
--   test: 测试用例的添加、修改、删除（src/\_\*.test.ts）
--   build: 构建层面修改。 egg：build/\*, rollup, gulp……
--   ci: 自动化脚本相关。 eg: Travis, jenkins, gitlab.ci
--   chore: 其他的修改，不包含src, test
--   revert: 回滚之前的commit
+- feat: 新功能, 新函数
+- fix: 修复函数的 bug （src/\*）
+- docs: 仅修改文档相关（docs/\*）
+- style: 代码风格层面改动, eg: 空格、分号、空行、引号……
+- refactor: 函数重构，既不是 bug 也不是 feature （src/\*）
+- perf: 优化性能（src/\*, build/\*）
+- test: 测试用例的添加、修改、删除（src/\_\*.test.ts）
+- build: 构建层面修改。 egg：build/\*, rollup, gulp……
+- ci: 自动化脚本相关。 eg: Travis, jenkins, gitlab.ci
+- chore: 其他的修改，不包含 src, test
+- revert: 回滚之前的 commit
 
 #### scope 建议
 
--   修改的函数名
--   待补充
+- 修改的函数名
+- 待补充
 
 <br/>
 
@@ -229,7 +238,8 @@ fix #1, fix #2
 
 ## 发版
 
-通过npm scripts, 执行自动化版本变更，然后申请pr，pr通过后，切换到master，执行`npm run pushtag`推送tag至远程，travis会自动化发版，发版成功后会收到邮件
+通过 npm scripts, 执行自动化版本变更，然后申请 pr，pr 通过后，切换到 master，执行`npm run pushtag`推送 tag 至远程，travis 会自动化发版，发版成功后会收到邮件
+
 ```bash
 npm run alpha # 内部测试版,一般不向外部发布,会有很多Bug.一般只有测试人员使用
 npm run beta # 公测版，消除了严重bug，这个阶段的版本会一直加入新的功能。在Alpha版之后推出

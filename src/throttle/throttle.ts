@@ -15,12 +15,12 @@
 
 type Func = (...rest: any[]) => void
 export function throttle(func: Function, wait = 300): Func {
-    let lastTime = 0
-    return function next(this: Func, ...rest) {
-        const nowTime = Date.now()
-        if (nowTime - lastTime >= wait || !lastTime) {
-            func.apply(this, rest)
-            lastTime = nowTime
-        }
+  let lastTime = 0
+  return function next(this: Func, ...rest) {
+    const nowTime = Date.now()
+    if (nowTime - lastTime >= wait || !lastTime) {
+      func.apply(this, rest)
+      lastTime = nowTime
     }
+  }
 }

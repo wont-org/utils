@@ -1,9 +1,7 @@
 {
-  "files.eol": "\n" ,
-  "eslint.validate": [
-    "typescript",
-  ],
+  "files.eol": "\n",
+  "eslint.validate": ["typescript"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": true
   }
 }

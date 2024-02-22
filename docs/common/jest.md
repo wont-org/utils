@@ -2,9 +2,9 @@
 
 单元测试是函数库中最重要的环节之一，良好的单元测试能对函数库产生许多正面的影响；
 
--   单元测试能帮助我们节约后续的开发和维护成本，在一定程度上降低了出错的概率；
--   单元测试也是代码设计的一部分，会促使开发者重新审视自己的代码，改进设计，完善各种边界条件和异常情况的处理；
--   当函数被修改后，如果发生错误，单元测试能帮助我们快速定位错误。
+- 单元测试能帮助我们节约后续的开发和维护成本，在一定程度上降低了出错的概率；
+- 单元测试也是代码设计的一部分，会促使开发者重新审视自己的代码，改进设计，完善各种边界条件和异常情况的处理；
+- 当函数被修改后，如果发生错误，单元测试能帮助我们快速定位错误。
 
 常见的单元测试框架有 **[Mocha](https://mochajs.org/)** 、**[Jasmine](https://jasmine.github.io/)**、**[Jest](https://jestjs.io/)** 等。
 
@@ -24,7 +24,7 @@ yarn add --dev jest
 
 ```js
 function sum(a, b) {
-    return a + b
+  return a + b
 }
 module.exports = sum
 ```
@@ -35,7 +35,7 @@ module.exports = sum
 const sum = require('./sum')
 
 test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3)
+  expect(sum(1, 2)).toBe(3)
 })
 ```
 
@@ -43,9 +43,9 @@ test('adds 1 + 2 to equal 3', () => {
 
 ```json
 {
-    "scripts": {
-        "test": "jest"
-    }
+  "scripts": {
+    "test": "jest"
+  }
 }
 ```
 
@@ -84,7 +84,7 @@ Jest 内置了断言，可以使用多种匹配器。
 
 ```js
 test('two plus two is four', () => {
-    expect(2 + 2).toBe(4)
+  expect(2 + 2).toBe(4)
 })
 ```
 
@@ -94,9 +94,9 @@ test('two plus two is four', () => {
 
 ```js
 test('object assignment', () => {
-    const data = { one: 1 }
-    data['two'] = 2
-    expect(data).toEqual({ one: 1, two: 2 })
+  const data = { one: 1 }
+  data['two'] = 2
+  expect(data).toEqual({ one: 1, two: 2 })
 })
 ```
 
@@ -106,21 +106,21 @@ test('object assignment', () => {
 
 ```js
 test('null', () => {
-    const n = null
-    expect(n).toBeNull()
-    expect(n).toBeDefined()
-    expect(n).not.toBeUndefined()
-    expect(n).not.toBeTruthy()
-    expect(n).toBeFalsy()
+  const n = null
+  expect(n).toBeNull()
+  expect(n).toBeDefined()
+  expect(n).not.toBeUndefined()
+  expect(n).not.toBeTruthy()
+  expect(n).toBeFalsy()
 })
 
 test('zero', () => {
-    const z = 0
-    expect(z).not.toBeNull()
-    expect(z).toBeDefined()
-    expect(z).not.toBeUndefined()
-    expect(z).not.toBeTruthy()
-    expect(z).toBeFalsy()
+  const z = 0
+  expect(z).not.toBeNull()
+  expect(z).toBeDefined()
+  expect(z).not.toBeUndefined()
+  expect(z).not.toBeTruthy()
+  expect(z).toBeFalsy()
 })
 ```
 
@@ -128,15 +128,15 @@ test('zero', () => {
 
 ```js
 test('two plus two', () => {
-    const value = 2 + 2
-    expect(value).toBeGreaterThan(3)
-    expect(value).toBeGreaterThanOrEqual(3.5)
-    expect(value).toBeLessThan(5)
-    expect(value).toBeLessThanOrEqual(4.5)
+  const value = 2 + 2
+  expect(value).toBeGreaterThan(3)
+  expect(value).toBeGreaterThanOrEqual(3.5)
+  expect(value).toBeLessThan(5)
+  expect(value).toBeLessThanOrEqual(4.5)
 
-    // toBe and toEqual are equivalent for numbers
-    expect(value).toBe(4)
-    expect(value).toEqual(4)
+  // toBe and toEqual are equivalent for numbers
+  expect(value).toBe(4)
+  expect(value).toEqual(4)
 })
 ```
 
@@ -144,9 +144,9 @@ js 浮点数计算中，有可能会出现精度问题，但是没有关系，Je
 
 ```js
 test('两个浮点数字相加', () => {
-    const value = 0.1 + 0.2
-    //expect(value).toBe(0.3)           这句会报错，因为浮点数有舍入误差
-    expect(value).toBeCloseTo(0.3) // 这句可以正常运行
+  const value = 0.1 + 0.2
+  //expect(value).toBe(0.3)           这句会报错，因为浮点数有舍入误差
+  expect(value).toBeCloseTo(0.3) // 这句可以正常运行
 })
 ```
 
@@ -154,11 +154,11 @@ test('两个浮点数字相加', () => {
 
 ```js
 test('there is no I in team', () => {
-    expect('team').not.toMatch(/I/)
+  expect('team').not.toMatch(/I/)
 })
 
 test('but there is a "stop" in Christoph', () => {
-    expect('Christoph').toMatch(/stop/)
+  expect('Christoph').toMatch(/stop/)
 })
 ```
 
@@ -166,16 +166,16 @@ test('but there is a "stop" in Christoph', () => {
 
 ```js
 const shoppingList = [
-    'diapers',
-    'kleenex',
-    'trash bags',
-    'paper towels',
-    'beer',
+  'diapers',
+  'kleenex',
+  'trash bags',
+  'paper towels',
+  'beer',
 ]
 
 test('the shopping list has beer on it', () => {
-    expect(shoppingList).toContain('beer')
-    expect(new Set(shoppingList)).toContain('beer')
+  expect(shoppingList).toContain('beer')
+  expect(new Set(shoppingList)).toContain('beer')
 })
 ```
 
@@ -183,18 +183,18 @@ test('the shopping list has beer on it', () => {
 
 ```js
 function compileAndroidCode() {
-    throw new ConfigError('you are using the wrong JDK')
+  throw new ConfigError('you are using the wrong JDK')
 }
 
 test('compiling android goes as expected', () => {
-    // expect(compileAndroidCode()).toThrow()   这种写法是错误的，如果想要抛出异常，expect()中必须是一个方法
+  // expect(compileAndroidCode()).toThrow()   这种写法是错误的，如果想要抛出异常，expect()中必须是一个方法
 
-    expect(compileAndroidCode).toThrow()
-    expect(compileAndroidCode).toThrow(ConfigError)
+  expect(compileAndroidCode).toThrow()
+  expect(compileAndroidCode).toThrow(ConfigError)
 
-    // You can also use the exact error message or a regexp
-    expect(compileAndroidCode).toThrow('you are using the wrong JDK')
-    expect(compileAndroidCode).toThrow(/JDK/)
+  // You can also use the exact error message or a regexp
+  expect(compileAndroidCode).toThrow('you are using the wrong JDK')
+  expect(compileAndroidCode).toThrow(/JDK/)
 })
 ```
 
@@ -210,12 +210,12 @@ test('compiling android goes as expected', () => {
 
 ```js
 test('the data is peanut butter', (done) => {
-    function callback(data) {
-        expect(data).toBe('peanut butter')
-        done()
-    }
+  function callback(data) {
+    expect(data).toBe('peanut butter')
+    done()
+  }
 
-    fetchData(callback)
+  fetchData(callback)
 })
 ```
 
@@ -227,9 +227,9 @@ test('the data is peanut butter', (done) => {
 
 ```js
 test('the data is peanut butter', () => {
-    return fetchData().then((data) => {
-        expect(data).toBe('peanut butter')
-    })
+  return fetchData().then((data) => {
+    expect(data).toBe('peanut butter')
+  })
 })
 ```
 
@@ -237,8 +237,8 @@ test('the data is peanut butter', () => {
 
 ```js
 test('the fetch fails with an error', () => {
-    expect.assertions(1)
-    return fetchData().catch((e) => expect(e).toMatch('error'))
+  expect.assertions(1)
+  return fetchData().catch((e) => expect(e).toMatch('error'))
 })
 ```
 
@@ -248,11 +248,11 @@ test('the fetch fails with an error', () => {
 
 ```js
 test('the data is peanut butter', () => {
-    return expect(fetchData()).resolves.toBe('peanut butter')
+  return expect(fetchData()).resolves.toBe('peanut butter')
 })
 
 test('the fetch fails with an error', () => {
-    return expect(fetchData()).rejects.toMatch('error')
+  return expect(fetchData()).rejects.toMatch('error')
 })
 ```
 
@@ -262,17 +262,17 @@ test('the fetch fails with an error', () => {
 
 ```js
 test('the data is peanut butter', async () => {
-    const data = await fetchData()
-    expect(data).toBe('peanut butter')
+  const data = await fetchData()
+  expect(data).toBe('peanut butter')
 })
 
 test('the fetch fails with an error', async () => {
-    expect.assertions(1)
-    try {
-        await fetchData()
-    } catch (e) {
-        expect(e).toMatch('error')
-    }
+  expect.assertions(1)
+  try {
+    await fetchData()
+  } catch (e) {
+    expect(e).toMatch('error')
+  }
 })
 ```
 
@@ -284,23 +284,23 @@ test('the fetch fails with an error', async () => {
 
 ```js
 describe('minus 方法测试', () => {
-    test('1 - 2 = -1', () => {
-        expect(minus(1, 2)).toBe(-1)
-    })
+  test('1 - 2 = -1', () => {
+    expect(minus(1, 2)).toBe(-1)
+  })
 
-    test('0 - 0 = 0', () => {
-        expect(minus(0, 0)).toBe(0)
-    })
+  test('0 - 0 = 0', () => {
+    expect(minus(0, 0)).toBe(0)
+  })
 
-    test('2 - 1 = 1', () => {
-        expect(minus(2, 1)).toBe(1)
-    })
+  test('2 - 1 = 1', () => {
+    expect(minus(2, 1)).toBe(1)
+  })
 
-    test('1 - undefined to throw Error', () => {
-        expect(() => {
-            minus(1)
-        }).toThrow('minus方法的参数必须为Number类型')
-    })
+  test('1 - undefined to throw Error', () => {
+    expect(() => {
+      minus(1)
+    }).toThrow('minus方法的参数必须为Number类型')
+  })
 })
 ```
 
@@ -312,17 +312,17 @@ describe('minus 方法测试', () => {
 let num = 1
 
 beforeEach(() => {
-    num = 1
+  num = 1
 })
 
 test('第一个测试', () => {
-    num += 1
-    expect(num).toBe(2)
+  num += 1
+  expect(num).toBe(2)
 })
 
 test('第二个测试', () => {
-    num += 2
-    expect(num).toBe(3)
+  num += 2
+  expect(num).toBe(3)
 })
 ```
 
@@ -332,19 +332,19 @@ test('第二个测试', () => {
 let num = 1
 
 beforeEach(() => {
-    return requestFun().then(() => {
-        num = 1
-    })
+  return requestFun().then(() => {
+    num = 1
+  })
 })
 
 test('第一个测试', () => {
-    num += 1
-    expect(num).toBe(2)
+  num += 1
+  expect(num).toBe(2)
 })
 
 test('第二个测试', () => {
-    num += 2
-    expect(num).toBe(3)
+  num += 2
+  expect(num).toBe(3)
 })
 ```
 
@@ -356,8 +356,8 @@ test('第二个测试', () => {
 
 `beforeAll` 和 `beforeEach` 的区别是：
 
--   `beforeAll`: 无论 `test` 有多少个，`beforeAll` 只会运行一次
--   `beforeEach`: `test` 有多少个，`beforeEach` 就会运行多少次
+- `beforeAll`: 无论 `test` 有多少个，`beforeAll` 只会运行一次
+- `beforeEach`: `test` 有多少个，`beforeEach` 就会运行多少次
 
 其他类似的方法还有 `afterEach` 、 `afterAll` 等；
 
@@ -373,11 +373,11 @@ Jest 默认使用 [jsdom](https://github.com/jsdom/jsdom) 来模拟一些浏览�
 
 Puppeteer 是一个 Chrome 官方出品的 headless Chrome node 库。它提供了一系列的 API, 可以在无 UI 的情况下调用 Chrome 的功能, 适用于爬虫、自动化处理等各种场景。它的功能包括但是不限于以下几点：
 
--   生成页面截图和 PDF
--   自动化表单提交、UI 测试、键盘输入等
--   创建一个最新的自动化测试环境。使用最新的 JavaScript 和浏览器功能，可以直接在最新版本的 Chrome 中运行测试
--   捕获站点的时间线跟踪，以帮助诊断性能问题
--   抓取 SPA 并生成预先呈现的内容
+- 生成页面截图和 PDF
+- 自动化表单提交、UI 测试、键盘输入等
+- 创建一个最新的自动化测试环境。使用最新的 JavaScript 和浏览器功能，可以直接在最新版本的 Chrome 中运行测试
+- 捕获站点的时间线跟踪，以帮助诊断性能问题
+- 抓取 SPA 并生成预先呈现的内容
 
 安装 puppeteer 后会自动下载一个 chromium 内核（100M+），相当于运行在一个真实的浏览器环境中，只是缺少了 UI 页面；也可以自己下载 chromium ，然后指定 chromium 路径；此外，还可以指定本地已安装的 Chrome 浏览器中的 chromium 路径，例如：executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
@@ -387,24 +387,24 @@ Puppeteer 是一个 Chrome 官方出品的 headless Chrome node 库。它提供�
 import puppeteer from 'puppeteer'
 
 test('获取页面title', async () => {
-    // 创建 browser 实例
-    const browser = await puppeteer.launch({
-        args: ['--no-sandbox'],
-    })
+  // 创建 browser 实例
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+  })
 
-    // 创建 page 实例
-    const page = await browser.newPage()
+  // 创建 page 实例
+  const page = await browser.newPage()
 
-    // 打开页面
-    await page.goto('https://www.baidu.com')
-    // 也可以打开本地启动的服务
-    // await page.goto('http://localhost:8080/')
+  // 打开页面
+  await page.goto('https://www.baidu.com')
+  // 也可以打开本地启动的服务
+  // await page.goto('http://localhost:8080/')
 
-    // 对当前页面截图，命名为 'screenshot.png'，并保存到 'src' 目录中
-    await page.screenshot({ path: 'src/screenshot.png' })
+  // 对当前页面截图，命名为 'screenshot.png'，并保存到 'src' 目录中
+  await page.screenshot({ path: 'src/screenshot.png' })
 
-    // 关闭浏览器
-    await browser.close()
+  // 关闭浏览器
+  await browser.close()
 })
 ```
 
@@ -413,36 +413,36 @@ test('获取页面title', async () => {
 ```js
 // hello.ts
 export default function hello(info: string): string {
-    return `hello ${info}`
+  return `hello ${info}`
 }
 
 // hello.test.js
 import puppeteer from 'puppeteer'
 
 test('获取页面title', async () => {
-    jest.setTimeout(20000) // 设置超时时间（毫秒）， 默认是5000
-    const browser = await puppeteer.launch({
-        args: ['--no-sandbox'],
-    })
-    const page = await browser.newPage()
-    await page.goto('https://www.baidu.html')
+  jest.setTimeout(20000) // 设置超时时间（毫秒）， 默认是5000
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+  })
+  const page = await browser.newPage()
+  await page.goto('https://www.baidu.html')
 
-    // 把 js 文件注入到页面中, path 表示js文件的路径
-    // 在函数库中，我们把打包好的文件存放在 'lib/index.min.js'
-    await page.addScriptTag({ path: 'lib/index.min.js' })
+  // 把 js 文件注入到页面中, path 表示js文件的路径
+  // 在函数库中，我们把打包好的文件存放在 'lib/index.min.js'
+  await page.addScriptTag({ path: 'lib/index.min.js' })
 
-    const name1 = 'name1'
-    const name2 = 'name2'
-    const title = await page.evaluate(
-        (a, b) => {
-            document.title = Jax.hello(a + b)
-            return document.title
-        },
-        name1,
-        name2
-    )
-    await browser.close()
-    expect(title).toBe('hello name1name1')
+  const name1 = 'name1'
+  const name2 = 'name2'
+  const title = await page.evaluate(
+    (a, b) => {
+      document.title = Jax.hello(a + b)
+      return document.title
+    },
+    name1,
+    name2
+  )
+  await browser.close()
+  expect(title).toBe('hello name1name1')
 })
 ```
 

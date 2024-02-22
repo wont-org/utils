@@ -21,15 +21,18 @@
  * ])  // return {a:1, b:2}
  */
 
-export const arrayToObject = (arr: Record<string, string | number>[], fieldNames = {
+export const arrayToObject = (
+  arr: Record<string, string | number>[],
+  fieldNames = {
     key: 'value',
     value: 'label',
-}) => {
-    const result = {}
-    arr.forEach((item) => {
-        const key = item[fieldNames.key]
-        const value = item[fieldNames.value]
-        result[key] = value
-    })
-    return result
+  }
+) => {
+  const result = {}
+  arr.forEach((item) => {
+    const key = item[fieldNames.key]
+    const value = item[fieldNames.value]
+    result[key] = value
+  })
+  return result
 }

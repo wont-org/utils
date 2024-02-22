@@ -15,5 +15,5 @@
 
 type Fn = (...rest: any[]) => any
 export function compose(funcs: Function[]): Fn {
-    return (param) => funcs.reduce((arg, fn) => fn(arg), param)
+  return (param) => funcs.reduce((arg, fn) => fn(arg), param)
 }

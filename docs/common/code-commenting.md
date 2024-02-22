@@ -152,10 +152,10 @@
  * @param {requestCallback} cb - 回调函数cb，接收一个 employee 参数，employee 为一个对象
  */
 export default function handleEmployee(cb) {
-    requestEmployee().then((employee) => {
-        console.log(employee.name, employee.age)
-        cb(employee)
-    })
+  requestEmployee().then((employee) => {
+    console.log(employee.name, employee.age)
+    cb(employee)
+  })
 }
 
 /**

@@ -5,47 +5,47 @@ jobs:
   check-status:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v2.3.1
+      - name: checkout
+        uses: actions/checkout@v2.3.1
 
-    - name: cache package-lock.json
-      uses: actions/cache@v2
-      with:
-        path: package-temp-dir
-        key: lock-${{ github.sha }}
+      - name: cache package-lock.json
+        uses: actions/cache@v2
+        with:
+          path: package-temp-dir
+          key: lock-${{ github.sha }}
 
-    - name: create package-lock.json
-      run: npm i --package-lock-only
+      - name: create package-lock.json
+        run: npm i --package-lock-only
 
-    - name: hack for singe file
-      run: |
-        if [ ! -d "package-temp-dir" ]; then
-          mkdir package-temp-dir
-        fi
-        cp package-lock.json package-temp-dir
+      - name: hack for singe file
+        run: |
+          if [ ! -d "package-temp-dir" ]; then
+            mkdir package-temp-dir
+          fi
+          cp package-lock.json package-temp-dir
 
-    - name: cache node_modules
-      id: node_modules_cache_id
-      uses: actions/cache@v2
-      with:
-        path: node_modules
-        key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
+      - name: cache node_modules
+        id: node_modules_cache_id
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
 
-    - name: install
-      if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-      run: npm ci
+      - name: install
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
+        run: npm ci
 
-    - name: eslint
-      run: npm run eslint
+      - name: eslint
+        run: npm run eslint
 
-    - name: coverage
-      run: npm run coverage
+      - name: coverage
+        run: npm run coverage
 
-    - name: build
-      run: npm run build
+      - name: build
+        run: npm run build
 
-    - name: build:docs
-      run: npm run build:docs
+      - name: build:docs
+        run: npm run build:docs
 
-    - name: moveCoverage
-      run: sh ./scripts/mv-coverage.sh
+      - name: moveCoverage
+        run: sh ./scripts/mv-coverage.sh

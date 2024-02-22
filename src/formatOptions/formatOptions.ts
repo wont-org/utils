@@ -22,12 +22,13 @@
  */
 
 export const formatOptions = (
-    arr: Record<string, string | number>[],
-    fieldNames = {
-        value: 'key',
-        label: 'value',
-    },
-) => arr.map((item) => ({
+  arr: Record<string, string | number>[],
+  fieldNames = {
+    value: 'key',
+    label: 'value',
+  }
+) =>
+  arr.map((item) => ({
     value: item[fieldNames.value],
     label: item[fieldNames.label],
-}))
+  }))
