@@ -61,7 +61,7 @@ class Docs {
       children: sidebar,
     }
     result.themeConfig.sidebar = mdList.concat(utilsGroup)
-    result = JSON.stringify(result, null, 4)
+    result = JSON.stringify(result, null, 2)
     writeFileSync(path, `module.exports = ${result}\n`, 'utf-8')
   }
 
