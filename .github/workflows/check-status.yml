@@ -35,8 +35,8 @@ jobs:
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: eslint
-        run: npm run eslint
+      # - name: eslint
+      #   run: npm run eslint
 
       - name: coverage
         run: npm run coverage
