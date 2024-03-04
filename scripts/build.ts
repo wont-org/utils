@@ -22,7 +22,7 @@ class Build {
     const { inputs, lib } = this.state
     if (inputs.length === 0) {
       const err = new Error(
-        'No files can be built, expect more than 1, but got 0'
+        'No files can be built, expect more than 1, but got 0',
       )
       consola.error(err)
       process.exit(0)
@@ -83,7 +83,7 @@ class Build {
     await Promise.all(
       rollupConfig.map(async (config) => {
         await this.build(config)
-      })
+      }),
     )
       .then(() => {
         fs.writeFileSync(esOutputFile, desc + esInputScript)

@@ -87,15 +87,15 @@ describe('number 规则测试', () => {
 describe('url 规则测试', () => {
   test('符合url', () => {
     expect(
-      validator('url', 'http://www.baidu.com/#/index?type=hash&id=8080&index=0')
+      validator('url', 'http://www.baidu.com/#/index?type=hash&id=8080&index=0'),
     ).toBeTruthy()
   })
   test('不符合url', () => {
     expect(
       validator(
         'url',
-        'http://localhost:8088/#/index?type=hash&id=8080&index=0'
-      )
+        'http://localhost:8088/#/index?type=hash&id=8080&index=0',
+      ),
     ).toBeFalsy()
   })
 })

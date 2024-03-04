@@ -26,9 +26,8 @@ export const formatOptions = (
   fieldNames = {
     value: 'key',
     label: 'value',
-  }
-) =>
-  arr.map((item) => ({
-    value: item[fieldNames.value],
-    label: item[fieldNames.label],
-  }))
+  },
+) => arr.map((item) => ({
+  value: item[fieldNames.value],
+  label: item[fieldNames.label],
+}))

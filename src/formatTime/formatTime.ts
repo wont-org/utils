@@ -35,14 +35,14 @@ export function formatTime(timestamp: number, fmt = 'yyyy-MM-dd'): string {
       date
         .getFullYear()
         .toString()
-        .substr(4 - RegExp.$1.length)
+        .substr(4 - RegExp.$1.length),
     )
   }
   for (const k in o) {
     if (new RegExp(`(${k})`).test(result)) {
       result = result.replace(
         RegExp.$1,
-        RegExp.$1.length === 1 ? o[k] : `00${o[k]}`.substr(`${o[k]}`.length)
+        RegExp.$1.length === 1 ? o[k] : `00${o[k]}`.substr(`${o[k]}`.length),
       )
     }
   }

@@ -3,8 +3,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     // 'eslint:recommended',
-    // 'plugin:@typescript-eslint/recommended',
     'airbnb-base',
+    'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:jest/recommended',
   ],
@@ -57,7 +57,7 @@ module.exports = {
       },
     ],
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
-    'no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ],

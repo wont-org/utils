@@ -12,7 +12,7 @@ describe('formatOptions 方法测试', () => {
           key: 'b',
           value: 2,
         },
-      ])
+      ]),
     ).toStrictEqual([
       {
         value: 'a',
@@ -40,8 +40,8 @@ describe('formatOptions 方法测试', () => {
         {
           value: 'key',
           label: 'value',
-        }
-      )
+        },
+      ),
     ).toStrictEqual([
       {
         value: 'a',

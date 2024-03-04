@@ -12,7 +12,7 @@ describe('arrayToObject 方法测试', () => {
           value: 'b',
           label: 2,
         },
-      ])
+      ]),
     ).toStrictEqual({ a: 1, b: 2 })
   })
   test('execute param fieldNames use custom', () => {
@@ -31,8 +31,8 @@ describe('arrayToObject 方法测试', () => {
         {
           key: 'key',
           value: 'value',
-        }
-      )
+        },
+      ),
     ).toStrictEqual({ a: 1, b: 2 })
   })
 })

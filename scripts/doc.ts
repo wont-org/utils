@@ -1,6 +1,8 @@
 import jsdoc2md from 'jsdoc-to-markdown'
 import glob from 'glob'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
+import {
+  existsSync, mkdirSync, readFileSync, writeFileSync,
+} from 'fs'
 import { removeSync } from 'fs-extra'
 
 interface State {

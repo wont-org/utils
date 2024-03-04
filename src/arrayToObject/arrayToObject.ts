@@ -26,7 +26,7 @@ export const arrayToObject = (
   fieldNames = {
     key: 'value',
     value: 'label',
-  }
+  },
 ) => {
   const result = {}
   arr.forEach((item) => {

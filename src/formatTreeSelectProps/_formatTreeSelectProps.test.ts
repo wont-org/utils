@@ -55,7 +55,7 @@ describe('formatTreeSelectProps 方法测试', () => {
     expect(
       formatTreeSelectProps({
         tree: beforeTree,
-      })
+      }),
     ).toStrictEqual(afterTree)
   })
 })
