@@ -24,15 +24,27 @@ module.exports = {
         link: '/coverage/lcov-report/index',
       },
       {
-        text: '生态系统',
+        text: '其他个人作品',
         items: [
           {
-            text: '脚手架',
-            link: 'https://github.com/wont-org/cli',
+            text: 'react组件库',
+            link: 'https://wont-org.github.io/pro-react-ui',
           },
           {
-            text: 'react组件库',
-            link: 'https://github.com/wont-org/utils',
+            text: 'eslint-plugin-vue3-jsx',
+            link: 'https://github.com/lk0606/lint/tree/master/packages/eslint-plugin-vue3-jsx',
+          },
+          {
+            text: '库打包工具',
+            link: 'https://github.com/wont-org/tools',
+          },
+          {
+            text: 'vue3组件库',
+            link: 'https://github.com/wont-org/vue3-el',
+          },
+          {
+            text: 'react脚手架',
+            link: 'https://github.com/wont-org/cli',
           },
         ],
       },
