@@ -5,7 +5,7 @@ jobs:
   check-status:
     runs-on: ubuntu-latest
     steps:
-      - name: Node Version
+      - name: set node version
         uses: actions/setup-node@v3
         with:
           node-version: 16

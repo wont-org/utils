@@ -8,10 +8,15 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: set node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: checkout
         uses: actions/checkout@master
 
-      - name: Set up NPM authentication
+      - name: set up NPM authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
 
       - name: cache package-lock.json
