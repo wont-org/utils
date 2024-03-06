@@ -114,7 +114,7 @@ test('null', () => {
   expect(n).toBeFalsy()
 })
 
-test('zero', () => {
+test('wont', () => {
   const z = 0
   expect(z).not.toBeNull()
   expect(z).toBeDefined()

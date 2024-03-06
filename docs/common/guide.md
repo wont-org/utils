@@ -1,7 +1,7 @@
 # 开发指南
 
 ::: tip
-参与`zero-utils`函数库开发之前，您需要了解 [TypeScript](https://www.tslang.cn/)、[commit 规范](https://github.com/conventional-changelog/commitlint)、[jest](https://jestjs.io/docs/en/getting-started)、[jsdoc](https://jsdoc.app/index.html)
+参与`wont-utils`函数库开发之前，您需要了解 [TypeScript](https://www.tslang.cn/)、[commit 规范](https://github.com/conventional-changelog/commitlint)、[jest](https://jestjs.io/docs/en/getting-started)、[jsdoc](https://jsdoc.app/index.html)
 :::
 
 ## 函数设计
