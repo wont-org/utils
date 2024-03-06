@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708567064157" clover="3.2.0">
-  <project timestamp="1708567064157" name="All files">
-    <metrics statements="78" coveredstatements="78" conditionals="33" coveredconditionals="30" methods="19" coveredmethods="19" elements="130" coveredelements="127" complexity="0" loc="78" ncloc="78" packages="11" files="11" classes="11"/>
+<coverage generated="1709715589890" clover="3.2.0">
+  <project timestamp="1709715589890" name="All files">
+    <metrics statements="103" coveredstatements="103" conditionals="47" coveredconditionals="42" methods="26" coveredmethods="26" elements="176" coveredelements="171" complexity="0" loc="103" ncloc="103" packages="15" files="15" classes="15"/>
+    <package name="arrayToObject">
+      <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="arrayToObject.ts" path="/home/runner/work/utils/utils/src/arrayToObject/arrayToObject.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="35" count="4" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+      </file>
+    </package>
     <package name="compose">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="compose.ts" path="/home/runner/work/utils/utils/src/compose/compose.ts">
@@ -39,6 +52,14 @@
         <line num="34" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="formatOptions">
+      <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="formatOptions.ts" path="/home/runner/work/utils/utils/src/formatOptions/formatOptions.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+      </file>
+    </package>
     <package name="formatTime">
       <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="formatTime.ts" path="/home/runner/work/utils/utils/src/formatTime/formatTime.ts">
@@ -52,7 +73,35 @@
         <line num="41" count="2" type="stmt"/>
         <line num="42" count="14" type="cond" truecount="1" falsecount="0"/>
         <line num="43" count="4" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="formatTree">
+      <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="5" methods="1" coveredmethods="1"/>
+      <file name="formatTree.ts" path="/home/runner/work/utils/utils/src/formatTree/formatTree.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="7" coveredconditionals="5" methods="1" coveredmethods="1"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="94" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="95" count="5" type="stmt"/>
+        <line num="96" count="5" type="stmt"/>
+        <line num="97" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="98" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="99" count="2" type="stmt"/>
+        <line num="101" count="3" type="stmt"/>
+        <line num="102" count="4" type="stmt"/>
+        <line num="108" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="109" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="formatTreeSelectProps">
+      <metrics statements="5" coveredstatements="5" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="formatTreeSelectProps.ts" path="/home/runner/work/utils/utils/src/formatTreeSelectProps/formatTreeSelectProps.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="89" count="3" type="stmt"/>
+        <line num="90" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
       </file>
     </package>
     <package name="get">
@@ -141,9 +190,9 @@
       <file name="validator.ts" path="/home/runner/work/utils/utils/src/validator/validator.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="66" count="22" type="stmt"/>
-        <line num="67" count="22" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="22" type="stmt"/>
+        <line num="70" count="22" type="stmt"/>
       </file>
     </package>
   </project>
