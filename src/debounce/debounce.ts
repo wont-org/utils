@@ -18,21 +18,21 @@
 
 type Func = (...rest: any[]) => void
 export function debounce(func: Function, wait = 300, immediate = false): Func {
-    let timer: NodeJS.Timeout | null
-    return function next(this: Func, ...rest: any[]) {
-        if (timer) {
-            clearTimeout(timer)
-        }
-        if (immediate) {
-            !timer && func.apply(this, rest)
-            timer = setTimeout(() => {
-                timer = null
-            }, wait)
-        } else {
-            timer = setTimeout(() => {
-                func.apply(this, rest)
-                timer = null
-            }, wait)
-        }
+  let timer: NodeJS.Timeout | null
+  return function next(this: Func, ...rest: any[]) {
+    if (timer) {
+      clearTimeout(timer)
     }
+    if (immediate) {
+      !timer && func.apply(this, rest)
+      timer = setTimeout(() => {
+        timer = null
+      }, wait)
+    } else {
+      timer = setTimeout(() => {
+        func.apply(this, rest)
+        timer = null
+      }, wait)
+    }
+  }
 }

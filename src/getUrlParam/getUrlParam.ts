@@ -10,8 +10,8 @@
  * getUrlParam('id', 'http://localhost:8088/#/index?type=hash&id=8080&index=0')  // returns '8080'
  */
 export function getUrlParam(name: string, url?: string): string {
-    const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`)
-    const href = url || window.location.href
-    const result = href.match(reg)
-    return (result && decodeURI(result[2])) || ''
+  const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`)
+  const href = url || window.location.href
+  const result = href.match(reg)
+  return (result && decodeURI(result[2])) || ''
 }

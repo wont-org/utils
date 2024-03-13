@@ -26,14 +26,14 @@
  */
 
 export const get = (object: object, path: string, defaultValue?: any): any => {
-    // a[3].b -> a.3.b
-    const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
-    let result = object
-    for (const key of paths) {
-        result = Object(result)[key]
-        if (result === undefined) {
-            return defaultValue
-        }
+  // a[3].b -> a.3.b
+  const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
+  let result = object
+  for (const key of paths) {
+    result = Object(result)[key]
+    if (result === undefined) {
+      return defaultValue
     }
-    return result
+  }
+  return result
 }

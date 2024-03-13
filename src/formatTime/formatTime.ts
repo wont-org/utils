@@ -18,35 +18,33 @@
  */
 
 export function formatTime(timestamp: number, fmt = 'yyyy-MM-dd'): string {
-    const date = new Date(timestamp)
-    let result = fmt
-    const o = {
-        'M+': date.getMonth() + 1, // 月份
-        'd+': date.getDate(), // 日
-        'h+': date.getHours(), // 小时
-        'm+': date.getMinutes(), // 分
-        's+': date.getSeconds(), // 秒
-        'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
-        S: date.getMilliseconds(), // 毫秒
+  const date = new Date(timestamp)
+  let result = fmt
+  const o = {
+    'M+': date.getMonth() + 1, // 月份
+    'd+': date.getDate(), // 日
+    'h+': date.getHours(), // 小时
+    'm+': date.getMinutes(), // 分
+    's+': date.getSeconds(), // 秒
+    'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
+    S: date.getMilliseconds(), // 毫秒
+  }
+  if (/(y+)/.test(fmt)) {
+    result = result.replace(
+      RegExp.$1,
+      date
+        .getFullYear()
+        .toString()
+        .substr(4 - RegExp.$1.length),
+    )
+  }
+  for (const k in o) {
+    if (new RegExp(`(${k})`).test(result)) {
+      result = result.replace(
+        RegExp.$1,
+        RegExp.$1.length === 1 ? o[k] : `00${o[k]}`.substr(`${o[k]}`.length),
+      )
     }
-    if (/(y+)/.test(fmt)) {
-        result = result.replace(
-            RegExp.$1,
-            date
-                .getFullYear()
-                .toString()
-                .substr(4 - RegExp.$1.length),
-        )
-    }
-    for (const k in o) {
-        if (new RegExp(`(${k})`).test(result)) {
-            result = result.replace(
-                RegExp.$1,
-                RegExp.$1.length === 1
-                    ? o[k]
-                    : `00${o[k]}`.substr(`${o[k]}`.length),
-            )
-        }
-    }
-    return result
+  }
+  return result
 }

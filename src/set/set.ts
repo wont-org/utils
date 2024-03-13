@@ -18,31 +18,31 @@
 
 export type Path = string | (string | number)[]
 export function set(object: object, path: Path, val: any): object {
-    const paths = Array.isArray(path)
-        ? path
-        : path.replace(/\[(\d+)\]/g, '.$1').split('.')
-    let current = object
-    const len = paths.length
-    let i = 0
-    while (i < len) {
-        const key = paths[i]
-        const isLast = i === len - 1
-        if (!current[key]) {
-            if (isLast) {
-                current[key] = val
-            } else {
-                const isArray = /^\d$/.test(paths[i + 1].toString())
-                current[key] = isArray ? [] : {}
-            }
-        }
-        if (isLast) {
-            current[key] = val
-        } else {
-            current = current[key]
-        }
-        i += 1
+  const paths = Array.isArray(path)
+    ? path
+    : path.replace(/\[(\d+)\]/g, '.$1').split('.')
+  let current = object
+  const len = paths.length
+  let i = 0
+  while (i < len) {
+    const key = paths[i]
+    const isLast = i === len - 1
+    if (!current[key]) {
+      if (isLast) {
+        current[key] = val
+      } else {
+        const isArray = /^\d$/.test(paths[i + 1].toString())
+        current[key] = isArray ? [] : {}
+      }
     }
-    return object
+    if (isLast) {
+      current[key] = val
+    } else {
+      current = current[key]
+    }
+    i += 1
+  }
+  return object
 }
 
 // const obj = {
