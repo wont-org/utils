@@ -78,6 +78,11 @@ module.exports = {
             path: '/src/compose',
           },
           {
+            title: 'convertObjKeys',
+            collapsable: false,
+            path: '/src/convertObjKeys',
+          },
+          {
             title: 'curry',
             collapsable: false,
             path: '/src/curry',
