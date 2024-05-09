@@ -4,7 +4,7 @@
 import { <%= name %> } from './<%= name %>'
 
 describe('<%= name %> 方法测试', () => {
-    test('execute', () => {
-        expect(<%= name %>(1)).toBe(1)
-    })
+  test('execute', () => {
+    expect(<%= name %>(1)).toBe(1)
+  })
 })

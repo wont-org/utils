@@ -14,5 +14,5 @@
  */
 
 export function <%= name %>(a: number): number {
-    return a
+  return a
 }
