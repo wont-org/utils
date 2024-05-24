@@ -1,6 +1,9 @@
 import {
-  decode as decodeAll, isValid, encode, encodeURI,
-} from 'js-base64'
+  decode as decodeAll,
+  isValid,
+  encode,
+  encodeURI,
+} from 'js-base64/base64.mjs'
 
 /**
  * @description base64 编码解码，包含encode、encodeURI、decode。decode时排除特殊字符

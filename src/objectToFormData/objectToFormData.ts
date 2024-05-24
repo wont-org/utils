@@ -8,8 +8,9 @@
  * import { objectToFormData } from '@wont/utils'
  * objectToFormData({a:1})  // returns 1
  */
-import snakeCase from 'lodash/snakeCase'
-import isNaN from 'lodash/isNaN'
+import {
+  snakeCase, isNaN,
+} from 'lodash-es'
 
 interface NestedObj {
   [key: string]: NestedObj | string | number | File | File[] | any

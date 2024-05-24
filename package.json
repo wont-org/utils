@@ -83,10 +83,10 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@types/jest": "^26.0.7",
-    "@types/lodash": "^4.17.1",
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^4",
     "@typescript-eslint/parser": "^4",
-    "@wont/tools": "^0.0.1-beta.2",
+    "@wont/tools": "^0.0.1-beta.3",
     "chalk": "^4.1.0",
     "cli-color": "^2.0.0",
     "commitizen": "^4.1.2",
@@ -117,6 +117,6 @@
   },
   "dependencies": {
     "js-base64": "^3.7.7",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   }
 }

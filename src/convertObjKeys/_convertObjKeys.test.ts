@@ -1,4 +1,4 @@
-import snakeCase from 'lodash/snakeCase.js'
+import { snakeCase } from 'lodash-es'
 import { convertObjKeys } from './convertObjKeys'
 
 describe('convertObjKeys 方法测试', () => {
