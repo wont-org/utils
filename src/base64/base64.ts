@@ -1,9 +1,6 @@
 import {
-  decode as decodeAll,
-  isValid,
-  encode,
-  encodeURI,
-} from 'js-base64/base64.mjs'
+  decode as decodeAll, isValid, encode, encodeURI,
+} from 'js-base64'
 
 /**
  * @description base64 编码解码，包含encode、encodeURI、decode。decode时排除特殊字符
@@ -13,8 +10,12 @@ import {
  * @throws {TypeError} 异常的描述
  * @author liukun <919590347@qq.com>
  * @example
- * import { decode } from '@wont/utils'
- * decode(1)  // returns 1
+ * import { base64 } from '@wont/utils'
+
+ * const query = '(ip.port="443") && country=="中国"'
+ * base64.encode(query)  // returns KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i
+ * base64.encodeURI(query)  // url safe returns KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i
+ * base64.decode(KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i)  // '(ip.port="443") && country=="中国"'
  */
 
 const hasInvalidEncoding = (str: string): boolean => /[�]/.test(str)
