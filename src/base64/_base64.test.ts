@@ -4,7 +4,7 @@ import {
 import { base64 } from './base64'
 
 jest.mock('js-base64', () => ({
-  ...jest.requireActual('js-base64'),
+  ...(jest.requireActual('js-base64') as Record<string, any>),
   decode: jest.fn(),
   isValid: jest.fn(),
   encode: jest.fn(),
