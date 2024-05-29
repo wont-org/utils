@@ -27,6 +27,7 @@ yarn-error.log*
 
 lib/
 es/
+.yalc
 
 # Created by https://www.gitignore.io/api/sublimetext,webstorm
 
