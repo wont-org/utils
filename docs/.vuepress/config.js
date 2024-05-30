@@ -73,6 +73,11 @@ module.exports = {
             path: '/src/arrayToObject',
           },
           {
+            title: 'base64',
+            collapsable: false,
+            path: '/src/base64',
+          },
+          {
             title: 'compose',
             collapsable: false,
             path: '/src/compose',
@@ -128,6 +133,26 @@ module.exports = {
             path: '/src/getUrlParam',
           },
           {
+            title: 'getUrlParams',
+            collapsable: false,
+            path: '/src/getUrlParams',
+          },
+          {
+            title: 'getUrlSearch',
+            collapsable: false,
+            path: '/src/getUrlSearch',
+          },
+          {
+            title: 'isFileName',
+            collapsable: false,
+            path: '/src/isFileName',
+          },
+          {
+            title: 'objectToFormData',
+            collapsable: false,
+            path: '/src/objectToFormData',
+          },
+          {
             title: 'set',
             collapsable: false,
             path: '/src/set',
@@ -146,6 +171,11 @@ module.exports = {
             title: 'validator',
             collapsable: false,
             path: '/src/validator',
+          },
+          {
+            title: 'winOpen',
+            collapsable: false,
+            path: '/src/winOpen',
           },
         ],
       },

@@ -7,6 +7,10 @@
 
 - [lodash](https://github.com/lodash/lodash)
 
+### 校验库
+
+- [validatorjs](https://github.com/validatorjs/validator.js/)
+
 ### url 处理
 
 - [urijs](https://github.com/medialize/URI.js)
