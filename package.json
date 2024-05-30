@@ -1,10 +1,11 @@
 {
   "name": "@wont/utils",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
+  "unpkg": "dist/umd.min.js",
   "keywords": [
     "@wont",
     "utils",
@@ -86,7 +87,7 @@
     "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^4",
     "@typescript-eslint/parser": "^4",
-    "@wont/tools": "0.0.1-beta.4",
+    "@wont/tools": "0.0.1-beta.5",
     "chalk": "^4.1.0",
     "cli-color": "^2.0.0",
     "commitizen": "^4.1.2",
