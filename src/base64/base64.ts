@@ -3,11 +3,37 @@ import {
 } from 'js-base64'
 
 /**
- * @description base64 编码解码，包含encode、encodeURI、decode。decode时排除特殊字符
- * @function base64
- * @param {number} a - 参数a的描述
- * @returns {number} 返回值的描述
- * @throws {TypeError} 异常的描述
+ * @description base64.encode base64编码，用来接口传输
+ * @function encode
+ * @param {string} str - 要编码的字符串
+ * @returns {string} 返回编码后的结果
+ * @author liukun <919590347@qq.com>
+ * @example
+ * import { base64 } from '@wont/utils'
+
+ * const query = '(ip.port="443") && country=="中国"'
+ * base64.encode(query)  // returns KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i
+ */
+
+/**
+ *
+ * @description base64.encodeURI  base64编码为url safe的字符串，用来作为URL参数跳转
+ * @function encodeURI
+ * @param {string} str - 要编码为url safe的字符串
+ * @returns {string} 返回编码后的结果
+ * @author liukun <919590347@qq.com>
+ * @example
+ * import { base64 } from '@wont/utils'
+
+ * const query = '(ip.port="443") && country=="中国"'
+ * base64.encodeURI(query)  // url safe returns KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i
+ */
+
+/**
+ * @description base64.decode  base64解码，能解码base64.encode和base64.encodeURI
+ * @function decode
+ * @param {string} str - 要解码的字符串
+ * @returns {string} 返回编码后的结果
  * @author liukun <919590347@qq.com>
  * @example
  * import { base64 } from '@wont/utils'

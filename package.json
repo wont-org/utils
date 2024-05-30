@@ -1,6 +1,6 @@
 {
   "name": "@wont/utils",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "@wont/utils is javascript library, written with typescript. supporting browser and node",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -16,6 +16,7 @@
     "email": "919590347@qq.com"
   },
   "files": [
+    "dist",
     "es",
     "lib"
   ],
