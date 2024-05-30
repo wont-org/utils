@@ -28,7 +28,7 @@ module.exports = {
         items: [
           {
             text: 'react组件库',
-            link: 'https://wont-org.github.io/pro-react-ui',
+            link: 'https://wont-org.github.io/biz-ui',
           },
           {
             text: 'eslint-plugin-vue3-jsx',
@@ -39,8 +39,16 @@ module.exports = {
             link: 'https://github.com/wont-org/tools',
           },
           {
+            text: 'antd可拖拽表格',
+            link: 'https://github.com/wont-org/use-antd-resizable-header',
+          },
+          {
             text: 'vue3组件库',
             link: 'https://github.com/wont-org/vue3-el',
+          },
+          {
+            text: 'vue3后台模板',
+            link: 'https://github.com/wont-org/v3-backend-tpl',
           },
           {
             text: 'react脚手架',
