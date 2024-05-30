@@ -16,6 +16,7 @@
     "email": "919590347@qq.com"
   },
   "files": [
+    "dist",
     "es",
     "lib"
   ],
