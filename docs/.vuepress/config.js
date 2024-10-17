@@ -156,6 +156,16 @@ module.exports = {
             path: '/src/isFileName',
           },
           {
+            title: 'locale',
+            collapsable: false,
+            path: '/src/locale',
+          },
+          {
+            title: 'LRUCache',
+            collapsable: false,
+            path: '/src/LRUCache',
+          },
+          {
             title: 'objectToFormData',
             collapsable: false,
             path: '/src/objectToFormData',

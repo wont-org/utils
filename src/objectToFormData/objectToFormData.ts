@@ -8,9 +8,7 @@
  * import { objectToFormData } from '@wont/utils'
  * objectToFormData({a:1})  // returns 1
  */
-import {
-  snakeCase, isNaN,
-} from 'lodash-es'
+import { isNaN } from 'lodash-es'
 
 interface NestedObj {
   [key: string]: NestedObj | string | number | File | File[] | any
@@ -20,7 +18,7 @@ export const objectToFormData = (
   rawParentKey = '',
 ): FormData => {
   // console.log('obj :>> ', obj);
-  const parentKey = snakeCase(rawParentKey)
+  const parentKey = rawParentKey
   const formData = new FormData()
   for (const key in obj) {
     if (Object.hasOwnProperty.call(obj, key)) {
@@ -29,9 +27,7 @@ export const objectToFormData = (
         continue
       }
       // console.log('key,value :>> ', key, value);
-      const propName = parentKey
-        ? `${snakeCase(parentKey)}[${snakeCase(key)}]`
-        : snakeCase(key)
+      const propName = parentKey ? `${parentKey}[${key}]` : key
       if (value instanceof File) {
         formData.append(propName, value)
       } else if (typeof value === 'object' && !Array.isArray(value)) {
