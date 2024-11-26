@@ -91,12 +91,12 @@ interface Param {
 }
 
 export function formatTree(param: Param): boolean | void {
-  const { tree, cb, level = 1, key = 'children' } = param
-  const treeItem = tree[key]
-  const editedObj = cb(tree, level)
-  if (editedObj) return editedObj
+  const { tree, cb, level = 1, key = 'children' } = param;
+  const treeItem = tree[key];
+  const editedObj = cb(tree, level);
+  if (editedObj) return editedObj;
   if (!(Array.isArray(treeItem) && treeItem.length > 0)) {
-    return true
+    return true;
   }
   for (const item of treeItem) {
     const needStop = formatTree({
@@ -104,9 +104,9 @@ export function formatTree(param: Param): boolean | void {
       cb,
       key,
       level: level + 1,
-    })
+    });
     if (needStop) {
-      break
+      break;
     }
   }
 }

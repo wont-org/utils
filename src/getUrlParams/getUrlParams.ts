@@ -12,10 +12,10 @@
 export function getUrlParams(
   url: string = window.location.href,
 ): Record<string, string> {
-  const result = {}
+  const result = {};
   url.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => {
-    result[k] = v
-    return v
-  })
-  return result
+    result[k] = v;
+    return v;
+  });
+  return result;
 }

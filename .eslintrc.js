@@ -24,7 +24,7 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
-    semi: ['error', 'never'],
+    semi: ['error', 'always'],
     'no-restricted-syntax': 0,
     'no-continue': 0,
     'max-len': 0,
@@ -63,4 +63,4 @@ module.exports = {
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ],
   },
-}
+};

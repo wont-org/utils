@@ -10,16 +10,16 @@
  */
 
 export const isFileName = (val: string): Promise<string> => {
-  const allSpaceReg = /^\s*$/
-  const specCharsReg = /[\\/:*?"<>|]/
+  const allSpaceReg = /^\s*$/;
+  const specCharsReg = /[\\/:*?"<>|]/;
   if (!val) {
-    return Promise.resolve('')
+    return Promise.resolve('');
   }
   if (specCharsReg.test(val)) {
-    return Promise.resolve('文件名称不可输入\\ / : * ? " < > |')
+    return Promise.resolve('文件名称不可输入\\ / : * ? " < > |');
   }
   if (allSpaceReg.test(val)) {
-    return Promise.resolve('文件名称不可只输入空格')
+    return Promise.resolve('文件名称不可只输入空格');
   }
-  return Promise.resolve('')
-}
+  return Promise.resolve('');
+};

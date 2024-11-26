@@ -62,10 +62,10 @@ const rulesInfo = {
     rules:
       /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/,
   },
-}
+};
 
 type ValidType = keyof typeof rulesInfo
 export function validator(type: ValidType, val: string): boolean {
-  const rules = rulesInfo[type].rules
-  return rules.test(val)
+  const rules = rulesInfo[type].rules;
+  return rules.test(val);
 }

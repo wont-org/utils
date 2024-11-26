@@ -17,32 +17,36 @@
  */
 
 export type Path = string | (string | number)[]
-export function set(object: object, path: Path, val: any): object {
+export function set(
+  object: Record<string, any>,
+  path: Path,
+  val: any,
+): Record<string, any> {
   const paths = Array.isArray(path)
     ? path
-    : path.replace(/\[(\d+)\]/g, '.$1').split('.')
-  let current = object
-  const len = paths.length
-  let i = 0
+    : path.replace(/\[(\d+)\]/g, '.$1').split('.');
+  let current = object;
+  const len = paths.length;
+  let i = 0;
   while (i < len) {
-    const key = paths[i]
-    const isLast = i === len - 1
+    const key = paths[i];
+    const isLast = i === len - 1;
     if (!current[key]) {
       if (isLast) {
-        current[key] = val
+        current[key] = val;
       } else {
-        const isArray = /^\d$/.test(paths[i + 1].toString())
-        current[key] = isArray ? [] : {}
+        const isArray = /^\d$/.test(paths[i + 1].toString());
+        current[key] = isArray ? [] : {};
       }
     }
     if (isLast) {
-      current[key] = val
+      current[key] = val;
     } else {
-      current = current[key]
+      current = current[key];
     }
-    i += 1
+    i += 1;
   }
-  return object
+  return object;
 }
 
 // const obj = {

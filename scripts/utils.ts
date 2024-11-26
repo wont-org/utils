@@ -1,12 +1,12 @@
-import clc from 'cli-color'
+import clc from 'cli-color';
 
-let isFirstFile = true
+let isFirstFile = true;
 export function getFileSizeInfo(
   options,
   bundle,
   { fileName, minSize, gzipSize, bundleSize },
 ) {
-  let output = ''
+  let output = '';
   if (isFirstFile) {
     output = `${clc.move.right(40 - 'FileName'.length)}${clc.bold(
       'FileName',
@@ -16,9 +16,9 @@ export function getFileSizeInfo(
       'BundleSize',
     )}${clc.move.right(15 - 'MinSize'.length)}${clc.bold(
       'MinSize',
-    )}${clc.move.right(15 - 'GzipSize'.length)}${clc.bold('GzipSize')}\n`
+    )}${clc.move.right(15 - 'GzipSize'.length)}${clc.bold('GzipSize')}\n`;
   }
-  isFirstFile = false
+  isFirstFile = false;
   return `${output}${clc.move.right(40 - fileName.length)}${clc.green(
     fileName,
   )}${clc.move.right(15 - bundle.format.length)}${clc.green(
@@ -27,5 +27,5 @@ export function getFileSizeInfo(
     bundleSize,
   )}${clc.move.right(15 - minSize.length)}${clc.green(minSize)}${clc.move.right(
     15 - gzipSize.length,
-  )}${clc.green(gzipSize)}`
+  )}${clc.green(gzipSize)}`;
 }

@@ -30,4 +30,4 @@ export const formatOptions = (
 ) => arr.map((item) => ({
   value: item[fieldNames.value],
   label: item[fieldNames.label],
-}))
+}));

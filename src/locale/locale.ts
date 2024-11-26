@@ -36,7 +36,7 @@ const getLocaleData = <T extends LocaleSourceData>(
   lang: LangType,
 ): Record<string, string> => Object.fromEntries(
     Object.entries(data).map(([key, value]) => [key, value[lang]]),
-  )
+  );
 
 /**
  * 格式化国际化数据，为每个键添加一个 `id` 字段。
@@ -49,7 +49,7 @@ const formatLocaleData = <T extends LocaleSourceData>(
   data: T,
 ): Record<string, LocaleSourceObj & { id: string }> => Object.fromEntries(
     Object.entries(data).map(([key, value]) => [key, { ...value, id: key }]),
-  )
+  );
 
 /**
  * 国际化数据处理模块。
@@ -79,4 +79,4 @@ const formatLocaleData = <T extends LocaleSourceData>(
 export const locale = {
   getLocaleData,
   formatLocaleData,
-}
+};

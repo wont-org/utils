@@ -101,11 +101,11 @@ export const formatTreeSelectProps: FormatTreeSelectProps = ({
         fieldNames,
         parentSelectable,
       }),
-    }
+    };
   }
   return {
     ...item,
     value: item[fieldNames.value],
     label: item[fieldNames.label],
-  }
-})
+  };
+});

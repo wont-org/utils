@@ -12,7 +12,7 @@
  */
 
 export function toFirstCase(word: string): string {
-  const temp = word.toLowerCase()
-  const result = temp.charAt(0).toUpperCase() + temp.slice(1)
-  return result
+  const temp = word.toLowerCase();
+  const result = temp.charAt(0).toUpperCase() + temp.slice(1);
+  return result;
 }

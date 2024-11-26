@@ -1,4 +1,4 @@
-import { formatOptions } from './formatOptions'
+import { formatOptions } from './formatOptions';
 
 describe('formatOptions 方法测试', () => {
   test('execute param fieldNames use default', () => {
@@ -22,8 +22,8 @@ describe('formatOptions 方法测试', () => {
         value: 'b',
         label: 2,
       },
-    ])
-  })
+    ]);
+  });
   test('execute param fieldNames use custom', () => {
     expect(
       formatOptions(
@@ -51,6 +51,6 @@ describe('formatOptions 方法测试', () => {
         value: 'b',
         label: 2,
       },
-    ])
-  })
-})
+    ]);
+  });
+});

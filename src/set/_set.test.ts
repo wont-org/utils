@@ -2,14 +2,14 @@ import {
   set,
   // eslint-disable-next-line no-unused-vars
   Path,
-} from './set'
+} from './set';
 
 const obj = {
   editVal: 0,
   editArrVal: [0],
   setNestVal: {},
   setArrVal: [],
-}
+};
 const testCase = [
   [
     'editVal',
@@ -52,13 +52,13 @@ const testCase = [
       arr: [0],
     },
   ],
-]
+];
 
 describe('set 方法测试', () => {
   testCase.forEach((item) => {
-    const [path, val, result] = item
+    const [path, val, result] = item;
     test(`set ${path}`, () => {
-      expect(set(obj, path as Path, val)).toEqual(result)
-    })
-  })
-})
+      expect(set(obj, path as Path, val)).toEqual(result);
+    });
+  });
+});

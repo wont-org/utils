@@ -23,8 +23,8 @@ export class LRUCache {
    * @param {number} [len=0] - lru缓存上限，默认为0，无上限。
    */
   constructor(len = 0) {
-    this.#map = new Map()
-    this.#length = len
+    this.#map = new Map();
+    this.#length = len;
   }
 
   /**
@@ -33,7 +33,7 @@ export class LRUCache {
    * @returns {boolean} 是否存在缓存
    */
   has(key: unknown): boolean {
-    return this.#map.has(key)
+    return this.#map.has(key);
   }
 
   /**
@@ -43,15 +43,15 @@ export class LRUCache {
    */
   get(key?: unknown): unknown | null | Map<unknown, unknown> {
     if (!key) {
-      return this.#map
+      return this.#map;
     }
     if (!this.has(key)) {
-      return null
+      return null;
     }
-    const val = this.#map.get(key)
-    this.#map.delete(key)
-    this.#map.set(key, val)
-    return this.#map.get(key)
+    const val = this.#map.get(key);
+    this.#map.delete(key);
+    this.#map.set(key, val);
+    return this.#map.get(key);
   }
 
   /**
@@ -62,12 +62,12 @@ export class LRUCache {
    */
   set(key: unknown, val: unknown): void {
     if (this.has(key)) {
-      this.#map.delete(key)
+      this.#map.delete(key);
     }
-    this.#map.set(key, val)
+    this.#map.set(key, val);
     if (this.#length > 0 && this.#map.size > this.#length) {
-      const firstEle = this.#map.keys().next().value
-      this.#map.delete(firstEle)
+      const firstEle = this.#map.keys().next().value;
+      this.#map.delete(firstEle);
     }
   }
 }

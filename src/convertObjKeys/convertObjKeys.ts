@@ -17,18 +17,18 @@ export const convertObjKeys = (
   convertFn: (key: string) => string,
 ): any => {
   if (!data || typeof data !== 'object') {
-    return data
+    return data;
   }
   if (Array.isArray(data)) {
-    return data.map((item) => convertObjKeys(item, convertFn))
+    return data.map((item) => convertObjKeys(item, convertFn));
   }
-  const newObj: Record<string, any> = {}
+  const newObj: Record<string, any> = {};
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
-      const newKey = convertFn(key)
-      const ele = data[key]
-      newObj[newKey] = convertObjKeys(ele, convertFn)
+      const newKey = convertFn(key);
+      const ele = data[key];
+      newObj[newKey] = convertObjKeys(ele, convertFn);
     }
   }
-  return newObj
-}
+  return newObj;
+};

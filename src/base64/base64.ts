@@ -1,6 +1,6 @@
 import {
   decode as decodeAll, isValid, encode, encodeURI,
-} from 'js-base64'
+} from 'js-base64';
 
 /**
  * @description base64.encode base64编码，用来接口传输
@@ -44,25 +44,25 @@ import {
  * base64.decode(KGlwLnBvcnQ9IjQ0MyIpICYmIGNvdW50cnk9PSLkuK3lm70i)  // '(ip.port="443") && country=="中国"'
  */
 
-const hasInvalidEncoding = (str: string): boolean => /[�]/.test(str)
+const hasInvalidEncoding = (str: string): boolean => /[�]/.test(str);
 
 const decode = (str: string): string => {
   if (typeof str !== 'string') {
-    return ''
+    return '';
   }
   try {
     if (!isValid(str)) {
-      return str
+      return str;
     }
-    const result = decodeAll(str)
+    const result = decodeAll(str);
     if (hasInvalidEncoding(result)) {
-      return str
+      return str;
     }
-    return result
+    return result;
   } catch (error) {
-    return str
+    return str;
   }
-}
+};
 
 export const base64 = {
   encode,
@@ -70,4 +70,4 @@ export const base64 = {
   decode,
   hasInvalidEncoding,
   isValid,
-}
+};

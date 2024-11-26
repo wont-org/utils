@@ -1,4 +1,4 @@
-import { formatTree } from './formatTree'
+import { formatTree } from './formatTree';
 
 describe('formatTree 方法测试', () => {
   test('execute', () => {
@@ -26,7 +26,7 @@ describe('formatTree 方法测试', () => {
           label: '2-1',
         },
       ],
-    }
+    };
     const afterTree = {
       id: 0,
       value: 0,
@@ -59,18 +59,18 @@ describe('formatTree 方法测试', () => {
           label: '2-1',
         },
       ],
-    }
+    };
     formatTree({
       tree: beforeTree,
       key: 'children',
       cb: (obj) => {
-        const result = obj
-        result.value = obj.id
+        const result = obj;
+        result.value = obj.id;
         if (result.children?.length > 0) {
-          result.selectable = false
+          result.selectable = false;
         }
       },
-    })
-    expect(beforeTree).toStrictEqual(afterTree)
-  })
-})
+    });
+    expect(beforeTree).toStrictEqual(afterTree);
+  });
+});

@@ -28,11 +28,11 @@ export const arrayToObject = (
     value: 'label',
   },
 ) => {
-  const result = {}
+  const result = {};
   arr.forEach((item) => {
-    const key = item[fieldNames.key]
-    const value = item[fieldNames.value]
-    result[key] = value
-  })
-  return result
-}
+    const key = item[fieldNames.key];
+    const value = item[fieldNames.value];
+    result[key] = value;
+  });
+  return result;
+};

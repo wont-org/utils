@@ -1,4 +1,4 @@
-import { arrayToObject } from './arrayToObject'
+import { arrayToObject } from './arrayToObject';
 
 describe('arrayToObject 方法测试', () => {
   test('execute param fieldNames use default', () => {
@@ -13,8 +13,8 @@ describe('arrayToObject 方法测试', () => {
           label: 2,
         },
       ]),
-    ).toStrictEqual({ a: 1, b: 2 })
-  })
+    ).toStrictEqual({ a: 1, b: 2 });
+  });
   test('execute param fieldNames use custom', () => {
     expect(
       arrayToObject(
@@ -33,6 +33,6 @@ describe('arrayToObject 方法测试', () => {
           value: 'value',
         },
       ),
-    ).toStrictEqual({ a: 1, b: 2 })
-  })
-})
+    ).toStrictEqual({ a: 1, b: 2 });
+  });
+});

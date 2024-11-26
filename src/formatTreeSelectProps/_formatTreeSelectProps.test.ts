@@ -1,4 +1,4 @@
-import { formatTreeSelectProps } from './formatTreeSelectProps'
+import { formatTreeSelectProps } from './formatTreeSelectProps';
 
 describe('formatTreeSelectProps 方法测试', () => {
   test('execute param only has tree', () => {
@@ -23,7 +23,7 @@ describe('formatTreeSelectProps 方法测试', () => {
         id: 2,
         label: '2-1',
       },
-    ]
+    ];
     const afterTree = [
       {
         id: 1,
@@ -51,11 +51,11 @@ describe('formatTreeSelectProps 方法测试', () => {
         value: 2,
         label: '2-1',
       },
-    ]
+    ];
     expect(
       formatTreeSelectProps({
         tree: beforeTree,
       }),
-    ).toStrictEqual(afterTree)
-  })
-})
+    ).toStrictEqual(afterTree);
+  });
+});

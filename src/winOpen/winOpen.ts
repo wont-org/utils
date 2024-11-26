@@ -17,15 +17,15 @@ export interface IWinOpenParams {
   query?: string | string[][] | Record<string, string> | URLSearchParams
 }
 export const winOpen = (obj: IWinOpenParams): void => {
-  const { path, query = {}, target = '_blank' } = obj
-  const urlParamsStr = new URLSearchParams(query).toString()
-  const paramsStr = urlParamsStr ? `?${urlParamsStr}` : ''
+  const { path, query = {}, target = '_blank' } = obj;
+  const urlParamsStr = new URLSearchParams(query).toString();
+  const paramsStr = urlParamsStr ? `?${urlParamsStr}` : '';
   const newWindow = window.open(
     `${path}${paramsStr}`,
     target,
     'noopener noreferrer',
-  )
+  );
   if (newWindow) {
-    newWindow.opener = null
+    newWindow.opener = null;
   }
-}
+};

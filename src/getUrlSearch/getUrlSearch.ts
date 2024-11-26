@@ -10,6 +10,6 @@
  */
 
 export const getUrlSearch = (obj: Record<string, string>): string => {
-  const searchParams = new URLSearchParams(obj)
-  return searchParams.toString()
-}
+  const searchParams = new URLSearchParams(obj);
+  return searchParams.toString();
+};

@@ -1,4 +1,4 @@
-import { get } from './get'
+import { get } from './get';
 
 const obj = {
   a: {
@@ -9,7 +9,7 @@ const obj = {
     ],
   },
   d: 'd',
-}
+};
 /*
  * get(obj, 'a.b')  // returns [{c:'c'}]
  * get(obj, 'd')  // returns 'd'
@@ -19,18 +19,18 @@ const obj = {
  */
 describe('get 方法测试', () => {
   test('execute d', () => {
-    expect(get(obj, 'd')).toEqual('d')
-  })
+    expect(get(obj, 'd')).toEqual('d');
+  });
   test('execute a.b', () => {
-    expect(get(obj, 'a.b')).toEqual([{ c: 'c' }])
-  })
+    expect(get(obj, 'a.b')).toEqual([{ c: 'c' }]);
+  });
   test('execute a.b[0].c', () => {
-    expect(get(obj, 'a.b[0].c')).toEqual('c')
-  })
+    expect(get(obj, 'a.b[0].c')).toEqual('c');
+  });
   test('execute e', () => {
-    expect(get(obj, 'e')).toEqual(undefined)
-  })
+    expect(get(obj, 'e')).toEqual(undefined);
+  });
   test('execute a.b[1].c 找不到属性，返回默认字符串', () => {
-    expect(get(obj, 'a.b[1].c', '默认字符串')).toEqual('默认字符串')
-  })
-})
+    expect(get(obj, 'a.b[1].c', '默认字符串')).toEqual('默认字符串');
+  });
+});

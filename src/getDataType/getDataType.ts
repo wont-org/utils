@@ -12,6 +12,6 @@
  */
 
 export function getDataType(data?: any): string {
-  const typeStr = Object.prototype.toString.call(data)
-  return typeStr.slice(typeStr.indexOf(' ') + 1, -1).toLowerCase()
+  const typeStr = Object.prototype.toString.call(data);
+  return typeStr.slice(typeStr.indexOf(' ') + 1, -1).toLowerCase();
 }

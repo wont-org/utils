@@ -25,15 +25,19 @@
  * get(obj, 'a.b[1].c', '默认字符串')  // returns '默认字符串'
  */
 
-export const get = (object: object, path: string, defaultValue?: any): any => {
+export const get = (
+  object: Record<string, any>,
+  path: string,
+  defaultValue?: unknown,
+): unknown => {
   // a[3].b -> a.3.b
-  const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.')
-  let result = object
+  const paths = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+  let result = object;
   for (const key of paths) {
-    result = Object(result)[key]
+    result = Object(result)[key];
     if (result === undefined) {
-      return defaultValue
+      return defaultValue;
     }
   }
-  return result
-}
+  return result;
+};
