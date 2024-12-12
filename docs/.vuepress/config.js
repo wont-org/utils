@@ -106,6 +106,11 @@ module.exports = {
             path: '/src/debounce',
           },
           {
+            title: 'findListDuplicatesByKeyList',
+            collapsable: false,
+            path: '/src/findListDuplicatesByKeyList',
+          },
+          {
             title: 'formatOptions',
             collapsable: false,
             path: '/src/formatOptions',

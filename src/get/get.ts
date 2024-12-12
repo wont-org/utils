@@ -26,7 +26,7 @@
  */
 
 export const get = (
-  object: Record<string, any>,
+  object: Record<string, unknown>,
   path: string,
   defaultValue?: unknown,
 ): unknown => {
