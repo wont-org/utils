@@ -10,21 +10,31 @@ import { get } from '../get/get';
  * @author liukun <919590347@qq.com>
  * @example
  * import { findListDuplicatesByKeyList } from '@wont/utils'
+ *
  * const data = [
  *   { id: 1, name: 'Alice', age: 25 },
  *   { id: 3, name: 'Alice', age: 25 },
  *   { id: 4, name: 'Charlie', age: 35 },
  *   { id: 5, name: 'Alice', age: 25 },
  * ];
- * findListDuplicatesByKeyList(data, ['name', 'age'])  // returns [{ id: 1, name: 'Alice', age: 25 }, { id: 3, name: 'Alice', age: 25 }, { id: 5, name: 'Alice', age: 25 }]
+ * const expectedData = [
+ *   { id: 1, name: 'Alice', age: 25 },
+ *   { id: 3, name: 'Alice', age: 25 },
+ *   { id: 5, name: 'Alice', age: 25 },
+ * ];
+ * findListDuplicatesByKeyList(data, ['name', 'age'])  // returns expectedData
  *
- * const data = [
+ * const data1 = [
  *     { id: 1, name: 'Alice', details: { age: 25, city: 'New York' } },
  *     { id: 2, name: 'Bob', details: { age: 30, city: 'Chicago' } },
  *     { id: 3, name: 'Alice', details: { age: 25, city: 'New York' } },
  *     { id: 4, name: 'Charlie', details: { age: 35, city: 'San Francisco' } },
  *   ];
- *   findListDuplicatesByKeyList(data, ['name', 'details.age']); // returns [{ id: 1, name: 'Alice', details:{ age: 25, city: 'New York' } },{ id: 3, name: 'Alice', details: { age: 25, city: 'New York' } }]
+ * const expectedData1 = [
+ *   { id: 1, name: 'Alice', details: { age: 25, city: 'New York' } },
+ *   { id: 3, name: 'Alice', details: { age: 25, city: 'New York' } },
+ * ];
+ * findListDuplicatesByKeyList(data1, ['name', 'details.age']); // returns expectedData1
  */
 
 export const findListDuplicatesByKeyList = <T extends Record<string, unknown>>(
