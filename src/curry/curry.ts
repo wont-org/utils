@@ -20,15 +20,29 @@
  * curried(1)(2)(3)  // returns expected
  * curried(1)(2, 3)  // returns expected
  */
+// type Curried<A extends unknown[], R> = A extends []
+//   ? ()=> R
+//   : A extends [infer P]
+//   ? (x: P) => R
+//   : A extends [infer F, ...infer Rest]
+//   ? (x: F) => Curried<Rest, R>
+//   : never;
 
-type Func = (...rest: any[]) => Func
-export function curry(func: Func, arity = func.length): Func {
-  return function carried(this: Func, ...args) {
-    if (args.length >= arity) {
-      return func.apply(this, args);
+// export function curry<A extends unknown[], R>(func: (...args: A) => R): Curried<A, R>;
+
+type Curried<A extends unknown[], R> = A extends [infer F, ...infer Rest]
+  ? (...args: [F, ...Partial<Rest>]) => Curried<Rest, R>
+  : () => R
+
+export function curry<A extends unknown[], R>(func: (...args: A) => R): Curried<A, R> {
+  return function curried(...args: A) {
+    if (args.length >= func.length) {
+      return func(...args);
     }
-    return function carried2(_this: Func, ...args2) {
-      return carried.apply(_this, args.concat(args2));
-    };
-  };
+    return (...nextArgs: A) => curried(...([...args, ...nextArgs] as A));
+  } as Curried<A, R>;
 }
+
+const sum = (a: number, b: string, c: boolean) => a + b + c;
+const d = curry(sum);
+d(1, '', false);
