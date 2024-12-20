@@ -30,4 +30,9 @@ describe('curry 方法测试', () => {
   test('curriedSum(1)(2, 3)', () => {
     expect(curriedSum(1)(2, 3)).toEqual(6);
   });
+  const sumNoArgs = () => 1;
+  test('curriedNoArgs()', () => {
+    const curriedNoArgs = curry(sumNoArgs);
+    expect(curriedNoArgs()).toEqual(1);
+  });
 });
