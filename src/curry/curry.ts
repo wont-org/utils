@@ -42,7 +42,3 @@ export function curry<A extends unknown[], R>(func: (...args: A) => R): Curried<
     return (...nextArgs: A) => curried(...([...args, ...nextArgs] as A));
   } as Curried<A, R>;
 }
-
-const sum = (a: number, b: string, c: boolean) => a + b + c;
-const d = curry(sum);
-d(1, '', false);

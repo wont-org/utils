@@ -2,5 +2,7 @@ module.exports = {
   singleQuote: true,
   semi: false,
   tabWidth: 2,
-  endOfLine: 'lf', // lf-mac crlf-win
+  printWidth: 100,
+  // lf-mac crlf-win
+  endOfLine: 'lf',
 }
