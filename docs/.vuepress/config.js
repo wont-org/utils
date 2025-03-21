@@ -141,6 +141,11 @@ module.exports = {
             path: '/src/getDataType',
           },
           {
+            title: 'getSelectOptionsBy',
+            collapsable: false,
+            path: '/src/getSelectOptionsBy',
+          },
+          {
             title: 'getUrlParam',
             collapsable: false,
             path: '/src/getUrlParam',
