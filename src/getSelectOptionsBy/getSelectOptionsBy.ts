@@ -3,11 +3,11 @@
  * @function getSelectOptionsBy
  * @param {Array<T>} data - 要转换的数据数组
  * @param {Object} [fieldNames] - 自定义字段名称配置
- * @param {string|Function} [fieldNames.groupNameField='groupName'] - 分组名称字段或获取函数
- * @param {string|Function} [fieldNames.groupIdField='groupId'] - 分组ID字段或获取函数
- * @param {string|Function} [fieldNames.labelField='label'] - 标签字段或获取函数
- * @param {string|Function} [fieldNames.valueField='value'] - 值字段或获取函数
- * @param {string} [fieldNames.childrenField='options'] - 子选项字段名称
+ * @param {string|Function} [fieldNames.groupNameField=groupName] - 分组名称字段或获取函数
+ * @param {string|Function} [fieldNames.groupIdField=groupId] - 分组ID字段或获取函数
+ * @param {string|Function} [fieldNames.labelField=label] - 标签字段或获取函数
+ * @param {string|Function} [fieldNames.valueField=value] - 值字段或获取函数
+ * @param {string} [fieldNames.childrenField=options] - 子选项字段名称
  * @returns {Array<Object>} 分组后的选择器选项，每个项包含label和一个子选项数组(默认名为options)
  * @author liukun <919590347@qq.com>
  * @example
