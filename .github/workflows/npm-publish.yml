@@ -14,13 +14,13 @@ jobs:
           node-version: 16
 
       - name: checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
       - name: set up NPM authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_KEY }}" > ~/.npmrc
 
       - name: cache package-lock.json
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: package-temp-dir
           key: lock-${{ github.sha }}
@@ -37,7 +37,7 @@ jobs:
 
       - name: cache node_modules
         id: node_modules_cache_id
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
