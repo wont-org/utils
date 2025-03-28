@@ -1,6 +1,6 @@
 name: Deploy gh-pages
 on:
-  pull_request:
+  push:
     branches:
       - master
       - dev
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
     steps:
       - name: set node version
         uses: actions/setup-node@v3
