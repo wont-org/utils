@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       contents: write
       id-token: write
@@ -62,4 +65,5 @@ jobs:
           path: ./docs/.vuepress/dist
 
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v3
