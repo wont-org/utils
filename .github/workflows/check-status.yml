@@ -1,5 +1,13 @@
 name: Check Status
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - master
+      - dev
+  push:
+    branches-ignore:
+      - master
+      - dev
 
 jobs:
   check-status:
