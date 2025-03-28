@@ -56,7 +56,10 @@ jobs:
       - name: moveCoverage
         run: sh ./scripts/mv-coverage.sh
 
-      - name: Deploy
-        uses: actions/deploy-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs/.vuepress/dist
+
+      - name: Deploy
+        uses: actions/deploy-pages@v3
