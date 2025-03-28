@@ -1,6 +1,6 @@
 name: Deploy gh-pages
 on:
-  pull_request:
+  push:
     branches:
       - master
       - dev
@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - name: set node version
         uses: actions/setup-node@v3
@@ -17,48 +20,43 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: cache package-lock.json
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: cache pnpm store
         uses: actions/cache@v3
         with:
-          path: package-temp-dir
-          key: lock-${{ github.sha }}
-
-      - name: create package-lock.json
-        run: npm i --package-lock-only
-
-      - name: hack for singe file
-        run: |
-          if [ ! -d "package-temp-dir" ]; then
-            mkdir package-temp-dir
-          fi
-          cp package-lock.json package-temp-dir
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: cache node_modules
         id: node_modules_cache_id
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
+          key: node_modules-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: install
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-        run: npm ci
+        run: pnpm install
 
       # - name: eslint
       #   run: npm run eslint
 
       - name: coverage
-        run: npm run coverage
+        run: pnpm run coverage
 
       - name: build:docs
-        run: npm run build:docs
+        run: pnpm run build:docs
 
       - name: moveCoverage
         run: sh ./scripts/mv-coverage.sh
 
-      - name: deploy
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+      - name: Deploy
+        uses: actions/deploy-pages@v3
         with:
-          token: ${{ secrets.GIT_KEY }}
-          branch: gh-pages
-          folder: ./docs/.vuepress/dist
+          path: ./docs/.vuepress/dist
