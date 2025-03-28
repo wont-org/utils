@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1729159765708" clover="3.2.0">
-  <project timestamp="1729159765708" name="All files">
-    <metrics statements="204" coveredstatements="193" conditionals="92" coveredconditionals="73" methods="45" coveredmethods="43" elements="341" coveredelements="309" complexity="0" loc="204" ncloc="204" packages="24" files="24" classes="24"/>
+<coverage generated="1743163008795" clover="3.2.0">
+  <project timestamp="1743163008795" name="All files">
+    <metrics statements="231" coveredstatements="220" conditionals="116" coveredconditionals="97" methods="50" coveredmethods="48" elements="397" coveredelements="365" complexity="0" loc="231" ncloc="231" packages="26" files="26" classes="26"/>
     <package name="LRUCache">
       <metrics statements="18" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
       <file name="LRUCache.ts" path="/home/runner/work/utils/utils/src/LRUCache/LRUCache.ts">
@@ -86,15 +86,14 @@
       </file>
     </package>
     <package name="curry">
-      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
       <file name="curry.ts" path="/home/runner/work/utils/utils/src/curry/curry.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="17" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="9" type="stmt"/>
+        <line num="42" count="8" type="stmt"/>
       </file>
     </package>
     <package name="debounce">
@@ -112,6 +111,24 @@
         <line num="32" count="4" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="findListDuplicatesByKeyList">
+      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="findListDuplicatesByKeyList.ts" path="/home/runner/work/utils/utils/src/findListDuplicatesByKeyList/findListDuplicatesByKeyList.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="47" count="7" type="stmt"/>
+        <line num="48" count="43" type="stmt"/>
+        <line num="49" count="22" type="stmt"/>
+        <line num="51" count="22" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="53" count="6" type="stmt"/>
+        <line num="55" count="16" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
       </file>
     </package>
     <package name="formatOptions">
@@ -170,14 +187,14 @@
       <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="get.ts" path="/home/runner/work/utils/utils/src/get/get.ts">
         <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="5" type="stmt"/>
-        <line num="31" count="5" type="stmt"/>
-        <line num="32" count="5" type="stmt"/>
-        <line num="33" count="11" type="stmt"/>
-        <line num="34" count="11" type="cond" truecount="1" falsecount="0"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="34" count="48" type="stmt"/>
+        <line num="35" count="48" type="stmt"/>
+        <line num="36" count="48" type="stmt"/>
+        <line num="37" count="64" type="stmt"/>
+        <line num="38" count="64" type="cond" truecount="1" falsecount="0"/>
+        <line num="39" count="6" type="stmt"/>
+        <line num="42" count="42" type="stmt"/>
       </file>
     </package>
     <package name="getDataType">
@@ -187,6 +204,28 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="8" type="stmt"/>
         <line num="16" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="getSelectOptionsBy">
+      <metrics statements="16" coveredstatements="16" conditionals="23" coveredconditionals="23" methods="2" coveredmethods="2"/>
+      <file name="getSelectOptionsBy.ts" path="/home/runner/work/utils/utils/src/getSelectOptionsBy/getSelectOptionsBy.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="23" coveredconditionals="23" methods="2" coveredmethods="2"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="97" count="13" type="stmt"/>
+        <line num="100" count="13" type="stmt"/>
+        <line num="103" count="13" type="stmt"/>
+        <line num="105" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="109" count="36" type="cond" truecount="5" falsecount="0"/>
+        <line num="112" count="5" type="stmt"/>
+        <line num="114" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="118" count="36" type="cond" truecount="3" falsecount="0"/>
+        <line num="119" count="4" type="stmt"/>
+        <line num="123" count="36" type="cond" truecount="1" falsecount="0"/>
+        <line num="124" count="24" type="stmt"/>
+        <line num="131" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="132" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="135" count="36" type="stmt"/>
+        <line num="143" count="13" type="stmt"/>
       </file>
     </package>
     <package name="getUrlParam">
@@ -285,23 +324,23 @@
       <file name="set.ts" path="/home/runner/work/utils/utils/src/set/set.ts">
         <metrics statements="18" coveredstatements="18" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
-        <line num="26" count="5" type="stmt"/>
-        <line num="27" count="5" type="stmt"/>
-        <line num="28" count="10" type="stmt"/>
-        <line num="29" count="10" type="stmt"/>
-        <line num="30" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="31" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="5" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="38" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="39" count="5" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
-        <line num="43" count="10" type="stmt"/>
+        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="34" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="5" type="stmt"/>
         <line num="45" count="5" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
       </file>
     </package>
     <package name="throttle">
