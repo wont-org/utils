@@ -8,13 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    # 不使用 github-pages 环境，因为它依赖可能有问题的 actions
     permissions:
-      contents: write
-      id-token: write
-      pages: write
+      contents: write # 允许推送到 gh-pages 分支
     steps:
       - name: set node version
         uses: actions/setup-node@v3
@@ -23,6 +19,8 @@ jobs:
 
       - name: checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false # 使用 JamesIves 部署时需要
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -60,14 +58,11 @@ jobs:
       - name: moveCoverage
         run: sh ./scripts/mv-coverage.sh
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./docs/.vuepress/dist
-
+      # 使用稳定的旧版本 JamesIves 部署 action
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: ./docs/.vuepress/dist
+          CLEAN: true
