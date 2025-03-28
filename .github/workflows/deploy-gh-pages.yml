@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      pages: write
     steps:
       - name: set node version
         uses: actions/setup-node@v3
@@ -59,11 +60,17 @@ jobs:
       - name: moveCoverage
         run: sh ./scripts/mv-coverage.sh
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Backup artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: docs-dist
+          path: ./docs/.vuepress/dist
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./docs/.vuepress/dist
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1
