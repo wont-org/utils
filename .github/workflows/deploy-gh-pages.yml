@@ -60,13 +60,10 @@ jobs:
       - name: moveCoverage
         run: sh ./scripts/mv-coverage.sh
 
-      - name: Backup artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: docs-dist
-          path: ./docs/.vuepress/dist
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
-      - name: Upload pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./docs/.vuepress/dist
