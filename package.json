@@ -23,17 +23,6 @@
   "license": "MIT",
   "scripts": {
     "bump": "bumpp package.json -c -p -t --all -x \"npm run changelog\"",
-    "fetchtag": "git tag | xargs -I {} git tag -d {} && git fetch --tags",
-    "patch:demo": "npm run release -- --release-as patch --dry-run",
-    "patch": "npm run fetchtag && npm run release -- --release-as patch && git push",
-    "minor": "npm run fetchtag && npm run release -- --release-as minor && git push",
-    "major": "npm run fetchtag && npm run release -- --release-as major && git push",
-    "alpha": "npm run fetchtag && npm run release -- --prerelease alpha && git push",
-    "beta": "npm run fetchtag && npm run release -- --prerelease beta && git push",
-    "rc": "npm run fetchtag && npm run release -- --prerelease rc && git push",
-    "release": "standard-version",
-    "pushtag": "git push --follow-tags origin master",
-    "pushtag1": "git push --tags origin master",
     "eslint": "eslint --ext .ts .",
     "eslint:fix": "eslint --ext .ts,.js . --fix",
     "prettier": "prettier --write .",
@@ -71,11 +60,6 @@
     "*.{jsx,js,tsx,ts}": [
       "eslint --fix"
     ]
-  },
-  "standard-version": {
-    "skip": {
-      "changelog": true
-    }
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -115,7 +99,6 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "sinon": "^9.2.1",
-    "standard-version": "^8.0.2",
     "ts-jest": "^26.1.3",
     "ts-node": "^8.10.2",
     "typescript": "~4.3.4",
