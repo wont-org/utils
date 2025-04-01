@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1743163008795" clover="3.2.0">
-  <project timestamp="1743163008795" name="All files">
+<coverage generated="1743500973589" clover="3.2.0">
+  <project timestamp="1743500973589" name="All files">
     <metrics statements="231" coveredstatements="220" conditionals="116" coveredconditionals="97" methods="50" coveredmethods="48" elements="397" coveredelements="365" complexity="0" loc="231" ncloc="231" packages="26" files="26" classes="26"/>
     <package name="LRUCache">
       <metrics statements="18" coveredstatements="18" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
