@@ -175,6 +175,11 @@ module.exports = {
             "path": "/src/LRUCache"
           },
           {
+            "title": "mapTreeList",
+            "collapsable": false,
+            "path": "/src/mapTreeList"
+          },
+          {
             "title": "objectToFormData",
             "collapsable": false,
             "path": "/src/objectToFormData"

@@ -22,6 +22,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "bump": "bumpp package.json -c -p -t --all -x \"npm run changelog\"",
     "eslint": "eslint --ext .ts .",
     "eslint:fix": "eslint --ext .ts,.js . --fix",

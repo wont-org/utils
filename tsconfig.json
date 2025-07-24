@@ -12,6 +12,15 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    // "lib": ["es2015", "es2016", "es2017", "esnext", "dom"],
+    // "allowJs": true,
+    // "checkJs": false,
+    // "outDir": "dist",
+    // "rootDir": "src",
+    // "baseUrl": ".",
+    // "paths": {
+    //   "*": ["node_modules/*"]
+    // }
   }
 }
